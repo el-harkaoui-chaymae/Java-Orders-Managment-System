@@ -17,6 +17,7 @@ import javax.sound.sampled.Clip;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
+
 public class Custom_Button extends JButton {
 	
 	// attributes
@@ -25,9 +26,11 @@ public class Custom_Button extends JButton {
 	public int width;
 	public int height;
 	String text ;
+	int font_size;
+	boolean gradient;
     
     // Constructor
-    public Custom_Button(int x,int y,int width, int height,String text) {
+    public Custom_Button(int x,int y,int width, int height,String text,int font_size,boolean gradient) {
         
     	// Call the superclass constructor
         super(text);
@@ -37,6 +40,9 @@ public class Custom_Button extends JButton {
         this.y = y;
         this.width = width;
         this.height = height;
+        this.text = text;
+        this.font_size = font_size;
+        this.gradient = gradient;
         
         
         // Remove the default button styles
@@ -50,7 +56,7 @@ public class Custom_Button extends JButton {
         this.setText(text);
         this.setHorizontalTextPosition(SwingConstants.CENTER);
         this.setForeground(new Color(255, 255, 255));
-        this.setFont(new Font("consolas", Font.BOLD, 20));
+        this.setFont(new Font("consolas", Font.BOLD, font_size));
         
         // set the button
         this.setBounds(x,y,width,height);
@@ -70,18 +76,23 @@ public class Custom_Button extends JButton {
     // Method to paint the button with gradient fill
     @Override
     protected void paintComponent(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g;
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        if(gradient==true) {
+        	
+        	Graphics2D g2 = (Graphics2D) g;
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        // Define the rounded rectangle shape
-        Shape shape = new RoundRectangle2D.Float(0, 0, getWidth(), getHeight(), 50, 50);
+            // Define the rounded rectangle shape
+            Shape shape = new RoundRectangle2D.Float(0, 0, getWidth(), getHeight(), 50, 50);
+            
+            // Fill the shape with the gradient paint
+            GradientPaint gradient = new GradientPaint(0, 0, Color.decode("#19566B"), getWidth(), getHeight(), Color.decode("#b39700"));
+            g2.setPaint(gradient);
+            g2.fill(shape);
+
+            
+        }
         
-        // Fill the shape with the gradient paint
-        GradientPaint gradient = new GradientPaint(0, 0, Color.decode("#19566B"), getWidth(), getHeight(), Color.decode("#b39700"));
-        g2.setPaint(gradient);
-        g2.fill(shape);
-
-        // Call superclass method to ensure default painting (including text)   
+     // Call superclass method to ensure default painting (including text)   
         super.paintComponent(g);
     }
 
@@ -96,5 +107,26 @@ public class Custom_Button extends JButton {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+    
+    
+    
+    // method to change button style
+    public void change_style() {
+    	
+         
+         this.addMouseListener(new java.awt.event.MouseAdapter() {
+             public void mouseEntered(java.awt.event.MouseEvent evt) {
+                 setFont(new Font("consolas", Font.BOLD, 26));
+                 setForeground(Color.decode("#b39700"));}
+
+             public void mouseExited(java.awt.event.MouseEvent evt) {
+                 setFont(new Font("consolas", Font.BOLD, 23));
+                 setForeground(Color.white);
+
+             }
+         }); 
+    	
+    	
     }
 }

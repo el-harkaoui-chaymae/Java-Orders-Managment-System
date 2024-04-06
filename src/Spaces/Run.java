@@ -4,6 +4,8 @@ import javax.swing.*;
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Panel;
+import Graphical_Interface.Custom_Label;
+
 
 import java.awt.*;
 import javax.swing.*;
@@ -25,41 +27,20 @@ public class Run{
         Custom_Button bt = new Custom_Button(1000,50,150,40,"company");
         Custom_Button bt2 = new Custom_Button(1200,50,150,40,"about us");
         
+        Custom_Label lab1 = new Custom_Label(250, 285, 510, 80,"Vertex Group Solutions","Arial",45,"#b39700"); 
+        lab1.create_buttom_border(4, "#19566B");
        
-        
-        // Create a JLabel and set its text
-        JLabel label = new JLabel("Vertex Group Solutions");
-        
-        // Set the location of the JLabel
-        label.setBounds(250, 285, 510, 80); // X, Y, width, height
-        
-        Font font = new Font("Arial", Font.BOLD, 45); // Font name, style, size
-        label.setFont(font);
-        
-        label.setForeground(Color.decode("#b39700"));
-        
-        // Create a bottom border for the label
-        Border border = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.decode("#19566B")); // Top, left, bottom, right
-        frame.getContentPane().add(pn);
-
-        // Set the border of the label
-        label.setBorder(border);
 
         
         // Add the JLabel to the JFrame
-        pn.add(label);
+        pn.add(lab1);
         
         
-     // Create a JLabel and set its text
-        JLabel label2 = new JLabel("Crafting the Foundations of Tomorrow");
-     // Set the location of the JLabel
-        label2.setBounds(290, 365, 500, 50); // X, Y, width, height
         
-        Font font2 = new Font("Consolas", Font.BOLD, 22); // Font name, style, size
-        label2.setFont(font2);
-        
-        label2.setForeground(Color.decode("#19566B"));
-        pn.add(label2);
+        Custom_Label lab2 = new Custom_Label(290, 365, 500, 50,"Crafting the Foundations of Tomorrow","Consolas",22,"#19566B"); 
+
+       
+        pn.add(lab2);
         
      
        

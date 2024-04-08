@@ -26,11 +26,12 @@ public class Custom_Button extends JButton {
 	public int width;
 	public int height;
 	String text ;
+	String text_color;
 	int font_size;
 	boolean gradient;
     
     // Constructor
-    public Custom_Button(int x,int y,int width, int height,String text,int font_size,boolean gradient) {
+    public Custom_Button(int x,int y,int width, int height,String text,String text_color,int font_size,boolean gradient) {
         
     	// Call the superclass constructor
         super(text);
@@ -41,6 +42,7 @@ public class Custom_Button extends JButton {
         this.width = width;
         this.height = height;
         this.text = text;
+        this.text_color = text_color;
         this.font_size = font_size;
         this.gradient = gradient;
         
@@ -55,7 +57,7 @@ public class Custom_Button extends JButton {
         // Set the button text and style
         this.setText(text);
         this.setHorizontalTextPosition(SwingConstants.CENTER);
-        this.setForeground(new Color(255, 255, 255));
+        this.setForeground(Color.decode(text_color));
         this.setFont(new Font("consolas", Font.BOLD, font_size));
         
         // set the button
@@ -110,17 +112,17 @@ public class Custom_Button extends JButton {
     
     
     // method to change button style
-    public void change_style() {
+    public void change_style(String color1,String color2) {
     	
          
          this.addMouseListener(new java.awt.event.MouseAdapter() {
              public void mouseEntered(java.awt.event.MouseEvent evt) {
                  setFont(new Font("consolas", Font.BOLD, 26));
-                 setForeground(Color.decode("#b39700"));}
+                 setForeground(Color.decode(color1));}
 
              public void mouseExited(java.awt.event.MouseEvent evt) {
                  setFont(new Font("consolas", Font.BOLD, 23));
-                 setForeground(Color.white);
+                 setForeground(Color.decode(color2));
 
              }
          }); 

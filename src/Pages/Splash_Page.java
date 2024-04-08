@@ -22,31 +22,31 @@ public class Splash_Page  {
 	    
 	    
 	    // about us button
-        Custom_Button about = new Custom_Button(1200,40,150,40,"About Us",23,false);
-        about.change_style();
+        Custom_Button about = new Custom_Button(1200,40,150,40,"About Us","#FFFFFF",23,false);
+        about.change_style("#b39700","#FFFFFF");
         bar.add(about);
         
         
         // services button
-        Custom_Button services = new Custom_Button(1000,40,150,40,"Services",23,false);
-        services.change_style();
+        Custom_Button services = new Custom_Button(1000,40,150,40,"Services","#FFFFFF",23,false);
+        services.change_style("#b39700","#FFFFFF");
         bar.add(services);
 
         
         // client button
-        Custom_Button client = new Custom_Button(800,40,150,40,"Client",23,false);
-        client.change_style();
+        Custom_Button client = new Custom_Button(800,40,150,40,"Client","#FFFFFF",23,false);
+        client.change_style("#b39700","#FFFFFF");
         bar.add(client);
         
         
         // staff button
-        Custom_Button staff = new Custom_Button(600,40,150,40,"Staff",23,false);
-        staff.change_style();
+        Custom_Button staff = new Custom_Button(600,40,150,40,"Staff","#FFFFFF",23,false);
+        staff.change_style("#b39700","#FFFFFF");
         bar.add(staff);
         
         
         // contact us button
-        Custom_Button contact = new Custom_Button(270,440,170,40,"Contact Us",23,true);
+        Custom_Button contact = new Custom_Button(239,440,200,40,"Contact Us","#2F5597",23,false);
         splash.add(contact);
         
 

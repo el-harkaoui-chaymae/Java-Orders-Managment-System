@@ -35,7 +35,7 @@ public class Custom_Button extends JButton {
     	// Call the superclass constructor
         super(text);
         
-        // set the attributes
+        // set the attributes 
         this.x = x;
         this.y = y;
         this.width = width;
@@ -69,7 +69,7 @@ public class Custom_Button extends JButton {
             }
         });
         
-         
+          
         
     }
 
@@ -85,14 +85,12 @@ public class Custom_Button extends JButton {
             Shape shape = new RoundRectangle2D.Float(0, 0, getWidth(), getHeight(), 50, 50);
             
             // Fill the shape with the gradient paint
-            GradientPaint gradient = new GradientPaint(0, 0, Color.decode("#19566B"), getWidth(), getHeight(), Color.decode("#b39700"));
+            GradientPaint gradient = new GradientPaint(0, 0, Color.decode("#1D63DC"), getWidth(), getHeight(), Color.decode("#b39700"));
             g2.setPaint(gradient);
-            g2.fill(shape);
-
-            
+            g2.fill(shape);      
         }
         
-     // Call superclass method to ensure default painting (including text)   
+        // Call superclass method to ensure default painting - including text -   
         super.paintComponent(g);
     }
 

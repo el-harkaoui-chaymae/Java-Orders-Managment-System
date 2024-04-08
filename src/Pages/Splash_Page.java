@@ -1,4 +1,4 @@
-package Spaces;
+package Pages;
 
 import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Button;
@@ -17,7 +17,7 @@ public class Splash_Page  {
 	    splash.add_background("logo_background.png");
 	    
 	    // add bar menu panel
-	    Custom_Panel bar = new Custom_Panel(0,0,frame.getWidth(),100,"#19566B");
+	    Custom_Panel bar = new Custom_Panel(0,0,frame.getWidth(),100,"#2F5597");
 	    splash.add(bar);
 	    
 	    
@@ -46,19 +46,17 @@ public class Splash_Page  {
         
         
         // contact us button
-        Custom_Button contact = new Custom_Button(250,500,170,40,"Contact Us",23,true);
+        Custom_Button contact = new Custom_Button(270,440,170,40,"Contact Us",23,true);
         splash.add(contact);
-		
         
 
         // add company logo labal
-        Custom_Label lab1 = new Custom_Label(250, 285, 510, 80,"Vertex Group Solutions","Arial",45,"#b39700"); 
-        lab1.create_buttom_border(4, "#19566B");
+        Custom_Label lab1 = new Custom_Label(270, 295, 510, 80,"Vertex Group Solutions","Arial",45,"#C00000"); 
         splash.add(lab1);
         
-        
+         
         // add slogan label
-        Custom_Label lab2 = new Custom_Label(290, 365, 500, 50,"Crafting the Foundations of Tomorrow","Consolas",22,"#19566B");
+        Custom_Label lab2 = new Custom_Label(270, 355, 500, 50,"Crafting the Foundations of Tomorrow","Consolas",22,"#b39700");
         splash.add(lab2);
         
         // add splach page-panel to the frame

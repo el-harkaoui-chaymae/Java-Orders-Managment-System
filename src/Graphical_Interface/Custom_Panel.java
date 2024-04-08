@@ -1,12 +1,9 @@
 package Graphical_Interface;
 
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.RenderingHints;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -55,6 +52,7 @@ public class Custom_Panel extends JPanel {
            new Thread(() -> {
                try {
                    backgroundImage = ImageIO.read(new File(image_path));
+                   repaint();
                } catch (IOException e) {
                    e.printStackTrace();
                }

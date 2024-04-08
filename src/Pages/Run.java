@@ -1,4 +1,4 @@
-package Spaces;
+package Pages;
 
 import Graphical_Interface.Custom_Frame;
 

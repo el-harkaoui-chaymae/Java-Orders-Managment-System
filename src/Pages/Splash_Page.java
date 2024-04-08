@@ -46,7 +46,7 @@ public class Splash_Page  {
         
         
         // contact us button
-        Custom_Button contact = new Custom_Button(239,440,200,40,"Contact Us","#2F5597",23,false);
+        Custom_Button contact = new Custom_Button(242,440,200,40,"Contact Us","#2F5597",23,false);
         splash.add(contact);
         
 
@@ -56,7 +56,7 @@ public class Splash_Page  {
         
          
         // add slogan label
-        Custom_Label lab2 = new Custom_Label(270, 355, 500, 50,"Crafting the Foundations of Tomorrow","Consolas",22,"#b39700");
+        Custom_Label lab2 = new Custom_Label(275, 355, 500, 50,"Crafting the Foundations of Tomorrow","Consolas",22,"#b39700");
         splash.add(lab2);
         
         // add splach page-panel to the frame

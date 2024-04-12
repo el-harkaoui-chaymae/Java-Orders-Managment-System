@@ -2,7 +2,6 @@ package Graphical_Interface;
 
 import java.awt.Color;
 import java.awt.Font;
-
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
@@ -16,7 +15,7 @@ public class Custom_Label extends JLabel {
 	public int height;
 	String text ;
 	String font;
-	int font_size;
+	int font_size; 
 	String color;
 	
 	// constructor
@@ -37,12 +36,11 @@ public class Custom_Label extends JLabel {
 	}
 	
     // method to create a bottom border for the label
-    public void create_buttom_border(int size,String color) {
-    	
-    	Border border = BorderFactory.createMatteBorder(0, 0, size, 0, Color.decode(color)); // Top, left, bottom, right
-        this.setBorder(border);
+    public void create_buttom_border(int size,String color) { 
+    	Border border = BorderFactory.createMatteBorder(0, 0, size, 0, Color.decode(color)); // Top-left-bottom-right
+        this.setBorder(border);}
 	
-    }
+    
     
     
 

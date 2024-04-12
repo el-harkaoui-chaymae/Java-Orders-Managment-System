@@ -21,20 +21,22 @@ import javax.swing.SwingConstants;
 public class Custom_Button extends JButton {
 	
 	// attributes
-	public int x;
-	public int y;
-	public int width;
-	public int height;
+	int x; 
+	int y;
+	int width;
+	int height;
 	String text ;
 	String text_color;
-	int font_size;
+	String font;
+	int font_size;  
 	boolean gradient;
     
     // Constructor
-    public Custom_Button(int x,int y,int width, int height,String text,String text_color,int font_size,boolean gradient) {
+    public Custom_Button(int x,int y,int width, int height,String text,String text_color,String font,int font_size,boolean gradient) {
         
     	// Call the superclass constructor
         super(text);
+        
         
         // set the attributes 
         this.x = x;
@@ -54,20 +56,23 @@ public class Custom_Button extends JButton {
         this.setOpaque(false);        
         this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         
+        
         // Set the button text and style
         this.setText(text);
         this.setHorizontalTextPosition(SwingConstants.CENTER);
         this.setForeground(Color.decode(text_color));
-        this.setFont(new Font("consolas", Font.BOLD, font_size));
+        this.setFont(new Font(font, Font.BOLD, font_size));
+        
         
         // set the button
         this.setBounds(x,y,width,height);
         
         
+        
         // Add ActionListener for button sound effect
         this.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                playButtonSound(); 
+                play_button_sound(); 
             }
         });
         
@@ -75,6 +80,8 @@ public class Custom_Button extends JButton {
         
     }
 
+    
+    
     // Method to paint the button with gradient fill
     @Override
     protected void paintComponent(Graphics g) {
@@ -88,45 +95,44 @@ public class Custom_Button extends JButton {
             
             // Fill the shape with the gradient paint
             GradientPaint gradient = new GradientPaint(0, 0, Color.decode("#1D63DC"), getWidth(), getHeight(), Color.decode("#b39700"));
-            g2.setPaint(gradient);
-            g2.fill(shape);      
-        }
-        
+            g2.setPaint(gradient); 
+            g2.fill(shape);}      
+       
         // Call superclass method to ensure default painting - including text -   
-        super.paintComponent(g);
-    }
+        super.paintComponent(g);}
+   
 
     
+  
+    
     // Method to play button sound effect
-    private void playButtonSound() {
+    private void play_button_sound() {
         try {
             File soundFile = new File("click_sound.wav");
             Clip clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(soundFile));
             clip.start();
         } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
+            ex.printStackTrace();}}
+    
+    
+     
     
     
     
     // method to change button style
     public void change_style(String color1,String color2) {
     	
-         
          this.addMouseListener(new java.awt.event.MouseAdapter() {
              public void mouseEntered(java.awt.event.MouseEvent evt) {
-                 setFont(new Font("consolas", Font.BOLD, 26));
                  setForeground(Color.decode(color1));}
 
              public void mouseExited(java.awt.event.MouseEvent evt) {
-                 setFont(new Font("consolas", Font.BOLD, 23));
                  setForeground(Color.decode(color2));
 
-             }
-         }); 
+             }});}
+          
     	
     	
-    }
+    
 }

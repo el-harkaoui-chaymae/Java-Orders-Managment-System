@@ -30,6 +30,7 @@ public class Custom_Button extends JButton {
 	String font;
 	int font_size;  
 	boolean gradient;
+
     
     // Constructor
     public Custom_Button(int x,int y,int width, int height,String text,String text_color,String font,int font_size,boolean gradient) {
@@ -94,7 +95,7 @@ public class Custom_Button extends JButton {
             Shape shape = new RoundRectangle2D.Float(0, 0, getWidth(), getHeight(), 50, 50);
             
             // Fill the shape with the gradient paint
-            GradientPaint gradient = new GradientPaint(0, 0, Color.decode("#1D63DC"), getWidth(), getHeight(), Color.decode("#b39700"));
+            GradientPaint gradient = new GradientPaint(0, 0, Color.decode("#1D63DC"), getWidth(), getHeight(), Color.decode("#C00000"));
             g2.setPaint(gradient); 
             g2.fill(shape);}      
        
@@ -105,7 +106,7 @@ public class Custom_Button extends JButton {
     
   
     
-    // Method to play button sound effect
+    // method to play button sound effect
     private void play_button_sound() {
         try {
             File soundFile = new File("click_sound.wav");
@@ -131,7 +132,13 @@ public class Custom_Button extends JButton {
                  setForeground(Color.decode(color2));
 
              }});}
-          
+    
+    
+    
+    
+    
+    
+              
     	
     	
     

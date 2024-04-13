@@ -1,11 +1,17 @@
 package Pages;
 
 import Graphical_Interface.Custom_Panel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Container;
+import javax.swing.SwingUtilities;
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
-import java.awt.Font;
-
+import Pages.Sign_In_Page;
+import Graphical_Interface.Custom_Resizing_Manager;
+ 
 
 public class Splash_Page  {
  	
@@ -39,10 +45,28 @@ public class Splash_Page  {
         Custom_Button client = new Custom_Button(470,30,85,30,"Client","#FFFFFF","Consolas",13,false);
         client.change_style("#b39700","#FFFFFF");
         bar.add(client);
+        // action
+        client.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	// remove the splash page panel from the frame
+            	Container contentPane = frame.getContentPane(); 
+                contentPane.remove(splash); 
+                
+            	// open the sign up page panel
+                Sign_In_Page page = new Sign_In_Page(frame);
+                
+                // refresh the window
+                frame.revalidate();
+                frame.repaint();
+         	
+                }}) ;
+                 
+            
         
-        
+     
         // staff button
-        Custom_Button staff = new Custom_Button(330,30,100,30,"Staff","#FFFFFF","Consolas",13,false);
+        Custom_Button staff = new Custom_Button(355,30,100,30,"Staff","#FFFFFF","Consolas",13,false);
         staff.change_style("#b39700","#FFFFFF");
         bar.add(staff);
         
@@ -68,8 +92,10 @@ public class Splash_Page  {
         
         
         // handle resizing
-        bar.hundle_resizing(bar.calculate_position_size_ratios(),bar.calculate_font_ratios());
-        splash.hundle_resizing(splash.calculate_position_size_ratios(),splash.calculate_font_ratios());
+        Custom_Resizing_Manager resize_1 = new Custom_Resizing_Manager(frame);
+        Custom_Resizing_Manager resize_2 = new Custom_Resizing_Manager(splash);
+        Custom_Resizing_Manager resize_3 = new Custom_Resizing_Manager(bar); 
+
 		
 		
 		

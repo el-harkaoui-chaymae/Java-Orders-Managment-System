@@ -23,9 +23,9 @@ public class Custom_Frame extends JFrame {
         
         // set the Layout to null for absolute constrol
         this.setLayout(null); 
- 
+  
       
-     	// set size and position
+     	// set size and position        
      	setBounds(400,100,900,600); 
         
  
@@ -49,26 +49,7 @@ public class Custom_Frame extends JFrame {
         
         
         
-        // handle frame resizing
-        this.addComponentListener(new ComponentAdapter() {
-            @Override
-            public void componentResized(ComponentEvent e) {
-                Component[] components = getContentPane().getComponents();
-                for (Component component : components) {
-                    if (component instanceof JComponent) {
-                        
-                        // frame parameters after resizing
-                        int width_fa = getWidth();
-                        int height_fa = getHeight();
-                        
-                        // determine new  size
-                        int width_a = (width_fa);
-                        int height_a = (height_fa);
-
-                        // set new parameters for the component
-                        component.setBounds(0, 0, width_a, height_a);
-                  
-                    }}}});
+       
     
 
     

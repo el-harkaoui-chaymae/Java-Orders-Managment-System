@@ -2,6 +2,11 @@ package Graphical_Interface;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
@@ -17,6 +22,8 @@ public class Custom_Label extends JLabel {
 	String font;
 	int font_size; 
 	String color;
+    Image backgroundImage;
+
 	
 	// constructor
 	public Custom_Label(int x,int y,int width,int height,String text,String font,int font_size,String color) {
@@ -39,6 +46,29 @@ public class Custom_Label extends JLabel {
     public void create_buttom_border(int size,String color) { 
     	Border border = BorderFactory.createMatteBorder(0, 0, size, 0, Color.decode(color)); // Top-left-bottom-right
         this.setBorder(border);}
+    
+    
+    // method to add image background
+    public void add_background(String image_path) {
+    	
+        // Start a new thread to load the image
+           new Thread(() -> {
+               try { 
+            	   backgroundImage = ImageIO.read(new File(image_path));
+                   repaint();}
+               catch (IOException e) {e.printStackTrace();}
+               
+           }).start(); 
+    }
+
+    // repaint the image to fit the label
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+        repaint();
+
+    }
 	
     
     

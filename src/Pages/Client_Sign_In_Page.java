@@ -15,14 +15,11 @@ import Graphical_Interface.Custom_Text_Field;
 
 
 
-
-
 public class Client_Sign_In_Page {
 		
 	
 	// constructor
 	public Client_Sign_In_Page(Custom_Frame frame) {
-		
 		
 		
 		// sign in panel
@@ -270,28 +267,18 @@ public class Client_Sign_In_Page {
 	    int bt3_y = (int) ((210*frame.getHeight())/600);
 	    int bt3_width = (int) ((100*frame.getWidth())/900);
 	    int bt3_height = (int) ((25*frame.getHeight())/600);
-	    int bt3_font_size = (int) ((12*frame.getWidth())/900);
+	    int bt3_font_size = (int) ((10*frame.getWidth())/900);
         Custom_Button sign_up = new Custom_Button(bt3_x,bt3_y,bt3_width,bt3_height,"Sign Up",
         "#FFFFFF","Consolas",bt3_font_size,true);
-        sign_up.setRound_shape_variables(35, 35);
+        sign_up.setRound_shape_variables(30, 30);
         left_panel.add(sign_up);
         
         
         
-   
-        
-        //  return button
-        int bt4_x = (int) ((30*frame.getWidth())/900);
-	    int bt4_y = (int) ((35*frame.getHeight())/600);
-	    int bt4_width = (int) ((50*frame.getWidth())/900);
-	    int bt4_height = (int) ((25*frame.getHeight())/600);
-	    int bt4_font_size = (int) ((10*frame.getWidth())/900);
-        Custom_Button Return = new Custom_Button(bt4_x,bt4_y,bt4_width,bt4_height,"",
-        "#4C4C4C","Arial",bt4_font_size,false);
-        Return.setHorizontalAlignment(SwingConstants.LEFT);
-        left_panel.add(Return);
-        // return button action
-        Return.addActionListener(new ActionListener() {
+        // return button and its action
+        int panel_original_width = 360;
+	    int panel_original_height = 600;
+	    left_panel.add_return_button(25, 35, 33, 25, panel_original_width, panel_original_height).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
               // remove client sign in page
               frame.getContentPane().removeAll();    
@@ -303,20 +290,8 @@ public class Client_Sign_In_Page {
         
         
         
-        // label 16 - return icon
-        int lb16_x = (int) ((30*frame.getWidth())/900);
-	    int lb16_y = (int) ((35*frame.getHeight())/600);
-	    int lb16_width = (int) ((20*frame.getWidth())/900);
-	    int lb16_height = (int) ((20*frame.getHeight())/600);
-	    int lb16_font_size = (int) ((10*frame.getWidth())/900);
-        Custom_Label lab16 = new Custom_Label(lb16_x, lb16_y, lb16_width, lb16_height,
-        "","Arial",lb16_font_size,"#b39700");
-        lab16.add_background("return_icon.png");
-        left_panel.add(lab16);
         
-        
-        
- 
+       
 	    
 	    // add sign_up page to the frame
         frame.getContentPane().add(sign_in);

@@ -5,11 +5,10 @@ import Graphical_Interface.Custom_Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Container;
-import javax.swing.SwingUtilities;
+
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
-import Pages.Client_Sign_In_Page;
 import Graphical_Interface.Custom_Resizing_Manager;
  
 
@@ -24,38 +23,53 @@ public class Splash_Page  {
 	    splash.add_background("logo_background.png");
 
 	    
+	   
 	    // add bar menu panel
-	    Custom_Panel bar = new Custom_Panel(0,0,frame.getWidth(),70,"#2F5597");
+	    int height = (int) ((70*frame.getHeight())/600);
+	    Custom_Panel bar = new Custom_Panel(0,0,frame.getWidth(),height,"#2F5597");
 	    splash.add(bar);
 	    
 	    
+	    
 	    // about us button 
-        Custom_Button about = new Custom_Button(700,30,100,30,"About Us","#FFFFFF","Consolas",13,false);
+	    int bt1_x = (int) ((700*frame.getWidth())/900);
+	    int bt1_y = (int) ((30*frame.getHeight())/600);
+	    int bt1_width = (int) ((100*frame.getWidth())/900);
+	    int bt1_height = (int) ((30*frame.getHeight())/600);
+	    int bt1_font_size = (int) ((13*frame.getWidth())/900);
+        Custom_Button about = new Custom_Button(bt1_x,bt1_y,bt1_width,bt1_height,
+        "About Us","#FFFFFF","Consolas",bt1_font_size,false);
         about.change_style("#b39700","#FFFFFF");
         bar.add(about);
         
         
+        
         // services button
-        Custom_Button services = new Custom_Button(580,30,100,30,"Services","#FFFFFF","Consolas",13,false);
+        int bt2_x = (int) ((580*frame.getWidth())/900);
+	    int bt2_width = (int) ((100*frame.getWidth())/900);
+        Custom_Button services = new Custom_Button(bt2_x,bt1_y,bt2_width,bt1_height,
+        "Services","#FFFFFF","Consolas",bt1_font_size,false);
         services.change_style("#b39700","#FFFFFF");
         bar.add(services);
 
         
+        
+        
         // client button
-        Custom_Button client = new Custom_Button(470,30,85,30,"Client","#FFFFFF","Consolas",13,false);
+        int bt3_x = (int) ((470*frame.getWidth())/900);
+	    int bt3_width = (int) ((85*frame.getWidth())/900);
+        Custom_Button client = new Custom_Button(bt3_x,bt1_y,bt3_width,bt1_height,"Client","#FFFFFF","Consolas",bt1_font_size,false);
         client.change_style("#b39700","#FFFFFF");
         bar.add(client);
+        
         // action
         client.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	
             	// remove the splash page panel from the frame
             	Container contentPane = frame.getContentPane(); 
                 contentPane.remove(splash); 
-                
             	// open the sign up page panel
                 Client_Sign_In_Page page = new Client_Sign_In_Page(frame);
-                
                 // refresh the window
                 frame.revalidate();
                 frame.repaint();
@@ -65,24 +79,48 @@ public class Splash_Page  {
             
         
      
+       
         // staff button
-        Custom_Button staff = new Custom_Button(355,30,100,30,"Staff","#FFFFFF","Consolas",13,false);
+        int bt4_x = (int) ((355*frame.getWidth())/900);
+	    int bt4_width = (int) ((100*frame.getWidth())/900);
+        Custom_Button staff = new Custom_Button(bt4_x,bt1_y,bt4_width,bt1_height,"Staff","#FFFFFF","Consolas",bt1_font_size,false);
         staff.change_style("#b39700","#FFFFFF");
         bar.add(staff);
         
         
+        
         // contact us button
-        Custom_Button contact = new Custom_Button(115,300,200,40,"Contact Us","#2F5597","Segoe Print",17,false);
+        int bt5_x = (int) ((115*frame.getWidth())/900);
+	    int bt5_y = (int) ((300*frame.getHeight())/600);
+	    int bt5_width = (int) ((200*frame.getWidth())/900);
+	    int bt5_height = (int) ((40*frame.getHeight())/600);
+	    int bt5_font_size = (int) ((17*frame.getWidth())/900);
+        Custom_Button contact = new Custom_Button(bt5_x,bt5_y,bt5_width,bt5_height,
+        "Contact Us","#2F5597","Segoe Print",bt5_font_size,false);
         splash.add(contact);
         
  
+       
         // add company logo labal
-        Custom_Label lab1 = new Custom_Label(168, 185, 510, 80,"Vertex Group Solutions","Arial",28,"#C00000"); 
+        int lb1_x = (int) ((168*frame.getWidth())/900);
+	    int lb1_y = (int) ((185*frame.getHeight())/600);
+	    int lb1_width = (int) ((510*frame.getWidth())/900);
+	    int lb1_height = (int) ((80*frame.getHeight())/600);
+	    int lb1_font_size = (int) ((28*frame.getWidth())/900);
+        Custom_Label lab1 = new Custom_Label(lb1_x, lb1_y, lb1_width, lb1_height,
+        "Vertex Group Solutions","Arial",lb1_font_size,"#C00000"); 
         splash.add(lab1);
         
          
+       
         // add slogan label
-        Custom_Label lab2 = new Custom_Label(170, 235, 500, 50,"Crafting the Foundations of Tomorrow","Consolas",14,"#b39700");
+        int lb2_x = (int) ((170*frame.getWidth())/900);
+	    int lb2_y = (int) ((235*frame.getHeight())/600);
+	    int lb2_width = (int) ((510*frame.getWidth())/900);
+	    int lb2_height = (int) ((50*frame.getHeight())/600);
+	    int lb2_font_size = (int) ((14*frame.getWidth())/900);
+        Custom_Label lab2 = new Custom_Label(lb2_x, lb2_y, lb2_width, lb2_height,
+        "Crafting the Foundations of Tomorrow","Consolas",lb2_font_size,"#b39700");
         splash.add(lab2);
         
         

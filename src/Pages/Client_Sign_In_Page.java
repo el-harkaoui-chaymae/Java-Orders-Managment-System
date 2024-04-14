@@ -281,8 +281,8 @@ public class Client_Sign_In_Page {
    
         
         //  return button
-        int bt4_x = (int) ((0*frame.getWidth())/900);
-	    int bt4_y = (int) ((0*frame.getHeight())/600);
+        int bt4_x = (int) ((30*frame.getWidth())/900);
+	    int bt4_y = (int) ((35*frame.getHeight())/600);
 	    int bt4_width = (int) ((50*frame.getWidth())/900);
 	    int bt4_height = (int) ((25*frame.getHeight())/600);
 	    int bt4_font_size = (int) ((10*frame.getWidth())/900);
@@ -304,8 +304,8 @@ public class Client_Sign_In_Page {
         
         
         // label 16 - return icon
-        int lb16_x = (int) ((0*frame.getWidth())/900);
-	    int lb16_y = (int) ((0*frame.getHeight())/600);
+        int lb16_x = (int) ((30*frame.getWidth())/900);
+	    int lb16_y = (int) ((35*frame.getHeight())/600);
 	    int lb16_width = (int) ((20*frame.getWidth())/900);
 	    int lb16_height = (int) ((20*frame.getHeight())/600);
 	    int lb16_font_size = (int) ((10*frame.getWidth())/900);

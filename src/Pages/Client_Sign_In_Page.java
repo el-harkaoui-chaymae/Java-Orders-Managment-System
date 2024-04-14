@@ -30,31 +30,31 @@ public class Client_Sign_In_Page {
 	    
 	    
 	    // left panel
-	    int left_panel_width = (int) (frame.getWidth() - (frame.getWidth() / (900.0 / 550.0)));
+	    int left_panel_width = (int) (frame.getWidth() - (frame.getWidth() / (900.0 / 540.0)));
 	    Custom_Panel left_panel = new Custom_Panel(0,0,left_panel_width,frame.getHeight(),"#D0E6F0");
 	    left_panel.add_background("sign_in.png");
 	    sign_in.add(left_panel);
 	    
         
-	    // label 1 - new here
-	    int lb1_x = (int) ((30*frame.getWidth())/900);
-	    int lb1_y = (int) ((30*frame.getHeight())/600);
+	    // label 1 - unlock
+	    int lb1_x = (int) ((36*frame.getWidth())/900);
+	    int lb1_y = (int) ((123*frame.getHeight())/600);
 	    int lb1_width = (int) ((510*frame.getWidth())/900);
 	    int lb1_height = (int) ((80*frame.getHeight())/600);
-	    int lb1_font_size = (int) ((16*frame.getWidth())/900);
-        Custom_Label lab1 = new Custom_Label(lb1_x, lb1_y, lb1_width, lb1_height,"New Here ?",
+	    int lb1_font_size = (int) ((17*frame.getWidth())/900);
+        Custom_Label lab1 = new Custom_Label(lb1_x, lb1_y, lb1_width, lb1_height,"Unlock Boundless Possibilities",
         "Arial Rounded MT Bold",lb1_font_size,"#2F5597"); 
         left_panel.add(lab1);
         
         
-        // label 2 - unlock
-	    int lb2_x = (int) ((23*frame.getWidth())/900);
-	    int lb2_y = (int) ((80*frame.getHeight())/600);
+        // label 2 - join us
+	    int lb2_x = (int) ((29*frame.getWidth())/900);
+	    int lb2_y = (int) ((170*frame.getHeight())/600);
 	    int lb2_width = (int) ((910*frame.getWidth())/900);
 	    int lb2_height = (int) ((50*frame.getHeight())/600);
-	    int lb2_font_size = (int) ((15*frame.getWidth())/900);
-        Custom_Label lab2 = new Custom_Label(lb2_x, lb2_y, lb2_width, lb2_height," Unlock Boundless Possibilities",
-        "Consolas",lb2_font_size,"#2F5597"); 
+	    int lb2_font_size = (int) ((18*frame.getWidth())/900);
+        Custom_Label lab2 = new Custom_Label(lb2_x, lb2_y, lb2_width, lb2_height," Join Our Clients",
+        "Segoe Print",lb2_font_size,"#2F5597"); 
         left_panel.add(lab2);
         
         
@@ -254,7 +254,77 @@ public class Client_Sign_In_Page {
         Custom_Button sign_up = new Custom_Button(bt3_x,bt3_y,bt3_width,bt3_height,"Sign Up",
         "#FFFFFF","Consolas",bt3_font_size,true);
         sign_up.setRound_shape_variables(15, 15);
-        left_panel.add(sign_up);
+        //left_panel.add(sign_up);
+        
+        
+        
+        // label 14 - company logo 
+        int lb14_x = (int) ((100*frame.getWidth())/900);
+	    int lb14_y = (int) ((51*frame.getHeight())/600);
+	    int lb14_width = (int) ((510*frame.getWidth())/900);
+	    int lb14_height = (int) ((80*frame.getHeight())/600);
+	    int lb14_font_size = (int) ((18*frame.getWidth())/900);
+        Custom_Label lab14 = new Custom_Label(lb14_x, lb14_y, lb14_width, lb14_height,
+        "Vertex Group Solutions","Arial",lb14_font_size,"#C00000"); 
+        left_panel.add(lab14);
+        
+         
+        // label 15 - slogan
+        int lb15_x = (int) ((102*frame.getWidth())/900);
+	    int lb15_y = (int) ((76*frame.getHeight())/600);
+	    int lb15_width = (int) ((510*frame.getWidth())/900);
+	    int lb15_height = (int) ((80*frame.getHeight())/600);
+	    int lb15_font_size = (int) ((10*frame.getWidth())/900);
+        Custom_Label lab15 = new Custom_Label(lb15_x, lb15_y, lb15_width, lb15_height,
+        "Crafting the Foundations of Tomorrow","Consolas",lb15_font_size,"#b39700");
+        left_panel.add(lab15);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         

@@ -9,7 +9,7 @@ import javax.swing.SwingUtilities;
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
-import Pages.Sign_In_Page;
+import Pages.Client_Sign_In_Page;
 import Graphical_Interface.Custom_Resizing_Manager;
  
 
@@ -54,7 +54,7 @@ public class Splash_Page  {
                 contentPane.remove(splash); 
                 
             	// open the sign up page panel
-                Sign_In_Page page = new Sign_In_Page(frame);
+                Client_Sign_In_Page page = new Client_Sign_In_Page(frame);
                 
                 // refresh the window
                 frame.revalidate();

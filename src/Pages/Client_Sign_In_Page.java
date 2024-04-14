@@ -2,11 +2,9 @@ package Pages;
 
 import Graphical_Interface.Custom_Panel;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import Graphical_Interface.Custom_Button;
@@ -19,11 +17,11 @@ import Graphical_Interface.Custom_Text_Field;
 
 
 
-public class Sign_In_Page {
+public class Client_Sign_In_Page {
 		
 	
 	// constructor
-	public Sign_In_Page(Custom_Frame frame) {
+	public Client_Sign_In_Page(Custom_Frame frame) {
 		
 		
 		
@@ -68,7 +66,7 @@ public class Sign_In_Page {
 	    int lb3_width = (int) ((80*frame.getWidth())/900);
 	    int lb3_height = (int) ((100*frame.getHeight())/600);
 	    int lb3_font_size = (int) ((16*frame.getWidth())/900);
-        Custom_Label lab3 = new Custom_Label(lb3_x, lb3_y, lb3_width, lb3_height,null,null,lb3_font_size,"#000000");
+        Custom_Label lab3 = new Custom_Label(lb3_x, lb3_y, lb3_width, lb3_height,null,null,lb3_font_size,"#FFFFFF");
 	    lab3.add_background("sign_in_user.png");
         sign_in.add(lab3);
         
@@ -115,7 +113,6 @@ public class Sign_In_Page {
 	    int lb6_y = (int) ((225*frame.getHeight())/600);
 	    int lb6_width = (int) ((200*frame.getWidth())/900);
 	    int lb6_height = (int) ((100*frame.getHeight())/600);
-	    int lb6_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Label lab6 = new Custom_Label(lb6_x, lb6_y, lb6_width, lb6_height,
         "Password","Century Gothic",lb5_font_size,"#b39700");
         lab6.setHorizontalAlignment(SwingConstants.LEFT);
@@ -134,12 +131,13 @@ public class Sign_In_Page {
         
         // log in button
         int bt1_x = (int) ((494*frame.getWidth())/900);
-	    int bt1_y = (int) ((340*frame.getHeight())/600);
+	    int bt1_y = (int) ((335*frame.getHeight())/600);
 	    int bt1_width = (int) ((250*frame.getWidth())/900);
-	    int bt1_height = (int) ((27*frame.getHeight())/600);
+	    int bt1_height = (int) ((30*frame.getHeight())/600);
 	    int bt1_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button log_in = new Custom_Button(bt1_x,bt1_y,bt1_width,bt1_height,"Log In",
         "#FFFFFF","Consolas",bt1_font_size,true);
+        log_in.setRound_shape_variables(15, 15);
         sign_in.add(log_in);
         
                
@@ -147,7 +145,7 @@ public class Sign_In_Page {
         
         // label 7 - forget password
 	    int lb7_x = (int) ((530*frame.getWidth())/900);
-	    int lb7_y = (int) ((340*frame.getHeight())/600);
+	    int lb7_y = (int) ((335*frame.getHeight())/600);
 	    int lb7_width = (int) ((125*frame.getWidth())/900);
 	    int lb7_height = (int) ((100*frame.getHeight())/600);
 	    int lb7_font_size = (int) ((12*frame.getWidth())/900);
@@ -160,7 +158,7 @@ public class Sign_In_Page {
         
         // reset password button
         int bt2_x = (int) ((641*frame.getWidth())/900);
-	    int bt2_y = (int) ((340*frame.getHeight())/600);
+	    int bt2_y = (int) ((335*frame.getHeight())/600);
 	    int bt2_width = (int) ((70*frame.getWidth())/900);
 	    int bt2_height = (int) ((100*frame.getHeight())/600);
 	    int bt2_font_size = (int) ((12*frame.getWidth())/900);
@@ -212,7 +210,7 @@ public class Sign_In_Page {
         // label 11 - linkedIn icon
 	    int lb11_x = (int) ((560*frame.getWidth())/900);
 	    int lb11_y = (int) ((470*frame.getHeight())/600);
-	    int lb11_width = (int) ((22*frame.getWidth())/900);
+	    int lb11_width = (int) ((24*frame.getWidth())/900);
 	    int lb11_height = (int) ((30*frame.getHeight())/600);
 	    int lb11_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Label lab11 = new Custom_Label(lb11_x, lb11_y, lb11_width, lb11_height,
@@ -248,18 +246,43 @@ public class Sign_In_Page {
         
         
         //  sign up button
-        int bt3_x = (int) ((0*frame.getWidth())/900);
-	    int bt3_y = (int) ((115*frame.getHeight())/600);
-	    int bt3_width = (int) ((140*frame.getWidth())/900);
-	    int bt3_height = (int) ((50*frame.getHeight())/600);
-	    int bt3_font_size = (int) ((20*frame.getWidth())/900);
+        int bt3_x = (int) ((30*frame.getWidth())/900);
+	    int bt3_y = (int) ((127*frame.getHeight())/600);
+	    int bt3_width = (int) ((110*frame.getWidth())/900);
+	    int bt3_height = (int) ((25*frame.getHeight())/600);
+	    int bt3_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button sign_up = new Custom_Button(bt3_x,bt3_y,bt3_width,bt3_height,"Sign Up",
-        "#2F5597","Segoe Print",bt3_font_size,false);
+        "#FFFFFF","Consolas",bt3_font_size,true);
+        sign_up.setRound_shape_variables(15, 15);
         left_panel.add(sign_up);
         
         
         
-
+        //  return button
+        int bt4_x = (int) ((0*frame.getWidth())/900);
+	    int bt4_y = (int) ((0*frame.getHeight())/600);
+	    int bt4_width = (int) ((60*frame.getWidth())/900);
+	    int bt4_height = (int) ((25*frame.getHeight())/600);
+	    int bt4_font_size = (int) ((14*frame.getWidth())/900);
+        Custom_Button Return = new Custom_Button(bt4_x,bt4_y,bt4_width,bt4_height,"<<",
+        "#2F5597","Arial",bt4_font_size,false);
+        Return.setHorizontalAlignment(SwingConstants.LEFT);
+        left_panel.add(Return);
+        // return button action
+        Return.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	        // remove client sign in page
+            	        frame.getContentPane().removeAll(); 
+                              
+                        // create an instance splash page 
+                    	Splash_Page previous_page = new Splash_Page (frame);                       
+                        
+                    	// refresh the window
+                        frame.revalidate();
+                        frame.repaint(); }});
+                   
+   
  
 	    
 	    // add sign_up page to the frame

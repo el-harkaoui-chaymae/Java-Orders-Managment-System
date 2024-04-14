@@ -30,6 +30,8 @@ public class Custom_Button extends JButton {
 	String font;
 	int font_size;  
 	boolean gradient;
+	int round_shape_x;
+	int round_shape_y;
 
     
     // Constructor
@@ -80,6 +82,13 @@ public class Custom_Button extends JButton {
           
         
     }
+    
+    
+    // setter for round shape variables
+    public void setRound_shape_variables(int round_shape_x,int round_shape_y) {
+    	this.round_shape_x = round_shape_x;
+    	this.round_shape_y = round_shape_y;
+    }
 
     
     
@@ -92,10 +101,10 @@ public class Custom_Button extends JButton {
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
             // Define the rounded rectangle shape
-            Shape shape = new RoundRectangle2D.Float(0, 0, getWidth(), getHeight(), 50, 50);
+            Shape shape = new RoundRectangle2D.Float(0, 0, getWidth(), getHeight(), round_shape_x, round_shape_y);
             
             // Fill the shape with the gradient paint
-            GradientPaint gradient = new GradientPaint(0, 0, Color.decode("#1D63DC"), getWidth(), getHeight(), Color.decode("#C00000"));
+            GradientPaint gradient = new GradientPaint(0, 0, Color.decode("#1D63DC"), getWidth(), getHeight(), Color.decode("#b39700"));
             g2.setPaint(gradient); 
             g2.fill(shape);}      
        

@@ -49,8 +49,8 @@ public class Client_Sign_In_Page {
 	    int lb2_y = (int) ((163*frame.getHeight())/600);
 	    int lb2_width = (int) ((510*frame.getWidth())/900);
 	    int lb2_height = (int) ((50*frame.getHeight())/600);
-	    int lb2_font_size = (int) ((13*frame.getWidth())/900);
-        Custom_Label lab2 = new Custom_Label(lb2_x, lb2_y, lb2_width, lb2_height,"Don't Have an Account yet ?",
+	    int lb2_font_size = (int) ((16*frame.getWidth())/900);
+        Custom_Label lab2 = new Custom_Label(lb2_x, lb2_y, lb2_width, lb2_height,"Join Our Clients",
         "Segoe Print",lb2_font_size,"#2F5597"); 
         left_panel.add(lab2);
 	    
@@ -135,31 +135,18 @@ public class Client_Sign_In_Page {
         log_in.setRound_shape_variables(35, 35);
         sign_in.add(log_in);
         
-               
-        
-        
-        // label 7 - forget password
-	    int lb7_x = (int) ((540*frame.getWidth())/900);
-	    int lb7_y = (int) ((335*frame.getHeight())/600);
-	    int lb7_width = (int) ((125*frame.getWidth())/900);
-	    int lb7_height = (int) ((100*frame.getHeight())/600);
-	    int lb7_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Label lab7 = new Custom_Label(lb7_x, lb7_y, lb7_width, lb7_height,
-        "Forget your Password ?","Calibri",lb7_font_size,"#000000");
-        lab7.setHorizontalAlignment(SwingConstants.LEFT);
-        sign_in.add(lab7);
-        
+
         
         
         // reset password button
-        int bt2_x = (int) ((642*frame.getWidth())/900);
-	    int bt2_y = (int) ((335*frame.getHeight())/600);
-	    int bt2_width = (int) ((70*frame.getWidth())/900);
-	    int bt2_height = (int) ((100*frame.getHeight())/600);
+        int bt2_x = (int) ((485*frame.getWidth())/900);
+	    int bt2_y = (int) ((375*frame.getHeight())/600);
+	    int bt2_width = (int) ((120*frame.getWidth())/900);
+	    int bt2_height = (int) ((25*frame.getHeight())/600);
 	    int bt2_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Button reset = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,"Reset",
+        Custom_Button reset = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,"Reset Password ?",
         "#4370FF","Calibri",bt2_font_size,false);
-        reset.change_style("#008000", "#4370FF");
+        reset.change_style("#b39700", "#4370FF");
         sign_in.add(reset);
         
        
@@ -263,19 +250,19 @@ public class Client_Sign_In_Page {
         
         
         // sign up button
-        int bt3_x = (int) ((36*frame.getWidth())/900);
-	    int bt3_y = (int) ((210*frame.getHeight())/600);
-	    int bt3_width = (int) ((100*frame.getWidth())/900);
+        int bt3_x = (int) ((625*frame.getWidth())/900);
+	    int bt3_y = (int) ((375*frame.getHeight())/600);
+	    int bt3_width = (int) ((130*frame.getWidth())/900);
 	    int bt3_height = (int) ((25*frame.getHeight())/600);
-	    int bt3_font_size = (int) ((10*frame.getWidth())/900);
-        Custom_Button sign_up = new Custom_Button(bt3_x,bt3_y,bt3_width,bt3_height,"Sign Up",
-        "#FFFFFF","Consolas",bt3_font_size,true);
-        sign_up.setRound_shape_variables(30, 30);
-        left_panel.add(sign_up);
+	    int bt3_font_size = (int) ((12*frame.getWidth())/900);
+        Custom_Button sign_up = new Custom_Button(bt3_x,bt3_y,bt3_width,bt3_height,"Create an account ?",
+        "#4370FF","Calibri",bt3_font_size,false);
+        sign_up.change_style("#b39700", "#4370FF");
+        sign_in.add(sign_up);
         
         
         
-        // return button and its action
+        // return button and its action 
         int panel_original_width = 360;
 	    int panel_original_height = 600;
 	    left_panel.add_return_button(25, 35, 33, 25, panel_original_width, panel_original_height).addActionListener(new ActionListener() {

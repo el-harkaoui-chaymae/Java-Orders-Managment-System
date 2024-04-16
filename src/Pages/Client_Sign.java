@@ -144,7 +144,7 @@ public class Client_Sign {
 	    int lb9_width = (int) (((width-60)*frame.getWidth())/900);
 	    int lb9_height = (int) (((height-70)*frame.getHeight())/600);
         Custom_Label lab9 = new Custom_Label(lb9_x, lb9_y, lb9_width, lb9_height,
-        "","Calibri",lb8_font_size,"#808080");
+        "","Calibri",7,"#808080");
         lab9.create_buttom_border(2, "#808080");
         panel.add(lab9);
         
@@ -153,7 +153,7 @@ public class Client_Sign {
 	    int lb10_y = (int) (((y+20)*frame.getHeight())/600);
 	    int lb10_width = (int) (((width-50)*frame.getWidth())/900);
         Custom_Label lab10 = new Custom_Label(lb10_x, lb10_y, lb10_width, lb9_height,
-        "","Calibri",lb8_font_size,"#808080");
+        "","Calibri",7,"#808080");
         lab10.create_buttom_border(2, "#808080");
         panel.add(lab10);
         

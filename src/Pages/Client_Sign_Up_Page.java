@@ -22,8 +22,7 @@ public class Client_Sign_Up_Page {
 	    Custom_Panel sign_up = new Custom_Panel(0,0,frame.getWidth(),frame.getHeight(),"#FFFFFF");
 	    
 	    
-	    // create the content that would be common between 
-	    // sign in - sign up - reset password pages
+	    // create left panel and its components
 	    Client_Sign content = new Client_Sign(frame,sign_up);
 	     
 	    
@@ -187,47 +186,13 @@ public class Client_Sign_Up_Page {
         
        
         // add another method to sign in
-        content.add_another_way_to_connect(frame, sign_up, 568, 430, 125, 100, 12,"or sign up with");
+        content.add_another_way_to_connect(frame, sign_up, 570, 430, 125, 100, 12," or sign up with");
         
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      
+
         
         // return button and its action 
         int panel_original_width = 360;

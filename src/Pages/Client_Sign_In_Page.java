@@ -50,7 +50,6 @@ public class Client_Sign_In_Page {
         lab5.setHorizontalAlignment(SwingConstants.LEFT);
         sign_in.add(lab5);
         
-  
         // email adress text field
         int x_m = (int) ((494*frame.getWidth())/900);
 	    int y_m = (int) ((240*frame.getHeight())/600);
@@ -59,6 +58,9 @@ public class Client_Sign_In_Page {
 	    int font_size_m = (int) ((11*frame.getWidth())/900);
 	    Custom_Text_Field mail = new Custom_Text_Field(x_m,y_m,width_m,height_m,"Calibri",font_size_m,"#000000") ; 
         sign_in.add(mail);
+        
+        
+        
         
         
         
@@ -72,7 +74,6 @@ public class Client_Sign_In_Page {
         "Password","Century Gothic",lb5_font_size,"#b39700");
         lab6.setHorizontalAlignment(SwingConstants.LEFT);
         sign_in.add(lab6);
-        
   
         // password text field
         int x_p = (int) ((494*frame.getWidth())/900);
@@ -82,6 +83,10 @@ public class Client_Sign_In_Page {
 	    int font_size_p = (int) ((11*frame.getWidth())/900);
 	    Custom_Text_Field password = new Custom_Text_Field(x_p,y_p,width_p,height_p,"Calibri",font_size_p,"#000000") ; 
         sign_in.add(password);
+        
+        
+        
+        
         
         
         // log in button
@@ -107,14 +112,26 @@ public class Client_Sign_In_Page {
         Custom_Button reset = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,"Reset Password ?",
         "#4370FF","Calibri",bt2_font_size,false);
         reset.change_style("#b39700", "#4370FF");
-        sign_in.add(reset);
+        sign_in.add(reset);   
+        // action to perform
+        reset.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+              // remove client sign in page
+              frame.getContentPane().removeAll();    
+              // create an instance reset password page 
+              Client_Reset_Password_Page reset_password_page = new Client_Reset_Password_Page (frame);                       
+              // refresh the window
+              frame.revalidate();
+              frame.repaint(); }});
         
        
+        
         
         // add another method to sign in
         content.add_another_way_to_connect(frame, sign_in, 576, 400, 125, 100, 12,"or connect with");
         
      
+        
         
         // sign up button
         int bt3_x = (int) ((625*frame.getWidth())/900);

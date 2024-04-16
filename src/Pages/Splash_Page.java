@@ -21,10 +21,12 @@ public class Splash_Page  {
 		// add new panel
 	    Custom_Panel splash = new Custom_Panel(0,0,frame.getWidth(),frame.getHeight(),"#D0E6F0");
 	    splash.add_background("logo_background.png");
+	    
+	    
 
 	    
 	   
-	    // add bar menu panel
+	    // add bar menu panel 
 	    int height = (int) ((70*frame.getHeight())/600);
 	    Custom_Panel bar = new Custom_Panel(0,0,frame.getWidth(),height,"#2F5597");
 	    splash.add(bar);
@@ -124,9 +126,10 @@ public class Splash_Page  {
         splash.add(lab2);
         
         
-        
-        // add splach page-panel to the frame
+     
+        // add splach page-panel to the frame 
         frame.getContentPane().add(splash);
+        
         
         
         // handle resizing

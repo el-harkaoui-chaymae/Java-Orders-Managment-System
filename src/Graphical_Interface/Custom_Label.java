@@ -18,8 +18,8 @@ public class Custom_Label extends JLabel {
 	public int y;
 	public int width;
 	public int height;
-	String text ;
-	String font;
+	String text ; 
+	String font; 
 	int font_size; 
 	String color;
     Image backgroundImage;

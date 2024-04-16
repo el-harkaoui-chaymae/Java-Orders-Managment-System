@@ -107,7 +107,7 @@ public class Custom_Button extends JButton {
             GradientPaint gradient = new GradientPaint(0, 0, Color.decode("#1D63DC"), getWidth(), getHeight(), Color.decode("#b39700"));
             g2.setPaint(gradient); 
             g2.fill(shape);}      
-       
+        
         // Call superclass method to ensure default painting - including text -   
         super.paintComponent(g);}
    

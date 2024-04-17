@@ -1,14 +1,10 @@
 
 package Graphical_Interface;
 
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import java.io.File;
 import java.io.IOException;
-import java.awt.Component;
 import java.awt.Image;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import javax.imageio.ImageIO;
  
 

@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 
 
-public class Client {
+public class Client implements Table_Management{
 	
 	// attributes
 	int client_id;
@@ -73,8 +73,10 @@ public class Client {
 		
 	}
 	
-	// method to check if a client exist in the client table
+	// a static method to check if a client exists in the client table
 	public static boolean check_client_existance(String mail) {
+		
+		boolean exist = false;
 		
 		Connection connection = null;
 		PreparedStatement prepared_selection = null;
@@ -85,7 +87,8 @@ public class Client {
 			connection = Database_Connector.getConnection();
             
 			// the select statement
-			String select_query = "SELECT COUNT(*) AS count FROM client WHERE mail = ?";
+			String select_query = "SELECT * FROM client WHERE mail = ?";
+					
             
 			// prepare the selection query
 			prepared_selection = connection.prepareStatement(select_query);
@@ -98,8 +101,7 @@ public class Client {
             
 			// Initially the cursor is positioned before the first row of the resultSet
 			// next() moves the cursor to the next row if there is one and returns true
-            if (resultSet.next()) {return true;}
-            return false;}
+            if (resultSet.next()) {exist = true;}}
                 
 
 		catch (SQLException e) {
@@ -116,24 +118,11 @@ public class Client {
             
 			catch (SQLException e) {
                 e.printStackTrace();}}
+		
+		
+		return exist;
             
-        
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		return false;
+  	
 	}
 	
 

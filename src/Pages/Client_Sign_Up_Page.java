@@ -189,31 +189,63 @@ public class Client_Sign_Up_Page {
         sign_up_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	
-            	// if entered passwords do match
-            	if((password.getText().equals(confirmed_password.getText()))) {
+            	// store all text fields 
+            	Custom_Text_Field [] text_filds = {first_name,second_name,city,adress,number,mail,password};
+            	
+            	// get entered details
+            	String firstName = text_filds[0].getText();
+            	String secondName = text_filds[1].getText();
+            	String City = text_filds[2].getText();
+            	String Adress = text_filds[3].getText();
+            	String phoneNumber = text_filds[4].getText();
+            	String Mail = text_filds[5].getText();
+            	String Password = text_filds[6].getText();
+            	
+            	// check if this new visitor is already a client - member
+            	if(Client.check_client_existance(Mail) == false) {
             		
-            		// get entered details
-                	String firstName = first_name.getText();
-                	String secondName = second_name.getText();
-                	String City = city.getText();
-                	String Adress = adress.getText();
-                	String phoneNumber = number.getText();
-                	String Mail = mail.getText();
-                	String Password = password.getText();
+            		// chech for empty text fields
+            		boolean empty = false;
+            		for(Custom_Text_Field  text_field:text_filds) {
+            			if ((text_field.getText()).isEmpty()) {
+            				// raise a message
+                        	Custom_Message message = new Custom_Message(90,140,"Needed Images\\x_icon.png","Empty field",
+                        			                                    "Please fill all fields");
+                        	empty = true;
+                        	break;}}
+            			
+            		// if all fields are filled
+            		if(empty==false) {
+            			
+            			// check if the entered passwords do match
+                		if((password.getText().equals(confirmed_password.getText()))) {
+                			// create an instance of client - add this client to database
+                        	Client new_client = new Client(firstName,secondName,City,Adress,phoneNumber,Mail,Password);
+                        	// raise a message
+                    		Custom_Message message = new Custom_Message(65,140,"Needed Images\\verification_icon.png",
+                    				                                    "Successful Sign Up",
+                    				                                    "Account created - Log in now");
+                    		
+                    		// remove client sign up page - take the client back to log in
+                            frame.getContentPane().removeAll();    
+                            // create an instance of sign in page 
+                            Client_Sign_In_Page sign_in = new Client_Sign_In_Page (frame);                       
+                            // refresh the window
+                            frame.revalidate();
+                            frame.repaint();}
+                    		
+                		else {
+                    		// raise a message
+                        	Custom_Message message = new Custom_Message(90,140,"Needed Images\\x_icon.png","Password Error",
+                        			                                    "Passwords do not match");}
                 	
-                	// check if this new visitor is already a client - member
-                	if(Client.check_client_existance(Mail) == false) {
-                		// create an instance of client - add this client to database
-                    	Client new_client = new Client(firstName,secondName,City,Adress,phoneNumber,Mail,Password);}
-                	
-                	else { 
-                		// raise a message
-                		Custom_Message message = new Custom_Message(90,140,"Needed Images\\x_icon.png","Membership Error",
-                    			                                      "You've already an account");}}
+            		}	
+            	}
+            	
             	else {
             		// raise a message
-                	Custom_Message message = new Custom_Message(90,140,"Needed Images\\x_icon.png","Password Error",
-                			                                    "Passwords do not match");
+            		Custom_Message message = new Custom_Message(10,140,"Needed Images\\x_icon.png","Membership Error",
+                			                                      "You have already an account, please log in");
             	}}});
         
         

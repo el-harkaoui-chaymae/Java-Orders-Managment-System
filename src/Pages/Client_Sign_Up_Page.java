@@ -8,9 +8,12 @@ import javax.swing.SwingConstants;
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
+import Graphical_Interface.Custom_Message;
 import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
 import Graphical_Interface.Custom_Text_Field;
+
+import Data_Base.Client;
 
 public class Client_Sign_Up_Page {
 	
@@ -150,7 +153,7 @@ public class Client_Sign_Up_Page {
         lab11.setHorizontalAlignment(SwingConstants.LEFT);
         sign_up.add(lab11);
   
-        // phone number text field
+        // password text field
 	    int y_p = (int) ((375*frame.getHeight())/600);
 	    Custom_Text_Field password = new Custom_Text_Field(x_f,y_p,width_f,height_f,"Calibri",font_size_f,"#000000") ; 
         sign_up.add(password);
@@ -164,7 +167,7 @@ public class Client_Sign_Up_Page {
         lab12.setHorizontalAlignment(SwingConstants.RIGHT);
         sign_up.add(lab12);
         
-        // adress text field
+        // confirmed password text field
 	    Custom_Text_Field confirmed_password = new Custom_Text_Field(x_s,y_p,width_f,height_f,"Calibri",font_size_f,"#000000") ; 
         sign_up.add(confirmed_password);
 
@@ -182,9 +185,53 @@ public class Client_Sign_Up_Page {
         sign_up_btn.setRound_shape_variables(35, 35);
         sign_up.add(sign_up_btn);
         
+        // sign up btn action
+        sign_up_btn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	// if entered passwords do match
+            	if((password.getText().equals(confirmed_password.getText()))) {
+            		
+            		// get entered details
+                	String firstName = first_name.getText();
+                	String secondName = second_name.getText();
+                	String City = city.getText();
+                	String Adress = adress.getText();
+                	String phoneNumber = number.getText();
+                	String Mail = mail.getText();
+                	String Password = password.getText();
+                	
+                	// check if this new visitor is already a client - member
+                	if(Client.check_client_existance(Mail) == false) {
+                		// create an instance of client - add this client to database
+                    	Client new_client = new Client(firstName,secondName,City,Adress,phoneNumber,Mail,Password);}
+                	
+                	else { 
+                		// raise a message
+                		Custom_Message message = new Custom_Message(90,140,"Needed Images\\x_icon.png","Membership Error",
+                    			                                      "You've already an account");}}
+            	else {
+            		// raise a message
+                	Custom_Message message = new Custom_Message(90,140,"Needed Images\\x_icon.png","Password Error",
+                			                                    "Passwords do not match");
+            	}}});
+        
         
         
        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         // add another method to sign in
         content.add_another_way_to_connect(frame, sign_up, 570, 430, 125, 100, 12," or sign up with");
         

@@ -31,7 +31,7 @@ public class Custom_Frame extends JFrame {
 
         // Load the frame icon - logo
         Image icon = null;
-        try { icon = ImageIO.read(new File("frame_icon.png")); }
+        try { icon = ImageIO.read(new File("Needed Images\\frame_icon.png")); }
         catch (IOException e) { e.printStackTrace();}
        
         

@@ -6,13 +6,16 @@ import javax.swing.SwingConstants;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
 public class Custom_Message extends JFrame {
 	
 	
-	public Custom_Message(String icon_path,String bar_text,String message) {
+	// contructor
+	public Custom_Message(int x1,int x2,String icon_path,String bar_text,String message) {
 		
 
 		// Call the superclass constructor with a title
@@ -45,16 +48,26 @@ public class Custom_Message extends JFrame {
         
         
         // label  - message text
-        Custom_Label lab = new Custom_Label(90, 30, 200, 50,
+        Custom_Label lab = new Custom_Label(x1, 30, 500, 50,
         message,"Consolas",16 ,"#000000");
         lab.setHorizontalAlignment(SwingConstants.LEFT);
         this.add(lab);
         
-        
-        Custom_Button send = new Custom_Button(135,80,100,30,"verify",
+        // ok button
+        Custom_Button Ok = new Custom_Button(x2,80,100,30,"Ok",
         "#FFFFFF","Consolas",16,true);
-        send.setRound_shape_variables(35, 35);
-        this.add(send);
+        Ok.setRound_shape_variables(35, 35);
+        this.add(Ok);
+        // action
+        Ok.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Close the frame
+                dispose();
+            }
+        });
+
+              
+
         
         
         // Make the frame visible
@@ -67,5 +80,7 @@ public class Custom_Message extends JFrame {
 		
 		
 	}
+	
+	
 
 }

@@ -119,7 +119,7 @@ public class Client_Sign_In_Page {
               // remove client sign in page
               frame.getContentPane().removeAll();    
               // create an instance reset password page 
-              Client_Reset_Password_Page reset_password_page = new Client_Reset_Password_Page (frame);                       
+              Client_Reset_Password_Mail_Page reset_password_page = new Client_Reset_Password_Mail_Page (frame);                       
               // refresh the window
               frame.revalidate();
               frame.repaint(); }});

@@ -2,229 +2,105 @@ package Pages;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Color;
 
 import javax.swing.SwingConstants;
 
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
+import Graphical_Interface.Custom_Message;
 import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
 import Graphical_Interface.Custom_Text_Field;
-import Graphical_Interface.Custom_Message;
-
-
-
-
 
 public class Client_Reset_Password_Page {
-	
 
 	// constructor
-	public  Client_Reset_Password_Page(Custom_Frame frame) {
+	public Client_Reset_Password_Page(Custom_Frame frame) {
+
+		// reset password panel
+		Custom_Panel reset_password = new Custom_Panel(0, 0, frame.getWidth(), frame.getHeight(),"#FFFFFF");
+
+		// create left panel and its components
+		Client_Sign content = new Client_Sign(frame, reset_password);
+
+		// set an user icon
+		content.add_user_icon(frame, reset_password, 570, 50, 80, 100);
+
+		// add a welcoming expression - welcome back
+		content.add_welcome_expression(frame, reset_password, 555, 120, 200, 100, 16, "welcome back");
 		
 		
-		// reset_password  panel
-	    Custom_Panel reset_password = new Custom_Panel(0,0,frame.getWidth(),frame.getHeight(),"#FFFFFF");
-	    
-	    
-	    // create left panel and its components
-	    Client_Sign content = new Client_Sign(frame,reset_password);
-	     
-	    
-	    // set an user icon
-	    content.add_user_icon(frame, reset_password, 570, 50, 80, 100);
-	    
-	    
-	    // add a welcoming expression - welcome back
-	    content.add_welcome_expression(frame, reset_password, 555, 120, 200, 100, 16, "welcome back");
-	    
-	    
-	    
-	    // label 5 - enter your E-mail Adress
-	    int lb5_x = (int) ((494*frame.getWidth())/900);
-	    int lb5_y = (int) ((165*frame.getHeight())/600);
-	    int lb5_width = (int) ((250*frame.getWidth())/900);
-	    int lb5_height = (int) ((100*frame.getHeight())/600);
-	    int lb5_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Label lab5 = new Custom_Label(lb5_x, lb5_y, lb5_width, lb5_height,
-        "E-mail Adress","Century Gothic",lb5_font_size,"#b39700");
-        lab5.setHorizontalAlignment(SwingConstants.LEFT);
-        reset_password.add(lab5);
+		
+		// label 1 - enter your new password
+	    int lb1_x = (int) ((494*frame.getWidth())/900);
+	    int lb1_y = (int) ((195*frame.getHeight())/600);
+	    int lb1_width = (int) ((250*frame.getWidth())/900);
+	    int lb1_height = (int) ((100*frame.getHeight())/600);
+	    int lb1_font_size = (int) ((12*frame.getWidth())/900);
+        Custom_Label lab1 = new Custom_Label(lb1_x, lb1_y, lb1_width, lb1_height,
+        "New Password","Century Gothic",lb1_font_size,"#b39700");
+        lab1.setHorizontalAlignment(SwingConstants.LEFT);
+        reset_password.add(lab1);
         
-        // email adress text field
+        // new password text field
         int x_m = (int) ((494*frame.getWidth())/900);
-	    int y_m = (int) ((230*frame.getHeight())/600);
+	    int y_m = (int) ((260*frame.getHeight())/600);
 	    int width_m = (int) ((250*frame.getWidth())/900);
 	    int height_m = (int) ((23*frame.getHeight())/600);
 	    int font_size_m = (int) ((11*frame.getWidth())/900);
-        Custom_Text_Field mail = new Custom_Text_Field(x_m,y_m,width_m,height_m,"Calibri",font_size_m,"#000000") ; 
-	    reset_password.add(mail);
-	    
-	    
-	    
-	    // label 8 - enter verification code
-	    int lb10_x = (int) ((494*frame.getWidth())/900);
-	    int lb10_y = (int) ((220*frame.getHeight())/600);
-	    int lb10_width = (int) ((250*frame.getWidth())/900);
-	    int lb10_height = (int) ((100*frame.getHeight())/600);
-	    int lb10_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Label lab10 = new Custom_Label(lb10_x, lb10_y, lb10_width, lb10_height,
-        "Verification code","Century Gothic",lb10_font_size,"#D0E6F0");
-        lab10.setHorizontalAlignment(SwingConstants.LEFT);
-        reset_password.add(lab10);
+        Custom_Text_Field password = new Custom_Text_Field(x_m,y_m,width_m,height_m,"Calibri",font_size_m,"#000000") ; 
+        reset_password.add(password);
         
-        // verification code text field
-        int x_v = (int) ((494*frame.getWidth())/900);
-	    int y_v = (int) ((285*frame.getHeight())/600);
-	    int width_v = (int) ((250*frame.getWidth())/900);
-	    int height_v = (int) ((23*frame.getHeight())/600);
-	    int font_size_v = (int) ((11*frame.getWidth())/900);
-        Custom_Text_Field code = new Custom_Text_Field(x_v,y_v,width_v,height_v,"Calibri",font_size_v,"#000000") ; 
-        code.setEditable(false);
-        code.setBackground(Color.WHITE);
-	    reset_password.add(code);
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	   
-	    
-	    // label 8 - enter new password
-	    int lb8_x = (int) ((494*frame.getWidth())/900);
-	    int lb8_y = (int) ((275*frame.getHeight())/600);
-	    int lb8_width = (int) ((250*frame.getWidth())/900);
-	    int lb8_height = (int) ((100*frame.getHeight())/600);
-	    int lb8_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Label lab8 = new Custom_Label(lb8_x, lb8_y, lb8_width, lb8_height,
-        "New Password","Century Gothic",lb8_font_size,"#D0E6F0");
-        lab8.setHorizontalAlignment(SwingConstants.LEFT);
-        reset_password.add(lab8);
+        
+        
+        
+        // label 2 - confirm your new password
+	    int lb2_x = (int) ((494*frame.getWidth())/900);
+	    int lb2_y = (int) ((255*frame.getHeight())/600);
+	    int lb2_width = (int) ((250*frame.getWidth())/900);
+	    int lb2_height = (int) ((100*frame.getHeight())/600);
+	    int lb2_font_size = (int) ((12*frame.getWidth())/900);
+        Custom_Label lab2 = new Custom_Label(lb2_x, lb2_y, lb2_width, lb2_height,
+        "Confirm Password","Century Gothic",lb2_font_size,"#b39700");
+        lab2.setHorizontalAlignment(SwingConstants.LEFT);
+        reset_password.add(lab2);
         
         // new password text field
         int x_p = (int) ((494*frame.getWidth())/900);
-	    int y_p = (int) ((340*frame.getHeight())/600);
+	    int y_p = (int) ((320*frame.getHeight())/600);
 	    int width_p = (int) ((250*frame.getWidth())/900);
 	    int height_p = (int) ((23*frame.getHeight())/600);
 	    int font_size_p = (int) ((11*frame.getWidth())/900);
-        Custom_Text_Field password = new Custom_Text_Field(x_p,y_p,width_p,height_p,"Calibri",font_size_p,"#000000") ; 
-        password.setEditable(false);
-        password.setBackground(Color.WHITE);
-	    reset_password.add(password);
-	    
-	    
-	    
-	    
-	    
-	    
-	    // label 9 - enter confirmed password
-	    int lb9_x = (int) ((494*frame.getWidth())/900);
-	    int lb9_y = (int) ((325*frame.getHeight())/600);
-	    int lb9_width = (int) ((250*frame.getWidth())/900);
-	    int lb9_height = (int) ((100*frame.getHeight())/600);
-	    int lb9_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Label lab9 = new Custom_Label(lb9_x, lb9_y, lb9_width, lb9_height,
-        "Confirm Password","Century Gothic",lb9_font_size,"#D0E6F0");
-        lab9.setHorizontalAlignment(SwingConstants.LEFT);
-        reset_password.add(lab9);
+        Custom_Text_Field Confirmed_password = new Custom_Text_Field(x_p,y_p,width_p,height_p,"Calibri",font_size_p,"#000000") ; 
+        reset_password.add(Confirmed_password);
         
-        // confirmed password text field
-        int x_pc = (int) ((494*frame.getWidth())/900);
-	    int y_pc = (int) ((390*frame.getHeight())/600);
-	    int width_pc = (int) ((250*frame.getWidth())/900);
-	    int height_pc = (int) ((23*frame.getHeight())/600);
-	    int font_size_pc = (int) ((11*frame.getWidth())/900);
-        Custom_Text_Field confirmed_password = new Custom_Text_Field(x_pc,y_pc,width_pc,height_pc,"Calibri",font_size_pc,"#000000") ; 
-        confirmed_password.setEditable(false);
-        confirmed_password.setBackground(Color.WHITE);
-        reset_password.add(confirmed_password);
-	    
-	    
-	    
-
-	    
-	    
-	    // send button
+        
+        
+        // reset button
 	    int bt1_x = (int) ((494*frame.getWidth())/900);
-	    int bt1_y = (int) ((440*frame.getHeight())/600);
+	    int bt1_y = (int) ((380*frame.getHeight())/600);
 	    int bt1_width = (int) ((250*frame.getWidth())/900);
 	    int bt1_height = (int) ((30*frame.getHeight())/600);
 	    int bt1_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Button send = new Custom_Button(bt1_x,bt1_y,bt1_width,bt1_height,"Send",
+        Custom_Button reset = new Custom_Button(bt1_x,bt1_y,bt1_width,bt1_height,"Reset",
         "#FFFFFF","Consolas",bt1_font_size,true);
-        send.setRound_shape_variables(35, 35);
-        reset_password.add(send);
-
-        
-        int bt2_x = (int) ((494*frame.getWidth())/900);
-	    int bt2_y = (int) ((440*frame.getHeight())/600);
-	    int bt2_width = (int) ((250*frame.getWidth())/900);
-	    int bt2_height = (int) ((30*frame.getHeight())/600);
-	    int bt2_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Button reset = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,"Reset",
-        "#FFFFFF","Consolas",bt2_font_size,true);
-        reset.setRound_shape_variables(35, 35); 
-        
-       
-    
-        
-        
-        // label 6 - enter your E-mail Adress and
-        int lb6_x = (int) ((519*frame.getWidth())/900);
-	    int lb6_y = (int) ((450*frame.getHeight())/600);
-	    int lb6_width = (int) ((250*frame.getWidth())/900);
-	    int lb6_height = (int) ((100*frame.getHeight())/600);
-	    int lb6_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Label lab6 = new Custom_Label(lb6_x, lb6_y, lb6_width, lb6_height,
-        "Enter your E-mail Adress and we","Segoe Print",lb6_font_size ,"#000000");
-        lab6.setHorizontalAlignment(SwingConstants.LEFT);
-        reset_password.add(lab6);
-        
-        // label 7 - will send you a Verification code
-        int lb7_x = (int) ((519*frame.getWidth())/900);
-	    int lb7_y = (int) ((470*frame.getHeight())/600);
-	    int lb7_width = (int) ((250*frame.getWidth())/900);
-	    int lb7_height = (int) ((100*frame.getHeight())/600);
-	    int lb7_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Label lab7 = new Custom_Label(lb7_x, lb7_y, lb7_width, lb7_height,
-        "Will Send You A Verification Code","Segoe Print",lb7_font_size ,"#000000");
-        lab7.setHorizontalAlignment(SwingConstants.LEFT);
-        reset_password.add(lab7);
-        
-        // send button action
-        send.addActionListener(new ActionListener() {
+        reset.setRound_shape_variables(35, 35);
+        reset_password.add(reset);
+        // reset action
+        reset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	
-            	
-              // remove send button and labels
-              //reset_password.remove(send);
               
-
-              // add reset button
-              //reset_password.add(reset);
-              
-              // create an instance of Custom_Message 
-              Custom_Message message = new Custom_Message("verification_icon.png","Verification","Verification Code Sent") ;                       
+              // raise a message
+              Custom_Message message = new Custom_Message(70,140,"Needed Images\\verification_icon.png","Password","Password reset successfully");	
+              // remove reset password page
+              frame.getContentPane().removeAll();    
+              // create an instance of client sign in  page 
+              Client_Sign_In_Page sign_in_page = new Client_Sign_In_Page (frame);                       
               // refresh the window
               frame.revalidate();
               frame.repaint(); }});
+        
         
         
         
@@ -238,19 +114,18 @@ public class Client_Reset_Password_Page {
             public void actionPerformed(ActionEvent e) {
               // remove reset password page
               frame.getContentPane().removeAll();    
-              // create an instance sign in page 
-              Client_Sign_In_Page previous_page = new Client_Sign_In_Page (frame);                       
+              // create an instance of client reset password verification page 
+              Client_Reset_Password_Verification_Page previous_page = new Client_Reset_Password_Verification_Page (frame);                       
               // refresh the window
               frame.revalidate();
               frame.repaint(); }});
-	    
-	    
-	    
-	    
-	    
-	
 		
-	    // add reset password page to the frame
+		
+		
+		
+		
+		
+		// add reset password  page to the frame
         frame.getContentPane().add(reset_password);
         
         
@@ -258,12 +133,7 @@ public class Client_Reset_Password_Page {
         Custom_Resizing_Manager resize_1 = new Custom_Resizing_Manager(frame);
         Custom_Resizing_Manager resize_2 = new Custom_Resizing_Manager(reset_password);
         Custom_Resizing_Manager resize_3 = new Custom_Resizing_Manager(content.getLeftPanel());
-		
-		
-		
-		
-		
-		
+
 	}
 
 }

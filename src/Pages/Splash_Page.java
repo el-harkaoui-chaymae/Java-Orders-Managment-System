@@ -20,7 +20,7 @@ public class Splash_Page  {
 		  
 		// add new panel
 	    Custom_Panel splash = new Custom_Panel(0,0,frame.getWidth(),frame.getHeight(),"#D0E6F0");
-	    splash.add_background("logo_background.png");
+	    splash.add_background("Needed images\\logo_background.png");
 	    
 	    
 

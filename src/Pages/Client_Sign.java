@@ -20,7 +20,7 @@ public class Client_Sign {
 	    // left panel
 	    int left_panel_width = (int) (frame.getWidth() - (frame.getWidth() / (900.0 / 540.0)));
 	    left_panel = new Custom_Panel(0,0,left_panel_width,frame.getHeight(),"#D0E6F0");
-	    left_panel.add_background("sign.png");
+	    left_panel.add_background("Needed Images\\sign.png");
 	    panel.add(left_panel);
 	    
 	    
@@ -99,7 +99,7 @@ public class Client_Sign {
 	    int lb3_width = (int) ((width*frame.getWidth())/900);
 	    int lb3_height = (int) ((height*frame.getHeight())/600);
         Custom_Label lab3 = new Custom_Label(lb3_x, lb3_y, lb3_width, lb3_height,null,null,6,"#FFFFFF");
-	    lab3.add_background("sign_user.png");
+	    lab3.add_background("Needed Images\\sign_user.png");
         panel.add(lab3);
 	}
 	
@@ -163,7 +163,7 @@ public class Client_Sign {
 	    int lb11_width = (int) (((width-99)*frame.getWidth())/900);
         Custom_Label lab11 = new Custom_Label(lb11_x, lb11_y, lb11_width, lb9_height,
         "","Calibri",7,"#000000");
-        lab11.add_background("linkedin.png");
+        lab11.add_background("Needed Images\\linkedin.png");
         panel.add(lab11);
         
         // label 12 - google icon
@@ -172,7 +172,7 @@ public class Client_Sign {
 	    int lb12_width = (int) (((width-102)*frame.getWidth())/900);
         Custom_Label lab12 = new Custom_Label(lb12_x, lb12_y, lb12_width, lb9_height,
         "","Calibri",7,"#000000");
-        lab12.add_background("google.png");
+        lab12.add_background("Needed Images\\google.png");
         panel.add(lab12);
         
         // label 13 - facebook icon
@@ -182,7 +182,7 @@ public class Client_Sign {
 	    int lb13_height = (int) (((height-82)*frame.getHeight())/600);
         Custom_Label lab13 = new Custom_Label(lb13_x, lb13_y, lb13_width, lb13_height,
         "","Calibri",7,"#000000");
-        lab13.add_background("facebook.png");
+        lab13.add_background("Needed Images\\facebook.png");
         panel.add(lab13);
 	}
 

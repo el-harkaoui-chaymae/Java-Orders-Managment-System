@@ -118,7 +118,7 @@ public class Custom_Button extends JButton {
     // method to play button sound effect
     private void play_button_sound() {
         try {
-            File soundFile = new File("click_sound.wav");
+            File soundFile = new File("Needed Sounds\\click_sound.wav");
             Clip clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(soundFile));
             clip.start();

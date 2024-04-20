@@ -201,8 +201,11 @@ public class Client_Sign_Up_Page {
             	String Mail = text_filds[5].getText();
             	String Password = text_filds[6].getText();
             	
+            	// create an instance of client 
+            	Client new_client = new Client(firstName,secondName,City,Adress,phoneNumber,Mail,Password);
+            	
             	// check if this new visitor is already a client - member
-            	if(Client.check_client_existance(Mail) == false) {
+            	if(new_client.check_existance() == false) {
             		
             		// chech for empty text fields
             		boolean empty = false;
@@ -219,8 +222,9 @@ public class Client_Sign_Up_Page {
             			
             			// check if the entered passwords do match
                 		if((password.getText().equals(confirmed_password.getText()))) {
-                			// create an instance of client - add this client to database
-                        	Client new_client = new Client(firstName,secondName,City,Adress,phoneNumber,Mail,Password);
+                			
+                        	// add the new client to client table
+                        	new_client.add();
                         	// raise a message
                     		Custom_Message message = new Custom_Message(65,140,"Needed Images\\verification_icon.png",
                     				                                    "Successful Sign Up",
@@ -243,9 +247,12 @@ public class Client_Sign_Up_Page {
             	}
             	
             	else {
+            		
+            		// remove the reference to the client object
+            		new_client = null;
             		// raise a message
             		Custom_Message message = new Custom_Message(10,140,"Needed Images\\x_icon.png","Membership Error",
-                			                                      "You have already an account, please log in");
+                			                                     "You have already an account, please log in");
             	}}});
         
         

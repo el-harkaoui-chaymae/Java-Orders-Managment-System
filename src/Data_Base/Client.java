@@ -32,49 +32,73 @@ public class Client implements Table_Management{
 		this.mail = mail;
 		this.password = password;
 		
-		// establish a connection to the database server
-		Connection connection = Database_Connector.getConnection();
 		
-		
-		
-		try {
-			
-			// the insertion statement for the table client
-	        String insert_query = "INSERT INTO client (prenom,nom,ville,adresse,telephone,mail,mot_de_passe) "
-	        		               + "VALUES (?,?,?,?,?,?,?)";
-		    
-	        // prepare the insertion query for execution
-		    PreparedStatement prepared_insertion = connection.prepareStatement(insert_query);
-		    
-		    // Set parameter values
-		    prepared_insertion.setString(1, first_name);
-		    prepared_insertion.setString(2, second_name);
-		    prepared_insertion.setString(3, city);
-		    prepared_insertion.setString(4, adress);
-		    prepared_insertion.setString(5, phone_number);
-		    prepared_insertion.setString(6, mail);
-		    prepared_insertion.setString(7, password);
-		
-		    // Execute the the prepared insertion
-		    prepared_insertion.executeUpdate();
-		}
-		
-		catch(SQLException e) {
-            e.printStackTrace(); 
-        
-		}
-	   
-		finally {
-        
-			try { if (connection != null) connection.close();}
-            catch (SQLException e) {e.printStackTrace();}}
         
   
 		
 	}
 	
-	// a static method to check if a client exists in the client table
-	public static boolean check_client_existance(String mail) {
+	
+	// override the method add to insert new client
+	@Override
+	public void add() {
+		        
+		        // establish a connection to the database server
+				Connection connection = Database_Connector.getConnection();
+		
+				try {
+					
+					// the insertion statement for the table client
+			        String insert_query = "INSERT INTO client (prenom,nom,ville,adresse,telephone,mail,mot_de_passe) "
+			        		               + "VALUES (?,?,?,?,?,?,?)";
+				    
+			        // prepare the insertion query for execution
+				    PreparedStatement prepared_insertion = connection.prepareStatement(insert_query);
+				    
+				    // Set parameter values
+				    prepared_insertion.setString(1, first_name);
+				    prepared_insertion.setString(2, second_name);
+				    prepared_insertion.setString(3, city);
+				    prepared_insertion.setString(4, adress);
+				    prepared_insertion.setString(5, phone_number);
+				    prepared_insertion.setString(6, mail);
+				    prepared_insertion.setString(7, password);
+				
+				    // Execute the the prepared insertion
+				    prepared_insertion.executeUpdate();
+				}
+				
+				catch(SQLException e) {
+		            e.printStackTrace(); 
+		        
+				}
+			   
+				finally {
+		        
+					try { if (connection != null) connection.close();}
+		            catch (SQLException e) {e.printStackTrace();}}
+		
+		
+	}
+	
+	// override the method modify
+	@Override
+	public void modify() {}
+	
+	
+	
+	// override the method delete
+	@Override
+	public void delete() {}
+	
+	
+	
+	
+	
+	
+	// override the method check_existance to see if a client already exists 
+	@Override
+	public boolean check_existance() {
 		
 		boolean exist = false;
 		
@@ -103,11 +127,9 @@ public class Client implements Table_Management{
 			// next() moves the cursor to the next row if there is one and returns true
             if (resultSet.next()) {exist = true;}}
                 
-
 		catch (SQLException e) {
             e.printStackTrace();}
          
-		
 		finally {
             
 			try {
@@ -119,11 +141,9 @@ public class Client implements Table_Management{
 			catch (SQLException e) {
                 e.printStackTrace();}}
 		
-		
-		return exist;
-            
-  	
-	}
+		return exist;}
 	
+            
+  
 
 }

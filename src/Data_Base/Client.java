@@ -98,7 +98,7 @@ public class Client implements Table_Management{
 	
 	// override the method check_existance to see if a client already exists 
 	@Override
-	public boolean check_existance() {
+	public boolean check_existance(int parameter_number) {
 		
 		boolean exist = false;
 		
@@ -111,15 +111,34 @@ public class Client implements Table_Management{
 			connection = Database_Connector.getConnection();
             
 			// the select statement
-			String select_query = "SELECT * FROM client WHERE mail = ?";
+			String select_query = null;
+			
+			// checking using the mail only
+			if(parameter_number == 1) {
+				
+				select_query = "SELECT * FROM client WHERE mail = ?";
+				
+				// prepare the selection query
+				prepared_selection = connection.prepareStatement(select_query);
+				
+				// set paremeter value
+				prepared_selection.setString(1, mail);}
+				
+		    // checking using both mail and password
+			if(parameter_number == 2) {
+				
+				select_query = "SELECT * FROM client WHERE mail = ? AND mot_de_passe = ?";
+				
+				// prepare the selection query
+				prepared_selection = connection.prepareStatement(select_query);
+				
+				// set paremeters values
+				prepared_selection.setString(1, mail);
+				prepared_selection.setString(2, password);}
+				
+			
 					
-            
-			// prepare the selection query
-			prepared_selection = connection.prepareStatement(select_query);
-            
-			// set paremeter value
-			prepared_selection.setString(1, mail);
-            
+         
 			// execute selsection query
 			resultSet = prepared_selection.executeQuery(); // resultSet stores rows
             

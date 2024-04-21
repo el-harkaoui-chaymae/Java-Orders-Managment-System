@@ -10,8 +10,11 @@ import javax.swing.SwingConstants;
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
+import Graphical_Interface.Custom_Message;
 import Graphical_Interface.Custom_Resizing_Manager;
 import Graphical_Interface.Custom_Text_Field;
+
+import Data_Base.Client;
 
 
 
@@ -99,6 +102,66 @@ public class Client_Sign_In_Page {
         "#FFFFFF","Consolas",bt1_font_size,true);
         log_in.setRound_shape_variables(35, 35);
         sign_in.add(log_in);
+  
+        // action to perform
+        log_in.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	// get the entered values
+            	String Mail = mail.getText();
+            	String Password = password.getText();
+            	
+            	// create a virtual client to check if it is a real client
+            	Client virtual_client = new Client(null,null,null,null,null,Mail,Password);
+            	
+            	// check 
+            	if(virtual_client.check_existance(2) == true) {
+            		
+            		// open the client space
+            	}
+            	
+            	else {
+            		// raise a message
+            		Custom_Message message = new Custom_Message(50,140,"Needed Images\\x_icon.png","log in failure",
+                                                                "Invalid Email adress or Password");}
+            	
+            	
+            	
+            	
+           
+            	
+            	
+               }});
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
 
         

@@ -54,7 +54,7 @@ public class Custom_Panel extends JPanel {
     
     // method to add image background
     public void add_background(String image_path) {
-        // Start a new thread to load the image
+           // Start a new thread to load the image
            new Thread(() -> {
                try { backgroundImage = ImageIO.read(new File(image_path));
                      repaint();}

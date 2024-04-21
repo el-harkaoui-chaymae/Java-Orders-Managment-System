@@ -15,7 +15,7 @@ interface Table_Management {
 	
 	
 	// abstract method to check the existance of an element in a table
-	boolean check_existance();
+	boolean check_existance(int parameter_number);
 	
 
 }

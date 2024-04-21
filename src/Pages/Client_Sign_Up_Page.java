@@ -205,7 +205,7 @@ public class Client_Sign_Up_Page {
             	Client new_client = new Client(firstName,secondName,City,Adress,phoneNumber,Mail,Password);
             	
             	// check if this new visitor is already a client - member
-            	if(new_client.check_existance() == false) {
+            	if(new_client.check_existance(1) == false) {
             		
             		// chech for empty text fields
             		boolean empty = false;
@@ -243,9 +243,8 @@ public class Client_Sign_Up_Page {
                         	Custom_Message message = new Custom_Message(90,140,"Needed Images\\x_icon.png","Password Error",
                         			                                    "Passwords do not match");}
                 	
-            		}	
-            	}
-            	
+            		}}	
+         
             	else {
             		
             		// remove the reference to the client object
@@ -258,17 +257,6 @@ public class Client_Sign_Up_Page {
         
         
        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         // add another method to sign in

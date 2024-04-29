@@ -134,10 +134,7 @@ public class Client implements Table_Management{
 				
 				// set paremeters values
 				prepared_selection.setString(1, mail);
-				prepared_selection.setString(2, password);}
-				
-			
-					
+				prepared_selection.setString(2, password);}	
          
 			// execute selsection query
 			resultSet = prepared_selection.executeQuery(); // resultSet stores rows
@@ -146,8 +143,7 @@ public class Client implements Table_Management{
 			// next() moves the cursor to the next row if there is one and returns true
             if (resultSet.next()) {exist = true;}}
                 
-		catch (SQLException e) {
-            e.printStackTrace();}
+		catch (SQLException e) {e.printStackTrace();}
          
 		finally {
             
@@ -157,8 +153,7 @@ public class Client implements Table_Management{
                 if (prepared_selection != null) prepared_selection.close();
                 if (connection != null) connection.close();}
             
-			catch (SQLException e) {
-                e.printStackTrace();}}
+			catch (SQLException e) {e.printStackTrace();}}
 		
 		return exist;}
 	

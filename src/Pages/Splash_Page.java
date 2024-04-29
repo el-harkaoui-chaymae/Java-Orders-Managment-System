@@ -60,7 +60,8 @@ public class Splash_Page  {
         // client button
         int bt3_x = (int) ((470*frame.getWidth())/900);
 	    int bt3_width = (int) ((85*frame.getWidth())/900);
-        Custom_Button client = new Custom_Button(bt3_x,bt1_y,bt3_width,bt1_height,"Client","#FFFFFF","Consolas",bt1_font_size,false);
+        Custom_Button client = new Custom_Button(bt3_x,bt1_y,bt3_width,bt1_height,"Client","#FFFFFF",
+        		                                 "Consolas",bt1_font_size,false);
         client.change_style("#b39700","#FFFFFF");
         bar.add(client);
         
@@ -85,7 +86,8 @@ public class Splash_Page  {
         // staff button
         int bt4_x = (int) ((355*frame.getWidth())/900);
 	    int bt4_width = (int) ((100*frame.getWidth())/900);
-        Custom_Button staff = new Custom_Button(bt4_x,bt1_y,bt4_width,bt1_height,"Staff","#FFFFFF","Consolas",bt1_font_size,false);
+        Custom_Button staff = new Custom_Button(bt4_x,bt1_y,bt4_width,bt1_height,"Staff","#FFFFFF",
+        		                                "Consolas",bt1_font_size,false);
         staff.change_style("#b39700","#FFFFFF");
         bar.add(staff);
         

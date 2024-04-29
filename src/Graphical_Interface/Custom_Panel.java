@@ -24,8 +24,6 @@ public class Custom_Panel extends JPanel {
     int height;
     String color;
     Image backgroundImage;
-    public ArrayList<Float> position_size_ratios = new ArrayList();
-    public ArrayList<Integer> font_size_ratios = new ArrayList();
 
     // Constructor 
     public Custom_Panel(int x, int y, int width, int height, String color) {
@@ -62,7 +60,7 @@ public class Custom_Panel extends JPanel {
            }).start(); }
     
 
-    // repaint the image to fit the panel
+    // repaint the image background to fit the panel
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

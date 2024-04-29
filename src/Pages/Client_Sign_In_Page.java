@@ -117,53 +117,27 @@ public class Client_Sign_In_Page {
             	// check 
             	if(virtual_client.check_existance(2) == true) {
             		
-            		// open the client space
+            		// remove client sign in page
+                    frame.getContentPane().removeAll();    
+                    // open client space 
+                    Client_Space_Page client_page = new Client_Space_Page (frame);                       
+                    // refresh the window
+                    frame.revalidate();
+                    frame.repaint();            		
             	}
             	
             	else {
             		// raise a message
             		Custom_Message message = new Custom_Message(50,140,"Needed Images\\x_icon.png","log in failure",
                                                                 "Invalid Email adress or Password");}
-            	
-            	
-            	
-            	
            
-            	
-            	
                }});
         
         
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
+      
         
         
         // reset password button

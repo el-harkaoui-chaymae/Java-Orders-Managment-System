@@ -2,8 +2,16 @@ package Pages;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Color;
+import java.util.Properties;
+import java.util.Random;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.SwingConstants;
 
 import Graphical_Interface.Custom_Button;
@@ -13,14 +21,23 @@ import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
 import Graphical_Interface.Custom_Text_Field;
 import Graphical_Interface.Custom_Message;
+import Data_Base.Client;
 
-import Pages.Client_Reset_Password_Verification_Page;
 
 
 
 public class Client_Reset_Password_Mail_Page {
 	
-
+	//attributes
+	static int verification_code;
+	// Generate a random verification code xxxx once for all instances
+    static {
+    	Random random = new Random();
+        verification_code = random.nextInt(9000) + 1000;
+    }
+	
+    
+    
 	// constructor
 	public  Client_Reset_Password_Mail_Page(Custom_Frame frame) {
 		
@@ -80,19 +97,86 @@ public class Client_Reset_Password_Mail_Page {
         send.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	
-            	// raise a message
-            	Custom_Message message = new Custom_Message(90,135,"Needed Images\\verification_icon.png","Verification","Verification Code Sent");
-            	// remove reset password mail page
-                frame.getContentPane().removeAll();    
-                // create an instance reset password verification page 
-                Client_Reset_Password_Verification_Page next_page = new Client_Reset_Password_Verification_Page (frame);                       
-                // refresh the window
-                frame.revalidate();
-                frame.repaint(); }});
+            	// get the enterd mail
+            	String Mail = mail.getText();
+       
+            	// create a virtual client with the same mail as Mail
+            	Client client = new Client( null, null, null, null,
+      			       null, Mail, null);
+            	
+            	// check if the entered mail already exist in the DB
+            	if(client.check_existance(1) == true) {
+            		
+            		// create the email message holding the verification code
+            		// that will be sent to the client
+                 	String to = mail.getText();
+                 	String subject = "Verification Code";
+                 	String body = "You want to reset your Account password. Your verification code is: " + verification_code;
+                 	String from = "vertex.group.solutions@gmail.com";
+                 	String password = "vertex-197";
+                 	 
+                    // Email server properties
+                    Properties props = new Properties();
+                    props.put("mail.smtp.host", "smtp.gmail.com");
+                    props.put("mail.smtp.port", "587");
+                    props.put("mail.smtp.auth", "true");
+                    props.put("mail.smtp.starttls.enable", "true");
+                    
+                    Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+                  	     protected PasswordAuthentication getPasswordAuthentication() {
+                  	         return new PasswordAuthentication(from, "bpjuynnwrclvkwgp");
+                  	     }
+                  	 });
+                    
+                    try {
+                  	     
+                   	     Message message = new MimeMessage(session);
+                  	     message.setFrom(new InternetAddress(from));
+                  	     message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+                  	     message.setSubject(subject);
+                  	     message.setText(body);
+
+                  	     // send the email
+                  	     Transport.send(message);
+                  	     
+                  	     // raise a message
+                    	 Custom_Message no_error_message = new Custom_Message(90,135,"Needed Images\\verification_icon.png",
+                    			                                              "Verification","Verification Code Sent");
+                    	 // remove reset password mail page
+                         frame.getContentPane().removeAll();    
+                         // create an instance reset password verification page 
+                         Client_Reset_Password_Verification_Page next_page = new Client_Reset_Password_Verification_Page (frame);                       
+                         // refresh the window
+                         frame.revalidate();
+                         frame.repaint();
+                  	
+                    }
+                    
+                    catch (MessagingException e1) {
+                  	     e1.printStackTrace();
+                  	     Custom_Message error_message = new Custom_Message(30,135,"Needed Images\\x_icon.png","Error",
+                  			                                               "Error sending email Please try again");}}
+                  	 else {
+                  		 
+                  	     // raise a message
+                    	 Custom_Message unfound_mail_message = new Custom_Message(90,135,"Needed Images\\x_icon.png",
+                    			                                              "Unfound Error","you're not registered");
+                  		 
+                  		 
+                  		 
+                  	 }
+            	
+            	
+            }});
 	    
 	    
 	    
 	 
+        
+        
+        
+        
+        
         
         // label 6 - enter your E-mail Adress and
         int lb6_x = (int) ((516*frame.getWidth())/900);
@@ -125,7 +209,8 @@ public class Client_Reset_Password_Mail_Page {
         // return button and its action 
         int panel_original_width = 360;
 	    int panel_original_height = 600;
-	    content.getLeftPanel().add_return_button(25, 35, 33, 25, panel_original_width, panel_original_height).addActionListener(new ActionListener() {
+	    content.getLeftPanel().add_return_button(25, 35, 33, 25, panel_original_width, 
+	    		                                 panel_original_height).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
               // remove reset password page
               frame.getContentPane().removeAll();    

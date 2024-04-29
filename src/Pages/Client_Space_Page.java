@@ -46,7 +46,8 @@ public class Client_Space_Page {
         lab1.setOpaque(true);
         menu.add(lab1);
         
-        
+        // color
+        String color = "#002F5E";
        
         
         // profile button 
@@ -60,6 +61,7 @@ public class Client_Space_Page {
         profile.setBackground(Color.decode("#2F5597"));
         profile.setOpaque(true);
         profile.change_style("#b39700","#FFFFFF");
+        profile.change_color_background(color,"#2F5597");
         menu.add(profile);
         
         
@@ -75,6 +77,7 @@ public class Client_Space_Page {
         products.setBackground(Color.decode("#2F5597"));
         products.setOpaque(true);
         products.change_style("#b39700","#FFFFFF");
+        products.change_color_background(color,"#2F5597");
         menu.add(products);
         
         
@@ -90,6 +93,7 @@ public class Client_Space_Page {
         orders.setBackground(Color.decode("#2F5597"));
         orders.setOpaque(true);
         orders.change_style("#b39700","#FFFFFF");
+        orders.change_color_background(color,"#2F5597");
         menu.add(orders);
         
         
@@ -105,6 +109,7 @@ public class Client_Space_Page {
         cart.setBackground(Color.decode("#2F5597"));
         cart.setOpaque(true);
         cart.change_style("#b39700","#FFFFFF");
+        cart.change_color_background(color,"#2F5597");
         menu.add(cart);
         
         
@@ -120,6 +125,7 @@ public class Client_Space_Page {
         favorites.setBackground(Color.decode("#2F5597"));
         favorites.setOpaque(true);
         favorites.change_style("#b39700","#FFFFFF");
+        favorites.change_color_background(color,"#2F5597");
         menu.add(favorites);
         
         
@@ -135,6 +141,7 @@ public class Client_Space_Page {
         log_out.setBackground(Color.decode("#2F5597"));
         log_out.setOpaque(true);
         log_out.change_style("#b39700","#FFFFFF");
+        log_out.change_color_background(color,"#2F5597");
         menu.add(log_out);
 		
         

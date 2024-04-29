@@ -143,6 +143,20 @@ public class Custom_Button extends JButton {
              }});}
     
     
+
+    // method to change the color background of a button
+    public void change_color_background(String color1,String color2) {
+    	
+         this.addMouseListener(new java.awt.event.MouseAdapter() {
+             public void mouseEntered(java.awt.event.MouseEvent evt) {
+            	 setBackground(Color.decode(color1));}
+
+             public void mouseExited(java.awt.event.MouseEvent evt) {
+            	 setBackground(Color.decode(color2));
+
+             }});}
+    
+    
     
     
     

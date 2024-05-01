@@ -31,8 +31,6 @@ public class Client_Space_Page {
 		Custom_Panel menu = new Custom_Panel(pn1_x,0,pn1_width,frame.getHeight(),"#2F5597");
 		space.add(menu);
 		
-		
-		
 		// label 2 - menu
 	    int lb1_x = (int) ((0*frame.getWidth())/900);
 	    int lb1_y = (int) ((15*frame.getHeight())/600);
@@ -46,11 +44,14 @@ public class Client_Space_Page {
         lab1.setOpaque(true);
         menu.add(lab1);
         
+        
+        
         // color
         String color = "#002F5E";
         // font
         String font = "calibri";
        
+        
         
         // profile button 
 	    int bt1_x = (int) ((0*frame.getWidth())/900);

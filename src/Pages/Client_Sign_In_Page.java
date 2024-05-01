@@ -196,7 +196,7 @@ public class Client_Sign_In_Page {
         // return button and its action 
         int panel_original_width = 360;
 	    int panel_original_height = 600;
-	    content.getLeftPanel().add_return_button(25, 35, 33, 25, panel_original_width, panel_original_height).addActionListener(new ActionListener() {
+	    content.getLeftPanel().add_return_button(40, 230, 15, 20, panel_original_width, panel_original_height).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
               // remove client sign in page
               frame.getContentPane().removeAll();    

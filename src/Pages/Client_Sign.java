@@ -25,6 +25,8 @@ public class Client_Sign {
 	    
 	    
 	    
+	    
+	    
         
 	    // label 1 - unlock
 	    int lb1_x = (int) ((36*frame.getWidth())/900);
@@ -71,6 +73,18 @@ public class Client_Sign {
         Custom_Label lab15 = new Custom_Label(lb15_x, lb15_y, lb15_width, lb15_height,
         "Crafting the Foundations of Tomorrow","Consolas",lb15_font_size,"#b39700");
         left_panel.add(lab15);
+        
+        
+        
+        // label 3 - Home Page
+        int lb3_x = (int) ((70*frame.getWidth())/900);
+	    int lb3_y = (int) ((217*frame.getHeight())/600);
+	    int lb3_width = (int) ((510*frame.getWidth())/900);
+	    int lb3_height = (int) ((50*frame.getHeight())/600);
+	    int lb3_font_size = (int) ((12*frame.getWidth())/900);
+        Custom_Label lab3 = new Custom_Label(lb3_x, lb3_y, lb3_width, lb3_height,"Previous Page",
+        "Segoe Print",lb3_font_size,"#2F5597"); 
+        left_panel.add(lab3);
         
         
         

@@ -89,7 +89,7 @@ public class Custom_Panel extends JPanel {
 	    int lb_height = (int) ((height*getHeight())/panel_original_height);
         Custom_Label lab = new Custom_Label(lb_x, lb_y, lb_width, lb_height,
         "","Arial",10,"#b39700");
-        lab.add_background("Needed Images\\return_icon.png");
+        lab.add_background("Needed Images\\home_icon.png");
         add(lab);
         
         return Return;

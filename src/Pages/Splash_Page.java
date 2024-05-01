@@ -95,7 +95,7 @@ public class Splash_Page  {
         
         // contact us button
         int bt5_x = (int) ((115*frame.getWidth())/900);
-	    int bt5_y = (int) ((300*frame.getHeight())/600);
+	    int bt5_y = (int) ((290*frame.getHeight())/600);
 	    int bt5_width = (int) ((200*frame.getWidth())/900);
 	    int bt5_height = (int) ((40*frame.getHeight())/600);
 	    int bt5_font_size = (int) ((17*frame.getWidth())/900);

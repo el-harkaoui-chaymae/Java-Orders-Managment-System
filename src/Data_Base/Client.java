@@ -32,11 +32,12 @@ public class Client implements Table_Management{
 		this.mail = mail;
 		this.password = password;
 		
-		
-        
-  
-		
 	}
+	
+	
+	
+	
+	
 	
 	
 	// override the method add to insert new client
@@ -156,6 +157,77 @@ public class Client implements Table_Management{
 			catch (SQLException e) {e.printStackTrace();}}
 		
 		return exist;}
+	
+	
+	
+	// override the method get informations to get the client proprieties
+	@Override
+	public String[] get_informations() {
+		
+		Connection connection = null;
+		PreparedStatement prepared_selection = null;
+		ResultSet resultSet = null;
+		
+		// an array to store infos
+		String [] infos = new String[7];
+		
+		try {
+			
+			// establish a connection with the database server
+			 connection = Database_Connector.getConnection();
+			
+			// the select statement
+			String select_query = "SELECT * FROM client WHERE mail = ?";
+			
+			// prepare the selection query
+			 prepared_selection = connection.prepareStatement(select_query);
+			
+			// set paremeters values
+			prepared_selection.setString(1, mail);
+			
+			// execute selsection query
+			 resultSet = prepared_selection.executeQuery();
+			
+			if (resultSet.next()) {
+				
+				// get and store infos
+				String first_name = resultSet.getString("prenom");
+				infos[0] = first_name;
+				String second_name = resultSet.getString("nom");
+				infos[1] = second_name;
+				String city = resultSet.getString("ville");
+				infos[2] = city;
+				String adress = resultSet.getString("adresse");
+				infos[3] = adress;
+				String phone_number = resultSet.getString("telephone");
+				infos[4] = phone_number;
+				String mail_adress = resultSet.getString("mail");
+				infos[5] = mail_adress;
+				String password = resultSet.getString("mot_de_passe");
+				infos[6] = password;
+
+			}}
+			
+			
+		catch(SQLException e) {e.printStackTrace();}
+        finally {
+            
+			try {
+                
+				if (resultSet != null) resultSet.close();
+                if (prepared_selection != null) prepared_selection.close();
+                if (connection != null) connection.close();}
+            
+			catch (SQLException e) {e.printStackTrace();}}
+		
+		return infos;
+		
+		
+		
+		
+		
+		
+	}
 	
             
   

@@ -17,5 +17,9 @@ interface Table_Management {
 	// abstract method to check the existance of an element in a table
 	boolean check_existance(int parameter_number);
 	
+	
+	// abstarct method to get an element information
+	String [] get_informations();
+	
 
 }

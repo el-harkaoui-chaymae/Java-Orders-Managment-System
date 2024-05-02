@@ -16,6 +16,9 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import javax.swing.border.Border;
+import javax.swing.BorderFactory;
+
 
 
 public class Custom_Button extends JButton {
@@ -143,18 +146,29 @@ public class Custom_Button extends JButton {
              }});}
     
     
+    
+    
 
-    // method to change the color background of a button
+    // method to change the color background of a button and add a left border
     public void change_color_background(String color1,String color2) {
     	
          this.addMouseListener(new java.awt.event.MouseAdapter() {
-             public void mouseEntered(java.awt.event.MouseEvent evt) {
-            	 setBackground(Color.decode(color1));}
+             
+        	 public void mouseEntered(java.awt.event.MouseEvent evt) {
+            	 setBackground(Color.decode(color1));
+            	 }
 
              public void mouseExited(java.awt.event.MouseEvent evt) {
             	 setBackground(Color.decode(color2));
+            	 
 
              }});}
+    
+    
+    
+    
+    
+    
     
     
     

@@ -159,7 +159,7 @@ public class Client_Sign {
 	    int lb9_height = (int) (((height-70)*frame.getHeight())/600);
         Custom_Label lab9 = new Custom_Label(lb9_x, lb9_y, lb9_width, lb9_height,
         "","Calibri",7,"#808080");
-        lab9.create_buttom_border(2, "#808080");
+        lab9.create_bottom_border(2, "#808080");
         panel.add(lab9);
         
         // label 10 - --------
@@ -168,7 +168,7 @@ public class Client_Sign {
 	    int lb10_width = (int) (((width-50)*frame.getWidth())/900);
         Custom_Label lab10 = new Custom_Label(lb10_x, lb10_y, lb10_width, lb9_height,
         "","Calibri",7,"#808080");
-        lab10.create_buttom_border(2, "#808080");
+        lab10.create_bottom_border(2, "#808080");
         panel.add(lab10);
         
         // label 11 - linkedIn icon

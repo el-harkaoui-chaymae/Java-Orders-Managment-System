@@ -19,6 +19,9 @@ import Data_Base.Client;
 
 
 public class Client_Sign_In_Page {
+	
+	// attributes
+	static String mail;
 		
 	
 	// constructor
@@ -117,6 +120,8 @@ public class Client_Sign_In_Page {
             	// check 
             	if(virtual_client.check_existance(2) == true) {
             		
+            		// store the entered mail for future use
+            		Client_Sign_In_Page.mail = Mail;
             		// remove client sign in page
                     frame.getContentPane().removeAll();    
                     // open client space 

@@ -43,7 +43,7 @@ public class Custom_Label extends JLabel {
 	}
 	
     // method to create a bottom border for the label
-    public void create_buttom_border(int size,String color) { 
+    public void create_bottom_border(int size,String color) { 
     	Border border = BorderFactory.createMatteBorder(0, 0, size, 0, Color.decode(color)); // Top-left-bottom-right
         this.setBorder(border);}
     

@@ -38,7 +38,8 @@ public class Custom_Button extends JButton {
 
     
     // Constructor
-    public Custom_Button(int x,int y,int width, int height,String text,String text_color,String font,int font_size,boolean gradient) {
+    public Custom_Button(int x,int y,int width, int height,String text,String text_color,
+    		             String font,int font_size,boolean gradient) {
         
     	// Call the superclass constructor
         super(text);
@@ -107,7 +108,8 @@ public class Custom_Button extends JButton {
             Shape shape = new RoundRectangle2D.Float(0, 0, getWidth(), getHeight(), round_shape_x, round_shape_y);
             
             // Fill the shape with the gradient paint
-            GradientPaint gradient = new GradientPaint(0, 0, Color.decode("#1D63DC"), getWidth(), getHeight(), Color.decode("#b39700"));
+            GradientPaint gradient = new GradientPaint(0, 0, Color.decode("#1D63DC"), getWidth(), 
+            		                                   getHeight(), Color.decode("#b39700"));
             g2.setPaint(gradient); 
             g2.fill(shape);}      
         

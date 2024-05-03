@@ -17,7 +17,6 @@ public class Custom_Resizing_Manager {
 	// attributes
 	ArrayList<Float> position_size_ratios = new ArrayList();
     ArrayList<Integer> font_size_ratios = new ArrayList();
-    public static boolean resizing_flag = false;
 	
 	
 		
@@ -47,7 +46,6 @@ public class Custom_Resizing_Manager {
 
 	                        // set new parameters for the component
 	                        component.setBounds(0, 0, width_a, height_a);
-	                        resizing_flag = true;
 	                  
 	                    }}}});
 				
@@ -98,7 +96,6 @@ public class Custom_Resizing_Manager {
 		                    // set new parameters for the component
 		                    component.setBounds(x_a, y_a, width_a+10, height_a);
 		                    
-		                    resizing_flag = true;
 		                    
 		                    
 		                    // check if the component has a font size

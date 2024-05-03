@@ -50,6 +50,9 @@ public class Custom_Panel extends JPanel {
 
     }
     
+    
+    
+    
     // method to add image background
     public void add_background(String image_path) {
            // Start a new thread to load the image
@@ -68,6 +71,9 @@ public class Custom_Panel extends JPanel {
         repaint();
 
     }
+    
+    
+    
     
     
     // method to add return button

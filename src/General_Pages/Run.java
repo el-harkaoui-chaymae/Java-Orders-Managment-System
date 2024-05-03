@@ -1,4 +1,4 @@
-package Pages;
+package General_Pages;
 
 import Graphical_Interface.Custom_Frame;
 

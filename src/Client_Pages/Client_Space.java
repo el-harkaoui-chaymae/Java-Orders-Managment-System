@@ -1,27 +1,41 @@
-package Pages;
+package Client_Pages;
 
 import javax.swing.SwingConstants;
 
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
+import Graphical_Interface.Custom_Message;
 import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
 
 import Data_Base.Client;
+import General_Pages.Splash_Page;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
-public class Client_Space_Page {
+public class Client_Space {
+	
+	// attributes
+	public Custom_Button profile;
+	public Custom_Button products;
+	public Custom_Button purchases;
+	public Custom_Button orders;
+	public Custom_Button favorites;
+	public Custom_Panel space;
+
+
 	
 	// construtor
-	public Client_Space_Page(Custom_Frame frame){
+	public Client_Space(Custom_Frame frame){
 		
 		
 		
 		// page panel
-		Custom_Panel space = new Custom_Panel(0,0,frame.getWidth(),frame.getHeight(),"#FFFFFF");
+		space = new Custom_Panel(0,0,frame.getWidth(),frame.getHeight(),"#FFFFFF");
 		space.add_background("Needed images\\client_space.png");
 		
 		
@@ -95,7 +109,6 @@ public class Client_Space_Page {
         
         
         
-        
      
         
         // color
@@ -111,7 +124,7 @@ public class Client_Space_Page {
 	    int bt1_width = (int) ((90*frame.getWidth())/900);
 	    int bt1_height = (int) ((40*frame.getHeight())/600);
 	    int bt1_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Button profile = new Custom_Button(bt1_x,bt1_y,bt1_width,bt1_height,
+        profile = new Custom_Button(bt1_x,bt1_y,bt1_width,bt1_height,
         "Profile","#FFFFFF",font,bt1_font_size,false);
         profile.setBackground(Color.decode("#2F5597"));
         profile.setOpaque(true);
@@ -119,7 +132,7 @@ public class Client_Space_Page {
         profile.change_color_background(color,"#2F5597");
         menu.add(profile);
         
-        
+       
         
         // products button 
 	    int bt2_x = (int) ((0*frame.getWidth())/900);
@@ -127,7 +140,7 @@ public class Client_Space_Page {
 	    int bt2_width = (int) ((90*frame.getWidth())/900);
 	    int bt2_height = (int) ((40*frame.getHeight())/600);
 	    int bt2_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Button products = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,
+        products = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,
         "Products","#FFFFFF",font,bt2_font_size,false);
         products.setBackground(Color.decode("#2F5597"));
         products.setOpaque(true);
@@ -143,7 +156,7 @@ public class Client_Space_Page {
 	    int bt3_width = (int) ((90*frame.getWidth())/900);
 	    int bt3_height = (int) ((40*frame.getHeight())/600);
 	    int bt3_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Button purchases = new Custom_Button(bt3_x,bt3_y,bt3_width,bt3_height,
+        purchases = new Custom_Button(bt3_x,bt3_y,bt3_width,bt3_height,
         "Purchases","#FFFFFF",font,bt3_font_size,false);
         purchases.setBackground(Color.decode("#2F5597"));
         purchases.setOpaque(true);
@@ -159,7 +172,7 @@ public class Client_Space_Page {
 	    int bt4_width = (int) ((90*frame.getWidth())/900);
 	    int bt4_height = (int) ((40*frame.getHeight())/600);
 	    int bt4_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Button orders = new Custom_Button(bt4_x,bt4_y,bt4_width,bt4_height,
+        orders = new Custom_Button(bt4_x,bt4_y,bt4_width,bt4_height,
         "Orders","#FFFFFF",font,bt4_font_size,false);
         orders.setBackground(Color.decode("#2F5597"));
         orders.setOpaque(true);
@@ -175,7 +188,7 @@ public class Client_Space_Page {
 	    int bt5_width = (int) ((90*frame.getWidth())/900);
 	    int bt5_height = (int) ((40*frame.getHeight())/600);
 	    int bt5_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Button favorites = new Custom_Button(bt5_x,bt5_y,bt5_width,bt5_height,
+        favorites = new Custom_Button(bt5_x,bt5_y,bt5_width,bt5_height,
         "Favorites","#FFFFFF",font,bt5_font_size,false);
         favorites.setBackground(Color.decode("#2F5597"));
         favorites.setOpaque(true);
@@ -198,36 +211,26 @@ public class Client_Space_Page {
         log_out.change_style("#b39700","#FFFFFF");
         log_out.change_color_background(color,"#2F5597");
         menu.add(log_out);
-		
+        // log out action
+        log_out.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+              // remove client space  page
+              frame.getContentPane().removeAll();    
+              // create an instance client sign in page 
+              Client_Sign_In_Page sign_in__page = new Client_Sign_In_Page (frame);                       
+              // refresh the window
+              frame.revalidate();
+              frame.repaint(); }});
         
+     
+		
+		 
         
-        // label 3 - hello
-	    int lb3_x = (int) ((440*frame.getWidth())/900);
-	    int lb3_y = (int) ((150*frame.getHeight())/600);
-	    int lb3_width = (int) ((100*frame.getWidth())/900);
-	    int lb3_height = (int) ((110*frame.getHeight())/600);
-	    int lb3_font_size = (int) ((22*frame.getWidth())/900);
-        Custom_Label lab3 = new Custom_Label(lb3_x, lb3_y, lb3_width, lb3_height,"Hello !!","Consolas",lb3_font_size,"#C00000");
-        space.add(lab3);
-        
-		
-        
-        
-        
-        
-		
-		
-		
-		
-		
-		
-		 // add space panel to the frame 
+        // add space panel to the frame 
         frame.getContentPane().add(space);
         
         
         // handle resizing
-        Custom_Resizing_Manager resize_1 = new Custom_Resizing_Manager(frame);
-        Custom_Resizing_Manager resize_2 = new Custom_Resizing_Manager(space);
         Custom_Resizing_Manager resize_3 = new Custom_Resizing_Manager(menu);
          
 

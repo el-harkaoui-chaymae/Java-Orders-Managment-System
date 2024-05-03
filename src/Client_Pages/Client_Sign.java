@@ -1,4 +1,4 @@
-package Pages;
+package Client_Pages;
 
 import Graphical_Interface.Custom_Label;
 import Graphical_Interface.Custom_Panel;

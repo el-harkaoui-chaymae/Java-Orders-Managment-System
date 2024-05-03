@@ -1,4 +1,4 @@
-package Pages;
+package General_Pages;
 
 import Graphical_Interface.Custom_Panel;
 
@@ -10,6 +10,7 @@ import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
 import Graphical_Interface.Custom_Resizing_Manager;
+import Client_Pages.Client_Sign_In_Page;
  
 
 public class Splash_Page  {

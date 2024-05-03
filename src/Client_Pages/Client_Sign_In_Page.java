@@ -1,4 +1,4 @@
-package Pages;
+package Client_Pages;
 
 import Graphical_Interface.Custom_Panel;
 
@@ -13,8 +13,8 @@ import Graphical_Interface.Custom_Label;
 import Graphical_Interface.Custom_Message;
 import Graphical_Interface.Custom_Resizing_Manager;
 import Graphical_Interface.Custom_Text_Field;
-
 import Data_Base.Client;
+import General_Pages.Splash_Page;
 
 
 
@@ -133,7 +133,7 @@ public class Client_Sign_In_Page {
             	
             	else {
             		// raise a message
-            		Custom_Message message = new Custom_Message(50,140,"Needed Images\\x_icon.png","log in failure",
+            		Custom_Message message = new Custom_Message(50,140,"Needed Images\\x_icon.png","Log in Failure",
                                                                 "Invalid Email adress or Password");}
            
                }});

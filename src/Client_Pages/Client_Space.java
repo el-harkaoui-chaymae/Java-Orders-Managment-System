@@ -61,13 +61,25 @@ public class Client_Space {
 	    int lb1_y = (int) ((15*frame.getHeight())/600);
 	    int lb1_width = (int) ((90*frame.getWidth())/900);
 	    int lb1_height = (int) ((41*frame.getHeight())/600);
-	    int lb1_font_size = (int) ((17*frame.getWidth())/900);
+	    int lb1_font_size = (int) ((18*frame.getWidth())/900);
         Custom_Label lab1 = new Custom_Label(lb1_x, lb1_y, lb1_width, lb1_height,
         "Menu","Segoe Print",lb1_font_size,"#2F5597");
         lab1.setHorizontalAlignment(SwingConstants.CENTER);
         lab1.setBackground(Color.decode("#b7c9e2"));
         lab1.setOpaque(true);
         menu.add(lab1);
+        
+        
+        // label - above menu
+	    int lb_x = (int) ((0*frame.getWidth())/900);
+	    int lb_y = (int) ((0*frame.getHeight())/600);
+	    int lb_width = (int) ((120*frame.getWidth())/900);
+	    int lb_height = (int) ((15*frame.getHeight())/600);
+        Custom_Label lab = new Custom_Label(lb_x, lb_y, lb_width, lb_height,
+        "","Segoe Print",7,"#2F5597");
+        lab.setBackground(Color.decode("#b7c9e2"));
+        lab.setOpaque(true);
+        menu.add(lab);
         
         
         // label  - menu icon

@@ -795,7 +795,6 @@ public class Client_Profile_Page {
         	    		                          new_mail,new_password);
         	    // set the virtual client id to the exact value as the original one
         	    edited_client.setClientId(original_client_id);
-        	   
         	    // set the additional client attributes
         	    edited_client.set_additional_attributes(new_birth_date, new_gender, new_nationality, 
         	    		                                new_educational_level, new_low_income, new_high_income);

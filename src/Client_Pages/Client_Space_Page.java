@@ -1,7 +1,5 @@
 package Client_Pages;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
@@ -30,22 +28,6 @@ public class Client_Space_Page {
         client_space.space.add(lab3);
         
         
-        
-        
-        // profile button action
-        client_space.profile.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	
-            	// remove client space page 
-                frame.getContentPane().removeAll();    
-                
-                // open client profile page 
-                Client_Profile_Page client_page = new Client_Profile_Page (frame);                       
-                
-                // refresh the window
-                frame.revalidate();
-                frame.repaint();            		
-            	}});
         
         
         

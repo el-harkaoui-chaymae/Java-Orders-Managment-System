@@ -29,6 +29,7 @@ public class Client_Space {
 	public Custom_Panel space;
 	
 	public Custom_Label labp;
+	public Custom_Label labr;
 	public Custom_Label labpr;
 	public Custom_Label labo;
 	public Custom_Label labf;
@@ -152,6 +153,23 @@ public class Client_Space {
         profile.change_style("#b39700","#FFFFFF");
         menu.add(profile);
         
+        // action
+        profile.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	// remove client space page 
+                frame.getContentPane().removeAll();    
+                
+                // open client profile page 
+                Client_Profile_Page client_page = new Client_Profile_Page (frame);                       
+                
+                // refresh the window
+                frame.revalidate();
+                frame.repaint();            		
+            	}});
+        
+        
+        
         // label  - profile icon
 	    int lbp_x = (int) ((0*frame.getWidth())/900);
 	    int lbp_y = (int) ((77*frame.getHeight())/600);
@@ -183,12 +201,29 @@ public class Client_Space {
         products.change_style("#b39700","#FFFFFF");
         menu.add(products);
         
+        // action
+        products.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	// remove client space page 
+                frame.getContentPane().removeAll();    
+                
+                // open client products page 
+                Client_Products_Page client_page = new Client_Products_Page (frame);                       
+                
+                // refresh the window
+                frame.revalidate();
+                frame.repaint();            		
+            	}});
+        
+        
+        
         // label  - products icon
 	    int lbr_x = (int) ((0*frame.getWidth())/900);
 	    int lbr_y = (int) ((140*frame.getHeight())/600);
 	    int lbr_width = (int) ((30*frame.getWidth())/900);
 	    int lbr_height = (int) ((40*frame.getHeight())/600);
-        Custom_Label labr = new Custom_Label(lbr_x, lbr_y, lbr_width, lbr_height,
+        labr = new Custom_Label(lbr_x, lbr_y, lbr_width, lbr_height,
         "","Segoe Print",7,"#2F5597");
         labr.setBackground(Color.decode("#2F5597"));
         labr.setOpaque(true);
@@ -213,6 +248,21 @@ public class Client_Space {
         purchases.setOpaque(true);
         purchases.change_style("#b39700","#FFFFFF");
         menu.add(purchases);
+        
+        // action
+        purchases.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	// remove client space page 
+                frame.getContentPane().removeAll();    
+                
+                // open client purchases page 
+                Client_Purchases_Page client_page = new Client_Purchases_Page (frame);                       
+                
+                // refresh the window
+                frame.revalidate();
+                frame.repaint();            		
+            	}});
         
         
         // label  - purchase icon
@@ -247,6 +297,22 @@ public class Client_Space {
         orders.change_style("#b39700","#FFFFFF");
         menu.add(orders);
         
+        // action
+        orders.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	// remove client space page 
+                frame.getContentPane().removeAll();    
+                
+                // open client orders page 
+                Client_Orders_Page client_page = new Client_Orders_Page (frame);                       
+                
+                // refresh the window
+                frame.revalidate();
+                frame.repaint();            		
+            	}});
+        
+        
         // label  - orders icon
 	    int lbo_x = (int) ((0*frame.getWidth())/900);
 	    int lbo_y = (int) ((266*frame.getHeight())/600);
@@ -278,6 +344,23 @@ public class Client_Space {
         favorites.setOpaque(true);
         favorites.change_style("#b39700","#FFFFFF");
         menu.add(favorites);
+        
+        // action
+        favorites.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	// remove client space page 
+                frame.getContentPane().removeAll();    
+                
+                // open client favorites page 
+                Client_Favorites_Page client_page = new Client_Favorites_Page (frame);                       
+                
+                // refresh the window
+                frame.revalidate();
+                frame.repaint();            		
+            	}});
+        
+        
         
         // label  - favorites icon
 	    int lbf_x = (int) ((0*frame.getWidth())/900);

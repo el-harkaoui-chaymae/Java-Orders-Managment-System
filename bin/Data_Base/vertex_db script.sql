@@ -19,6 +19,12 @@ CREATE TABLE client (
     telephone VARCHAR(12) NOT NULL,
     mail VARCHAR(100) NOT NULL,
     mot_de_passe VARCHAR(50) NOT NULL,
+    date_de_naissance Date NULL,
+    genre VARCHAR(20) NULL,
+    nationalite VARCHAR(50) NULL,
+    niveau_education VARCHAR(100) NULL,
+    revenu_faible DOUBLE NULL,
+    revenu_eleve DOUBLE NULL,
     PRIMARY KEY (numeroclient)
 
 );

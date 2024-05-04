@@ -151,17 +151,19 @@ public class Custom_Button extends JButton {
     
     
 
-    // method to change the color background of a button and add a left border
-    public void change_color_background(String color1,String color2) {
+    // method to change the color background of a button and its icon label
+    public void change_color_background(String color1,String color2,Custom_Label label) {
     	
          this.addMouseListener(new java.awt.event.MouseAdapter() {
              
         	 public void mouseEntered(java.awt.event.MouseEvent evt) {
             	 setBackground(Color.decode(color1));
+            	 label.setBackground(Color.decode(color1));
             	 }
 
              public void mouseExited(java.awt.event.MouseEvent evt) {
             	 setBackground(Color.decode(color2));
+            	 label.setBackground(Color.decode(color2));
             	 
 
              }});}

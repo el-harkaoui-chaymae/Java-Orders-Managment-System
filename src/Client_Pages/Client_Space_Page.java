@@ -1,13 +1,10 @@
 package Client_Pages;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Data_Base.Client;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
-import Graphical_Interface.Custom_Message;
 import Graphical_Interface.Custom_Resizing_Manager;
 
 

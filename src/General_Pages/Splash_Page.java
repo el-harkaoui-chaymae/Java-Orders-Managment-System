@@ -10,7 +10,11 @@ import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
 import Graphical_Interface.Custom_Resizing_Manager;
+
 import Client_Pages.Client_Sign_In_Page;
+
+import Staff_Pages.Staff_Sign_In_Page;
+
  
 
 public class Splash_Page  {
@@ -72,7 +76,7 @@ public class Splash_Page  {
             	// remove the splash page panel from the frame
             	Container contentPane = frame.getContentPane(); 
                 contentPane.remove(splash); 
-            	// open the sign up page panel
+            	// open the client sign in page panel
                 Client_Sign_In_Page page = new Client_Sign_In_Page(frame);
                 // refresh the window
                 frame.revalidate();
@@ -91,6 +95,25 @@ public class Splash_Page  {
         		                                "Consolas",bt1_font_size,false);
         staff.change_style("#b39700","#FFFFFF");
         bar.add(staff);
+        
+       // action
+       staff.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	// remove the splash page panel from the frame
+            	Container contentPane = frame.getContentPane(); 
+                contentPane.remove(splash); 
+            	// open the staff sign in page panel
+                Staff_Sign_In_Page page = new Staff_Sign_In_Page(frame);
+                // refresh the window
+                frame.revalidate();
+                frame.repaint();
+         	
+                }}) ;
+        
+        
+       
+        
+        
         
         
         

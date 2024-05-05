@@ -88,12 +88,6 @@ public class Client_Sign {
         
         
         
-        
-        
-        
-        
-        
-        
 		
 		
 	}

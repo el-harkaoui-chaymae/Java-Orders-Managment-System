@@ -537,12 +537,12 @@ public class Client_Profile_Page {
         
        
 	    
-	    
+	    // top bar buttons
 	    
 	    
 	    
 	    // edit button 
-	    int bt1_x = (int) ((250*frame.getWidth())/900);
+	    int bt1_x = (int) ((170*frame.getWidth())/900);
 	    int bt1_y = (int) ((11*frame.getHeight())/600);
 	    int bt1_width = (int) ((90*frame.getWidth())/900);
 	    int bt1_height = (int) ((40*frame.getHeight())/600);
@@ -550,6 +550,7 @@ public class Client_Profile_Page {
         Custom_Button edit = new Custom_Button(bt1_x,bt1_y,bt1_width,bt1_height,
         "Edit","#000000","Consolas",bt1_font_size,false);
         edit.change_style("#C00000","#000000");
+        edit.add_buttom_border(182, 50, 55, "#C00000", frame, client_space.space);
         client_space.space.add(edit);
         
         String color = "#56AE57";
@@ -597,7 +598,7 @@ public class Client_Profile_Page {
         
 
         // label 17 - edit icon
-	    int lb17_x = (int) ((260*frame.getWidth())/900);
+	    int lb17_x = (int) ((180*frame.getWidth())/900);
 	    int lb17_y = (int) ((19*frame.getHeight())/600);
 	    int lb17_width = (int) ((15*frame.getWidth())/900);
 	    int lb17_height = (int) ((20*frame.getHeight())/600);
@@ -616,7 +617,7 @@ public class Client_Profile_Page {
         
         
         // cancel button 
-	    int bt2_x = (int) ((400*frame.getWidth())/900);
+	    int bt2_x = (int) ((280*frame.getWidth())/900);
 	    int bt2_y = (int) ((11*frame.getHeight())/600);
 	    int bt2_width = (int) ((90*frame.getWidth())/900);
 	    int bt2_height = (int) ((40*frame.getHeight())/600);
@@ -624,6 +625,7 @@ public class Client_Profile_Page {
         Custom_Button cancel = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,
         "Cancel","#000000","Consolas",bt2_font_size,false);
         cancel.change_style("#C00000","#000000");
+        cancel.add_buttom_border(292, 50, 60, "#C00000", frame, client_space.space);
         client_space.space.add(cancel);
         
         String original_color = "#b39700";
@@ -686,14 +688,13 @@ public class Client_Profile_Page {
         
         
         // label 18 - cancel icon
-	    int lb18_x = (int) ((407*frame.getWidth())/900);
+	    int lb18_x = (int) ((293*frame.getWidth())/900);
 	    int lb18_y = (int) ((18*frame.getHeight())/600);
 	    int lb18_width = (int) ((15*frame.getWidth())/900);
 	    int lb18_height = (int) ((16*frame.getHeight())/600);
 	    int lb18_font_size = (int) ((16*frame.getWidth())/900);
         Custom_Label lab18 = new Custom_Label(lb18_x, lb18_y, lb18_width, lb18_height,"x",
         "Segoe Print",lb18_font_size,"#000000");
-        //lab18.add_background("Needed images\\cancel_icon.png");
         client_space.space.add(lab18);
         
         
@@ -706,7 +707,7 @@ public class Client_Profile_Page {
         
         
         // save button 
-	    int bt3_x = (int) ((547*frame.getWidth())/900);
+	    int bt3_x = (int) ((392*frame.getWidth())/900);
 	    int bt3_y = (int) ((11*frame.getHeight())/600);
 	    int bt3_width = (int) ((90*frame.getWidth())/900);
 	    int bt3_height = (int) ((40*frame.getHeight())/600);
@@ -714,6 +715,7 @@ public class Client_Profile_Page {
         Custom_Button save = new Custom_Button(bt3_x,bt3_y,bt3_width,bt3_height,
         "Save","#000000","Consolas",bt3_font_size,false);
         save.change_style("#C00000","#000000");
+        save.add_buttom_border(402, 50, 55, "#C00000", frame, client_space.space);
         client_space.space.add(save);
         
         // action
@@ -809,14 +811,47 @@ public class Client_Profile_Page {
         
         
         // label 19 - save icon
-	    int lb19_x = (int) ((560*frame.getWidth())/900);
-	    int lb19_y = (int) ((20*frame.getHeight())/600);
+	    int lb19_x = (int) ((405*frame.getWidth())/900);
+	    int lb19_y = (int) ((19*frame.getHeight())/600);
 	    int lb19_width = (int) ((12*frame.getWidth())/900);
 	    int lb19_height = (int) ((15*frame.getHeight())/600);
-        Custom_Label lab19 = new Custom_Label(lb19_x, lb19_y, lb19_width, lb19_height,"",
-        "Calibri",7,"#b39700");
-        lab19.add_background("Needed images\\save_icon.png");
+	    int lb19_font_size = (int) ((16*frame.getWidth())/900);
+        Custom_Label lab19 = new Custom_Label(lb19_x, lb19_y, lb19_width, lb19_height,"v",
+        "Segoe Print",lb19_font_size,"#000000");
         client_space.space.add(lab19);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // delete account button 
+	    int bt4_x = (int) ((510*frame.getWidth())/900);
+	    int bt4_y = (int) ((11*frame.getHeight())/600);
+	    int bt4_width = (int) ((125*frame.getWidth())/900);
+	    int bt4_height = (int) ((40*frame.getHeight())/600);
+	    int bt4_font_size = (int) ((12*frame.getWidth())/900);
+        Custom_Button delete = new Custom_Button(bt4_x,bt4_y,bt4_width,bt4_height,
+        "Delete Account","#000000","Consolas",bt4_font_size,false);
+        delete.change_style("#C00000","#000000");
+        delete.add_buttom_border(505, 50, 120, "#C00000", frame, client_space.space);
+        client_space.space.add(delete);
+        
+        // label 19 - delete icon
+	    int lb20_x = (int) ((505*frame.getWidth())/900);
+	    int lb20_y = (int) ((20*frame.getHeight())/600);
+	    int lb20_width = (int) ((12*frame.getWidth())/900);
+	    int lb20_height = (int) ((15*frame.getHeight())/600);
+        Custom_Label lab20 = new Custom_Label(lb20_x, lb20_y, lb20_width, lb20_height,"",
+        "Segoe Print",7,"#000000");
+        lab20.add_background("Needed images\\delete_icon.png");
+        client_space.space.add(lab20);
+        
+        
         
         
         

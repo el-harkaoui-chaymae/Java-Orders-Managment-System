@@ -5,10 +5,7 @@ import javax.swing.SwingConstants;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.awt.geom.RoundRectangle2D;
 
-import javax.swing.*;
 import java.awt.*;
 
 import javax.imageio.ImageIO;

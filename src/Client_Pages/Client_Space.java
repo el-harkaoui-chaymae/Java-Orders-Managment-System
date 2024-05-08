@@ -5,35 +5,36 @@ import javax.swing.SwingConstants;
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
-import Graphical_Interface.Custom_Message;
 import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
 
 import Data_Base.Client;
-import General_Pages.Splash_Page;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
-import java.awt.*;
 
 public class Client_Space {
 	
 	// attributes
+	public Custom_Panel space;
+
 	public Custom_Button profile;
 	public Custom_Button products;
 	public Custom_Button purchases;
 	public Custom_Button orders;
 	public Custom_Button favorites;
-	public Custom_Panel space;
-	
+	public Custom_Button settings;
+
+		
 	public Custom_Label labp;
 	public Custom_Label labr;
 	public Custom_Label labpr;
 	public Custom_Label labo;
 	public Custom_Label labf;
 	public Custom_Label labg;
+	public Custom_Label labs;
+
 
 
 
@@ -55,6 +56,23 @@ public class Client_Space {
 	    int pn1_width = (int) ((120*frame.getWidth())/900);
 		Custom_Panel menu = new Custom_Panel(pn1_x,0,pn1_width,frame.getHeight(),"#2F5597");
 		space.add(menu);
+		
+		
+		
+		// label  - menu icon
+	    int lbm_x = (int) ((0*frame.getWidth())/900);
+	    int lbm_y = (int) ((15*frame.getHeight())/600);
+	    int lbm_width = (int) ((30*frame.getWidth())/900);
+	    int lbm_height = (int) ((41*frame.getHeight())/600);
+        Custom_Label labm = new Custom_Label(lbm_x, lbm_y, lbm_width, lbm_height,
+        "","Segoe Print",7,"#2F5597");
+        labm.setBackground(Color.decode("#b7c9e2"));
+        labm.setOpaque(true);
+        labm.add_background("Needed images\\menu_icon.png");
+        menu.add(labm);
+		
+		
+		
 		
 		// label 2 - menu
 	    int lb1_x = (int) ((30*frame.getWidth())/900);
@@ -82,17 +100,7 @@ public class Client_Space {
         menu.add(lab);
         
         
-        // label  - menu icon
-	    int lbm_x = (int) ((0*frame.getWidth())/900);
-	    int lbm_y = (int) ((15*frame.getHeight())/600);
-	    int lbm_width = (int) ((30*frame.getWidth())/900);
-	    int lbm_height = (int) ((41*frame.getHeight())/600);
-        Custom_Label labm = new Custom_Label(lbm_x, lbm_y, lbm_width, lbm_height,
-        "","Segoe Print",7,"#2F5597");
-        labm.setBackground(Color.decode("#b7c9e2"));
-        labm.setOpaque(true);
-        labm.add_background("Needed images\\menu_icon.png");
-        menu.add(labm);
+        
         
         
         
@@ -437,7 +445,8 @@ public class Client_Space {
 		
 		 
         
-       
+        
+   
         
         
         

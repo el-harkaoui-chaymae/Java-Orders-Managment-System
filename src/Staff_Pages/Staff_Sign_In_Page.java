@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.SwingConstants;
 
+import Client_Pages.Client_Sign_In_Page;
 import General_Pages.Splash_Page;
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
@@ -152,6 +153,16 @@ public class Staff_Sign_In_Page {
         "#FFFFFF","Consolas",bt1_font_size,true);
         enter.setRound_shape_variables(35, 35);
         page_panel.add(enter);
+        
+        enter.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+              // remove staff sign in  page
+              frame.getContentPane().removeAll();    
+              // create an instance staff space  page 
+              Staff_Space_Page staff_page = new Staff_Space_Page (frame);                       
+              // refresh the window
+              frame.revalidate();
+              frame.repaint(); }});
         
         
         

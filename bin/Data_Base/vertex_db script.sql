@@ -66,7 +66,7 @@ CREATE TABLE livraison (
     primary key (numerolivraison),
     FOREIGN KEY (numerocommande) REFERENCES commande(numerocommande)
     
-    
+    /
 );
 
 

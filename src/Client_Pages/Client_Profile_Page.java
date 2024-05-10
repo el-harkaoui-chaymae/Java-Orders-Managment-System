@@ -12,6 +12,7 @@ import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
 
+import javax.swing.BorderFactory;
 import javax.swing.border.EmptyBorder;
 
 import Data_Base.Client;
@@ -35,8 +36,7 @@ public class Client_Profile_Page {
 		// create the client space elements
 		Client_Space client_space = new Client_Space(frame);
 		
-
-    	// change profile button background to show that it's clicked
+		// change profile button background to show that it's clicked
     	client_space.profile.setBackground(Color.decode("#002F5E"));
     	client_space.labp.setBackground(Color.decode("#002F5E"));
     	client_space.profile.change_color_background("#002F5E","#002F5E",client_space.labp);

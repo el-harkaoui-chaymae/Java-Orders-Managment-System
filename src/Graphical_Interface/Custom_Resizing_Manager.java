@@ -46,7 +46,8 @@ public class Custom_Resizing_Manager {
 
 	                        // set new parameters for the component
 	                        component.setBounds(0, 0, width_a, height_a);
-	                  
+	                        
+	                
 	                    }}}});
 				
 		}
@@ -168,16 +169,15 @@ public class Custom_Resizing_Manager {
        for (Component component : panel.getComponents()) {
            if (component.getFont() != null) {
            	
-           	Rectangle bounds = component.getBounds();
+           	 Rectangle bounds = component.getBounds();
            	
-           	int width = bounds.width;
-           	float height = bounds.height;
+           	 int width = bounds.width;
        
-           	Font font = component.getFont();
-               int font_size = font.getSize();
+           	 Font font = component.getFont();
+             int font_size = font.getSize();
                                
-               font_size_ratios.add(font_size);
-               font_size_ratios.add(width);}}
+             font_size_ratios.add(font_size);
+             font_size_ratios.add(width);}}
        
        return font_size_ratios;}
 	

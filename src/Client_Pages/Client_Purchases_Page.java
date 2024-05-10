@@ -2,6 +2,8 @@ package Client_Pages;
 
 import java.awt.Color;
 
+import javax.swing.BorderFactory;
+
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Resizing_Manager;
 
@@ -13,7 +15,6 @@ public class Client_Purchases_Page {
 			// create the client space elements
 			Client_Space client_space = new Client_Space(frame);
 					
-
 			// change purchases button background to show that it's clicked
 			client_space.purchases.setBackground(Color.decode("#002F5E"));
 			client_space.labpr.setBackground(Color.decode("#002F5E"));

@@ -18,17 +18,14 @@ import Graphical_Interface.Custom_Resizing_Manager;
 public class Staff_Space {
 	
 	// attributes
+	
 	public Custom_Panel space;
 
-	
-	
 	public Custom_Button stock;
 	public Custom_Button client;
 	public Custom_Button delivery;
 
 
-	
-	
 	public Custom_Label labs;
 	public Custom_Label labr;
 	public Custom_Label labpr;
@@ -36,11 +33,6 @@ public class Staff_Space {
 	
 
 	
-	
-	
-	
-	
-
 
      
 	// constructor
@@ -205,7 +197,7 @@ public class Staff_Space {
         
         
         
-       // label  - delivery icon
+        // label  - delivery icon
 	    int lbpr_x = (int) ((0*frame.getWidth())/900);
 	    int lbpr_y = (int) ((203*frame.getHeight())/600);
 	    int lbpr_width = (int) ((30*frame.getWidth())/900);

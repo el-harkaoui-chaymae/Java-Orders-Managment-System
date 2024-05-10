@@ -18,7 +18,8 @@ public class Custom_ComboBox extends JComboBox<String> {
 
     // constructor
     public Custom_ComboBox(int x, int y, int width, int height,int font_size, String[] options) {
-        // set the comboBox options
+        
+    	// set the comboBox options
         super(options);
 
         // Set default selected option

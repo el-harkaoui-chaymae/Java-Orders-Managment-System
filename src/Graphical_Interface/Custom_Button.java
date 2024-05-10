@@ -16,6 +16,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import javax.swing.BorderFactory;
 
 
 
@@ -170,6 +171,9 @@ public class Custom_Button extends JButton {
     
     
     
+    
+    
+    
     // method to add buttom border
     public void add_buttom_border(int x,int y,int width,String color,Custom_Frame frame,Custom_Panel panel) {
     	
@@ -187,7 +191,7 @@ public class Custom_Button extends JButton {
          	     int lb_height = (int) ((6*frame.getHeight())/600);
          	     lab = new Custom_Label(lb_x, lb_y, lb_width, lb_height,
                  "","Segoe Print",7,"#2F5597");
-         	     lab.create_bottom_border(6,color);
+         	     lab.create_bottom_border(5,color);
                  panel.add(lab);}
 
              public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -196,6 +200,26 @@ public class Custom_Button extends JButton {
                  panel.repaint();
 
              }});}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
     
     
     

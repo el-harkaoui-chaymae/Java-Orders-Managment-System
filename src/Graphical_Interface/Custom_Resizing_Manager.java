@@ -103,12 +103,12 @@ public class Custom_Resizing_Manager {
 		                    if (component.getFont() != null) {
 		                    
 		                        // retrieve font size and surface before resizing 
-		                        float font_size = font_size_ratios.get(k);
+		                        float old_font_size = font_size_ratios.get(k);
 		                        float old_width = font_size_ratios.get(k+1);
 		                        
 
 		                        // determine new font size
-		                        float new_size = (font_size*width_a)/old_width;
+		                        float new_size = (old_font_size*width_a)/old_width;
 		                        
 		                        // set the new font for the component
 		                        Font currentFont = component.getFont();

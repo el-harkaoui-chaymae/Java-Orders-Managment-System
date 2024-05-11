@@ -4,24 +4,18 @@ import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import javax.swing.BorderFactory;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+
 
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
 import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
 import Graphical_Interface.Custom_Text_Field;
+import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_ComboBox;
 import Graphical_Interface.Custom_Table;
-
-
-
-
-
-
-
-
 
 
 
@@ -156,7 +150,7 @@ public class Staff_Stock_Page {
 	    int cell_font_size = (int) ((14*frame.getWidth())/900);
         Custom_Table table = new Custom_Table(frame,x_t, y_t, width_t, height_t, row_column_number, columns_names, 
         columns_names.length, columns_widths, row_height,header_font_size,cell_font_size);
-        
+                
      
         // Add the scroll pane holding the view of the table to the center panel
         center_panel.add(table.scroll_pane);
@@ -164,6 +158,41 @@ public class Staff_Stock_Page {
         
         
 
+        
+        
+        // search button 
+	    int bt4_x = (int) ((676*frame.getWidth())/900);
+	    int bt4_y = (int) ((33*frame.getHeight())/600);
+	    int bt4_width = (int) ((30*frame.getWidth())/900);
+	    int bt4_height = (int) ((35*frame.getHeight())/600);
+        Custom_Button button_search = new Custom_Button(bt4_x,bt4_y,bt4_width,bt4_height,
+        "","#000000","Consolas",7,false);
+        center_panel.add(button_search);
+        
+        
+        // label 17 - search icon
+	    int lb17_x = (int) ((676*frame.getWidth())/900);//520
+	    int lb17_y = (int) ((33*frame.getHeight())/600);
+	    int lb17_width = (int) ((30*frame.getWidth())/900);//25
+	    int lb17_height = (int) ((35*frame.getHeight())/600);//30
+        Custom_Label lab17 = new Custom_Label(lb17_x, lb17_y, lb17_width, lb17_height,"",
+        "Calibri",7,"#b39700");
+        lab17.add_background("Needed images\\search_icon.png");
+        center_panel.add(lab17);
+        
+        
+        // search text_field
+        int x_s = (int) ((547*frame.getWidth())/900);//557
+	    int y_s = (int) ((40*frame.getHeight())/600);
+	    int width_s = (int) ((150*frame.getWidth())/900);
+	    int height_s = (int) ((23*frame.getHeight())/600);
+	    int font_size_s = (int) ((11*frame.getWidth())/900);
+	    Custom_Text_Field search = new Custom_Text_Field(x_s,y_s,width_s,height_s,"Segoe Print",font_size_s,"#000000") ;
+	    search.setText(" search ...");
+	    center_panel.add(search);
+	    
+	    
+        
         
        
         

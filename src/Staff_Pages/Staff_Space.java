@@ -6,9 +6,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.SwingConstants;
 
-import Client_Pages.Client_Products_Page;
-import Client_Pages.Client_Profile_Page;
-import Client_Pages.Client_Purchases_Page;
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
@@ -99,6 +96,31 @@ public class Staff_Space {
         Custom_Label lab4 = new Custom_Label(lb4_x, lb4_y, lb4_width, lb4_height,"","Consolas",7,"#808080");
         lab4.create_bottom_border(1,"#B4B4B4");
         space.add(lab4);
+        
+        
+        
+        // label 5 - user icon
+	    int lb5_x = (int) ((850*frame.getWidth())/900);
+	    int lb5_y = (int) ((20*frame.getHeight())/600);
+	    int lb5_width = (int) ((16*frame.getWidth())/900);
+	    int lb5_height = (int) ((20*frame.getHeight())/600);
+        Custom_Label lab5 = new Custom_Label(lb5_x, lb5_y, lb5_width, lb5_height,"","Consolas",7,"#808080");
+        lab5.add_background("Needed images\\user_on.png");
+        space.add(lab5);
+        
+        
+        
+        // label 6 - administration
+	    int lb6_x = (int) ((633*frame.getWidth())/900);
+	    int lb6_y = (int) ((21*frame.getHeight())/600);
+	    int lb6_width = (int) ((200*frame.getWidth())/900);
+	    int lb6_height = (int) ((20*frame.getHeight())/600);
+	    int lb6_font_size = (int) ((11*frame.getWidth())/900);
+        Custom_Label lab6 = new Custom_Label(lb6_x, lb6_y, lb6_width, lb6_height,"administrative staff",
+        "Segoe Print",lb6_font_size,"#C00000");
+        lab6.setHorizontalAlignment(SwingConstants.RIGHT);
+        space.add(lab6);
+        
         
         
         

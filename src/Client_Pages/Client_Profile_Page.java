@@ -12,7 +12,6 @@ import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
 
-import javax.swing.BorderFactory;
 import javax.swing.border.EmptyBorder;
 
 import Data_Base.Client;

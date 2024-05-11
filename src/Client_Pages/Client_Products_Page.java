@@ -2,8 +2,6 @@ package Client_Pages;
 
 import java.awt.Color;
 
-import javax.swing.BorderFactory;
-
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Resizing_Manager;
 

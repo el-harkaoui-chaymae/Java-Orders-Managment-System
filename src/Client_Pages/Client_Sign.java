@@ -2,7 +2,6 @@ package Client_Pages;
 
 import Graphical_Interface.Custom_Label;
 import Graphical_Interface.Custom_Panel;
-import Graphical_Interface.Custom_Resizing_Manager;
 import Graphical_Interface.Custom_Frame;
 
 

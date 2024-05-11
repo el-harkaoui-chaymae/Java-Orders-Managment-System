@@ -3,7 +3,6 @@ package Staff_Pages;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
 import Graphical_Interface.Custom_Resizing_Manager;
-import Client_Pages.Client_Space;
 
 public class Staff_Space_Page {
 

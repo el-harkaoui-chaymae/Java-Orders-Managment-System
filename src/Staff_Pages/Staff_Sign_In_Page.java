@@ -95,7 +95,7 @@ public class Staff_Sign_In_Page {
         left_panel.add(lab3);
         
         // user icon
-	    int lb4_x = (int) ((580*frame.getWidth())/900);
+	    int lb4_x = (int) ((573*frame.getWidth())/900);
 	    int lb4_y = (int) ((50*frame.getHeight())/600);
 	    int lb4_width = (int) ((80*frame.getWidth())/900);
 	    int lb4_height = (int) ((100*frame.getHeight())/600);
@@ -121,7 +121,7 @@ public class Staff_Sign_In_Page {
         
         // label 5 - enter the system password
 	    int lb6_x = (int) ((494*frame.getWidth())/900);
-	    int lb6_y = (int) ((195*frame.getHeight())/600);
+	    int lb6_y = (int) ((205*frame.getHeight())/600);
 	    int lb6_width = (int) ((200*frame.getWidth())/900);
 	    int lb6_height = (int) ((100*frame.getHeight())/600);
 	    int lb6_font_size = (int) ((12*frame.getWidth())/900);
@@ -132,7 +132,7 @@ public class Staff_Sign_In_Page {
         
         // password text field
         int x_m = (int) ((494*frame.getWidth())/900);
-	    int y_m = (int) ((260*frame.getHeight())/600);
+	    int y_m = (int) ((270*frame.getHeight())/600);
 	    int width_m = (int) ((250*frame.getWidth())/900);
 	    int height_m = (int) ((23*frame.getHeight())/600);
 	    int font_size_m = (int) ((11*frame.getWidth())/900);
@@ -144,7 +144,7 @@ public class Staff_Sign_In_Page {
 	    
 	    // enter button
         int bt1_x = (int) ((494*frame.getWidth())/900);
-	    int bt1_y = (int) ((315*frame.getHeight())/600);
+	    int bt1_y = (int) ((325*frame.getHeight())/600);
 	    int bt1_width = (int) ((250*frame.getWidth())/900);
 	    int bt1_height = (int) ((30*frame.getHeight())/600);
 	    int bt1_font_size = (int) ((12*frame.getWidth())/900);

@@ -96,7 +96,7 @@ public class Client_Profile_Page {
         
         // label 2 - first name
 	    int lb2_x = (int) ((10*frame.getWidth())/900);
-	    int lb2_y = (int) ((55*frame.getHeight())/600);
+	    int lb2_y = (int) ((65*frame.getHeight())/600);
 	    int lb2_width = (int) ((200*frame.getWidth())/900);
 	    int lb2_height = (int) ((30*frame.getHeight())/600);
 	    int lb2_font_size = (int) ((12*frame.getWidth())/900);
@@ -107,7 +107,7 @@ public class Client_Profile_Page {
         
         // first name text field
         int x_f = (int) ((100*frame.getWidth())/900);
-	    int y_f = (int) ((58*frame.getHeight())/600);
+	    int y_f = (int) ((68*frame.getHeight())/600);
 	    int width_f = (int) ((200*frame.getWidth())/900);
 	    int height_f = (int) ((23*frame.getHeight())/600);
 	    int font_size_f = (int) ((11*frame.getWidth())/900);
@@ -126,7 +126,7 @@ public class Client_Profile_Page {
 	    
 	    // label 3 - second name
 	    int lb3_x = (int) ((10*frame.getWidth())/900);
-	    int lb3_y = (int) ((85*frame.getHeight())/600);
+	    int lb3_y = (int) ((95*frame.getHeight())/600);
 	    int lb3_width = (int) ((200*frame.getWidth())/900);
 	    int lb3_height = (int) ((30*frame.getHeight())/600);
 	    int lb3_font_size = (int) ((12*frame.getWidth())/900);
@@ -137,7 +137,7 @@ public class Client_Profile_Page {
         
         // second name text field
         int x_s = (int) ((100*frame.getWidth())/900);
-	    int y_s = (int) ((88*frame.getHeight())/600);
+	    int y_s = (int) ((98*frame.getHeight())/600);
 	    int width_s = (int) ((200*frame.getWidth())/900);
 	    int height_s = (int) ((23*frame.getHeight())/600);
 	    int font_size_s = (int) ((11*frame.getWidth())/900);
@@ -157,7 +157,7 @@ public class Client_Profile_Page {
 	    
 	    // label 4 - mail
 	    int lb4_x = (int) ((10*frame.getWidth())/900);
-	    int lb4_y = (int) ((115*frame.getHeight())/600);
+	    int lb4_y = (int) ((125*frame.getHeight())/600);
 	    int lb4_width = (int) ((200*frame.getWidth())/900);
 	    int lb4_height = (int) ((30*frame.getHeight())/600);
 	    int lb4_font_size = (int) ((12*frame.getWidth())/900);
@@ -168,7 +168,7 @@ public class Client_Profile_Page {
         
         // mail adress text field
         int x_m = (int) ((100*frame.getWidth())/900);
-	    int y_m = (int) ((118*frame.getHeight())/600);
+	    int y_m = (int) ((128*frame.getHeight())/600);
 	    int width_m = (int) ((200*frame.getWidth())/900);
 	    int height_m = (int) ((23*frame.getHeight())/600);
 	    int font_size_m = (int) ((11*frame.getWidth())/900);
@@ -187,7 +187,7 @@ public class Client_Profile_Page {
 	    
 	    // label 5 - password
 	    int lb5_x = (int) ((10*frame.getWidth())/900);
-	    int lb5_y = (int) ((145*frame.getHeight())/600);
+	    int lb5_y = (int) ((155*frame.getHeight())/600);
 	    int lb5_width = (int) ((200*frame.getWidth())/900);
 	    int lb5_height = (int) ((30*frame.getHeight())/600);
 	    int lb5_font_size = (int) ((12*frame.getWidth())/900);
@@ -198,7 +198,7 @@ public class Client_Profile_Page {
         
         // password text field
         int x_p = (int) ((100*frame.getWidth())/900);
-	    int y_p = (int) ((148*frame.getHeight())/600);
+	    int y_p = (int) ((158*frame.getHeight())/600);
 	    int width_p = (int) ((200*frame.getWidth())/900);
 	    int height_p = (int) ((23*frame.getHeight())/600);
 	    int font_size_p = (int) ((11*frame.getWidth())/900);
@@ -245,7 +245,7 @@ public class Client_Profile_Page {
         
         // label 7 - phone number
 	    int lb7_x = (int) ((10*frame.getWidth())/900);
-	    int lb7_y = (int) ((55*frame.getHeight())/600);
+	    int lb7_y = (int) ((65*frame.getHeight())/600);
 	    int lb7_width = (int) ((200*frame.getWidth())/900);
 	    int lb7_height = (int) ((30*frame.getHeight())/600);
 	    int lb7_font_size = (int) ((12*frame.getWidth())/900);
@@ -255,7 +255,7 @@ public class Client_Profile_Page {
         
         // phone number text field
         int x_n = (int) ((110*frame.getWidth())/900);
-	    int y_n = (int) ((58*frame.getHeight())/600);
+	    int y_n = (int) ((68*frame.getHeight())/600);
 	    int width_n = (int) ((200*frame.getWidth())/900);
 	    int height_n = (int) ((23*frame.getHeight())/600);
 	    int font_size_n = (int) ((11*frame.getWidth())/900);
@@ -274,7 +274,7 @@ public class Client_Profile_Page {
 	    
 	    // label 8 - city
 	    int lb8_x = (int) ((10*frame.getWidth())/900);
-	    int lb8_y = (int) ((85*frame.getHeight())/600);
+	    int lb8_y = (int) ((95*frame.getHeight())/600);
 	    int lb8_width = (int) ((200*frame.getWidth())/900);
 	    int lb8_height = (int) ((30*frame.getHeight())/600);
 	    int lb8_font_size = (int) ((12*frame.getWidth())/900);
@@ -284,7 +284,7 @@ public class Client_Profile_Page {
         
         // city text field
         int x_c = (int) ((110*frame.getWidth())/900);
-	    int y_c = (int) ((88*frame.getHeight())/600);
+	    int y_c = (int) ((98*frame.getHeight())/600);
 	    int width_c = (int) ((200*frame.getWidth())/900);
 	    int height_c = (int) ((23*frame.getHeight())/600);
 	    int font_size_c = (int) ((11*frame.getWidth())/900);
@@ -303,7 +303,7 @@ public class Client_Profile_Page {
 	    
 	    // label 9 - adress
 	    int lb9_x = (int) ((10*frame.getWidth())/900);
-	    int lb9_y = (int) ((115*frame.getHeight())/600);
+	    int lb9_y = (int) ((125*frame.getHeight())/600);
 	    int lb9_width = (int) ((200*frame.getWidth())/900);
 	    int lb9_height = (int) ((30*frame.getHeight())/600);
 	    int lb9_font_size = (int) ((12*frame.getWidth())/900);
@@ -314,7 +314,7 @@ public class Client_Profile_Page {
         
         // adress text field
         int x_a = (int) ((110*frame.getWidth())/900);
-	    int y_a = (int) ((118*frame.getHeight())/600);
+	    int y_a = (int) ((128*frame.getHeight())/600);
 	    int width_a = (int) ((200*frame.getWidth())/900);
 	    int height_a = (int) ((23*frame.getHeight())/600);
 	    int font_size_a = (int) ((11*frame.getWidth())/900);
@@ -360,7 +360,7 @@ public class Client_Profile_Page {
         
         // label 11 - birth date
 	    int lb11_x = (int) ((10*frame.getWidth())/900);
-	    int lb11_y = (int) ((55*frame.getHeight())/600);
+	    int lb11_y = (int) ((75*frame.getHeight())/600);
 	    int lb11_width = (int) ((200*frame.getWidth())/900);
 	    int lb11_height = (int) ((30*frame.getHeight())/600);
 	    int lb11_font_size = (int) ((12*frame.getWidth())/900);
@@ -371,7 +371,7 @@ public class Client_Profile_Page {
         
         // birth date text field
         int x_b = (int) ((120*frame.getWidth())/900);
-	    int y_b = (int) ((58*frame.getHeight())/600);
+	    int y_b = (int) ((78*frame.getHeight())/600);
 	    int width_b = (int) ((100*frame.getWidth())/900);
 	    int height_b = (int) ((23*frame.getHeight())/600);
 	    int font_size_b = (int) ((11*frame.getWidth())/900);
@@ -391,7 +391,7 @@ public class Client_Profile_Page {
 	    
 	    // label 12 - gender
 	    int lb12_x = (int) ((255*frame.getWidth())/900);
-	    int lb12_y = (int) ((55*frame.getHeight())/600);
+	    int lb12_y = (int) ((75*frame.getHeight())/600);
 	    int lb12_width = (int) ((200*frame.getWidth())/900);
 	    int lb12_height = (int) ((30*frame.getHeight())/600);
 	    int lb12_font_size = (int) ((12*frame.getWidth())/900);
@@ -402,7 +402,7 @@ public class Client_Profile_Page {
         
         // gender text field
         int x_g = (int) ((360*frame.getWidth())/900);
-	    int y_g = (int) ((58*frame.getHeight())/600);
+	    int y_g = (int) ((78*frame.getHeight())/600);
 	    int width_g = (int) ((100*frame.getWidth())/900);
 	    int height_g = (int) ((23*frame.getHeight())/600);
 	    int font_size_g = (int) ((11*frame.getWidth())/900);
@@ -421,7 +421,7 @@ public class Client_Profile_Page {
 	    
 	    // label 13 - nationality
 	    int lb13_x = (int) ((480*frame.getWidth())/900);
-	    int lb13_y = (int) ((55*frame.getHeight())/600);
+	    int lb13_y = (int) ((75*frame.getHeight())/600);
 	    int lb13_width = (int) ((200*frame.getWidth())/900);
 	    int lb13_height = (int) ((30*frame.getHeight())/600);
 	    int lb13_font_size = (int) ((12*frame.getWidth())/900);
@@ -431,7 +431,7 @@ public class Client_Profile_Page {
         
         // nationality text field
         int x_t = (int) ((590*frame.getWidth())/900);
-	    int y_t = (int) ((58*frame.getHeight())/600);
+	    int y_t = (int) ((78*frame.getHeight())/600);
 	    int width_t = (int) ((100*frame.getWidth())/900);
 	    int height_t = (int) ((23*frame.getHeight())/600);
 	    int font_size_t = (int) ((11*frame.getWidth())/900);
@@ -450,7 +450,7 @@ public class Client_Profile_Page {
 	    
 	    // label 14 - educational level
 	    int lb14_x = (int) ((10*frame.getWidth())/900);
-	    int lb14_y = (int) ((95*frame.getHeight())/600);
+	    int lb14_y = (int) ((115*frame.getHeight())/600);
 	    int lb14_width = (int) ((200*frame.getWidth())/900);
 	    int lb14_height = (int) ((30*frame.getHeight())/600);
 	    int lb14_font_size = (int) ((12*frame.getWidth())/900);
@@ -460,7 +460,7 @@ public class Client_Profile_Page {
          
         // education level text field
         int x_e = (int) ((120*frame.getWidth())/900);
-	    int y_e = (int) ((98*frame.getHeight())/600);
+	    int y_e = (int) ((118*frame.getHeight())/600);
 	    int width_e = (int) ((100*frame.getWidth())/900);
 	    int height_e = (int) ((23*frame.getHeight())/600);
 	    int font_size_e = (int) ((11*frame.getWidth())/900);
@@ -480,7 +480,7 @@ public class Client_Profile_Page {
 	    
 	    // label 15 - low income
 	    int lb15_x = (int) ((255*frame.getWidth())/900);
-	    int lb15_y = (int) ((95*frame.getHeight())/600);
+	    int lb15_y = (int) ((115*frame.getHeight())/600);
 	    int lb15_width = (int) ((200*frame.getWidth())/900);
 	    int lb15_height = (int) ((30*frame.getHeight())/600);
 	    int lb15_font_size = (int) ((12*frame.getWidth())/900);
@@ -490,7 +490,7 @@ public class Client_Profile_Page {
         
         // low income text field
         int x_l = (int) ((360*frame.getWidth())/900);
-	    int y_l = (int) ((98*frame.getHeight())/600);
+	    int y_l = (int) ((118*frame.getHeight())/600);
 	    int width_l = (int) ((100*frame.getWidth())/900);
 	    int height_l = (int) ((23*frame.getHeight())/600);
 	    int font_size_l = (int) ((11*frame.getWidth())/900);
@@ -511,7 +511,7 @@ public class Client_Profile_Page {
 	    
 	    // label 16 - high income
 	    int lb16_x = (int) ((480*frame.getWidth())/900);
-	    int lb16_y = (int) ((95*frame.getHeight())/600);
+	    int lb16_y = (int) ((115*frame.getHeight())/600);
 	    int lb16_width = (int) ((200*frame.getWidth())/900);
 	    int lb16_height = (int) ((30*frame.getHeight())/600);
 	    int lb16_font_size = (int) ((12*frame.getWidth())/900);
@@ -522,7 +522,7 @@ public class Client_Profile_Page {
         
         // high income text field
         int x_h = (int) ((590*frame.getWidth())/900);
-	    int y_h = (int) ((98*frame.getHeight())/600);
+	    int y_h = (int) ((118*frame.getHeight())/600);
 	    int width_h = (int) ((100*frame.getWidth())/900);
 	    int height_h = (int) ((23*frame.getHeight())/600);
 	    int font_size_h = (int) ((11*frame.getWidth())/900);
@@ -536,9 +536,13 @@ public class Client_Profile_Page {
         
        
 	    
+	    
+	    
+	    
+	    
 	    // top bar buttons
 	    
-	    
+	    String btn_color = "#0496C7" ;
 	    
 	    // edit button 
 	    int bt1_x = (int) ((170*frame.getWidth())/900);
@@ -548,8 +552,8 @@ public class Client_Profile_Page {
 	    int bt1_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button edit = new Custom_Button(bt1_x,bt1_y,bt1_width,bt1_height,
         "Edit","#000000","Consolas",bt1_font_size,false);
-        edit.change_style("#C00000","#000000");
-        edit.add_buttom_border(182, 50, 55, "#C00000", frame, client_space.space);
+        edit.change_style(btn_color,"#000000");
+        edit.add_buttom_border(182, 50, 55, btn_color, frame, client_space.space);
         client_space.space.add(edit);
         
         String color = "#56AE57";
@@ -623,8 +627,8 @@ public class Client_Profile_Page {
 	    int bt2_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button cancel = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,
         "Cancel","#000000","Consolas",bt2_font_size,false);
-        cancel.change_style("#C00000","#000000");
-        cancel.add_buttom_border(292, 50, 60, "#C00000", frame, client_space.space);
+        cancel.change_style(btn_color,"#000000");
+        cancel.add_buttom_border(292, 50, 60, btn_color, frame, client_space.space);
         client_space.space.add(cancel);
         
         String original_color = "#b39700";
@@ -713,8 +717,8 @@ public class Client_Profile_Page {
 	    int bt3_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button save = new Custom_Button(bt3_x,bt3_y,bt3_width,bt3_height,
         "Save","#000000","Consolas",bt3_font_size,false);
-        save.change_style("#C00000","#000000");
-        save.add_buttom_border(402, 50, 55, "#C00000", frame, client_space.space);
+        save.change_style(btn_color,"#000000");
+        save.add_buttom_border(402, 50, 55, btn_color, frame, client_space.space);
         client_space.space.add(save);
         
         // action
@@ -836,11 +840,11 @@ public class Client_Profile_Page {
 	    int bt4_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button delete = new Custom_Button(bt4_x,bt4_y,bt4_width,bt4_height,
         "Delete Account","#000000","Consolas",bt4_font_size,false);
-        delete.change_style("#C00000","#000000");
-        delete.add_buttom_border(505, 50, 120, "#C00000", frame, client_space.space);
+        delete.change_style(btn_color,"#000000");
+        delete.add_buttom_border(505, 50, 120, btn_color, frame, client_space.space);
         client_space.space.add(delete);
         
-        // label 19 - delete icon
+        // label 20 - delete icon
 	    int lb20_x = (int) ((505*frame.getWidth())/900);
 	    int lb20_y = (int) ((20*frame.getHeight())/600);
 	    int lb20_width = (int) ((12*frame.getWidth())/900);

@@ -4,11 +4,13 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
 
-import javax.swing.BorderFactory;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.BorderFactory;
+import javax.swing.JTextArea;
 
-public class Custom_Text_Field extends JTextField {
+public class Custom_Text_Area extends JTextArea{
+	
+	
 
     // attributes
     public int x;
@@ -20,7 +22,7 @@ public class Custom_Text_Field extends JTextField {
     String color;
 
     // constructor
-    public Custom_Text_Field(int x, int y, int width, int height, String font, int font_size, String color) {
+    public Custom_Text_Area(int x, int y, int width, int height, String font, int font_size, String color) {
         
         // size and position
         this.setBounds(x, y, width, height);
@@ -28,15 +30,28 @@ public class Custom_Text_Field extends JTextField {
         // cursor
         this.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
         
-        // text alignment
-        this.setHorizontalAlignment(SwingConstants.LEFT);
+        
         
         // text color
         this.setForeground(Color.decode(color));
         
         // text font
-        this.setFont(new Font(font, Font.PLAIN, font_size));  
+        this.setFont(new Font(font, Font.PLAIN, font_size));
+        
+        
+        // Enable line wrapping
+	    this.setLineWrap(true);
+	    
+	    // Wrap at word boundaries
+	    this.setWrapStyleWord(true); 
+
+	    // Set background color 
+	    this.setBackground(Color.WHITE); 
+	    
+	    // Set border
+	    this.setBorder(BorderFactory.createLineBorder(Color.decode("#999999")));  
         
         
     }
+
 }

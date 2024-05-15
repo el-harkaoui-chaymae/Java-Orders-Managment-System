@@ -6,7 +6,11 @@ import javax.swing.SwingConstants;
 import java.io.File;
 import java.io.IOException;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.Graphics;
+
+
 
 import javax.imageio.ImageIO;
 

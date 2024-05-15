@@ -224,7 +224,7 @@ public class Staff_Space {
 	    int bt4_height = (int) ((40*frame.getHeight())/600);
 	    int bt4_font_size = (int) ((12*frame.getWidth())/900);
         new_product = new Custom_Button(bt4_x,bt4_y,bt4_width,bt4_height,
-        "New Product","#FFFFFF",font,bt4_font_size,false);
+        "Product","#FFFFFF",font,bt4_font_size,false);
         new_product.setBackground(Color.decode("#002F5E"));
         new_product.setOpaque(true);
         new_product.change_style("#b39700","#FFFFFF");

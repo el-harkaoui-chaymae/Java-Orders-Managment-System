@@ -66,7 +66,7 @@ public class Client implements Table_Management{
 	
 	
 	
-	// override the method add to insert new client
+	// the method add to insert new client
 	@Override
 	public void add() {
 		        
@@ -108,6 +108,10 @@ public class Client implements Table_Management{
 		
 	}
 	
+	
+	
+
+	// --------------------------------------------------------------------------------------------------------------
 	
 	
 	
@@ -155,7 +159,7 @@ public class Client implements Table_Management{
 	
 	
 	
-	
+	//-----------------------------------------------------------------------------------------
 	
 	
 	// setter for client id
@@ -167,10 +171,10 @@ public class Client implements Table_Management{
 	
 	
 	
+	// ------------------------------------------------------------------------------------------
 	
 	
-	
-	// override the method modify
+	// the method modify
 	@Override
 	public void modify() {
 		
@@ -253,11 +257,11 @@ public class Client implements Table_Management{
 		
 		
 		
-	
+	// ---------------------------------------------------------------------------------
 	
 	
 
-    // override the method delete
+    // the method delete
 	@Override
 	public void delete() {}
 	
@@ -268,12 +272,12 @@ public class Client implements Table_Management{
 	
 	
 	
+	// ----------------------------------------------------------------------------------
 	
 	
 	
 	
-	
-	// override the method check_existance to see if a client already exists 
+	// the method check_existance to see if a client already exists 
 	@Override
 	public boolean check_existance(int parameter_number) {
 		
@@ -342,13 +346,13 @@ public class Client implements Table_Management{
 	
 	
 	
+	// ------------------------------------------------------------------------
 	
 	
 	
 	
 	
-	
-	// override the method get informations to get the client proprieties
+	// the method get informations to get the client proprieties
 	@Override
 	public String[] get_informations() {
 		

@@ -62,9 +62,10 @@ public class Custom_Table extends JTable{
 
         
         
-        // diseable auto resizing
+        // diseable auto resizing and writing
         this.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        this.setEnabled(true);
+        this.setEnabled(false);
+        
         
         
         // row height
@@ -96,7 +97,6 @@ public class Custom_Table extends JTable{
                 
                 if (isSelected) {
                     setBackground(table.getSelectionBackground());
-                    setForeground(table.getSelectionForeground());
                 }
                 return this;
             }};

@@ -70,7 +70,7 @@ public class Staff_New_Product_Page {
 	    // ---- product photo 1
 	    
 	    
-	    // product photo label
+	    // product photo_1 label
 	    int lb1_x = (int) ((100*frame.getWidth())/900);
 	    int lb1_y = (int) ((10*frame.getHeight())/600);
 	    int lb1_width = (int) ((120*frame.getWidth())/900);
@@ -108,8 +108,9 @@ public class Staff_New_Product_Page {
                         
                          image_1 = ImageIO.read(selected_file_1);
                         lab1.setIcon(new ImageIcon(image_1.getScaledInstance(lab1.getWidth(),
-                        		                   lab1.getHeight(), Image.SCALE_SMOOTH)));}
-                     catch (Exception ex) {
+                        lab1.getHeight(), Image.SCALE_SMOOTH)));}
+                     
+                	catch (Exception ex) {
                         ex.printStackTrace();
                     }}}});
         
@@ -126,7 +127,7 @@ public class Staff_New_Product_Page {
 	    
 	    
 
-	    // product photo 2 label
+	    // product photo_2 label
 	    int lb2_x = (int) ((300*frame.getWidth())/900);
 	    int lb2_y = (int) ((10*frame.getHeight())/600);
 	    int lb2_width = (int) ((120*frame.getWidth())/900);
@@ -166,8 +167,9 @@ public class Staff_New_Product_Page {
                         
                         image_2 = ImageIO.read(selected_file_2);
                         lab2.setIcon(new ImageIcon(image_2.getScaledInstance(lab2.getWidth(),
-                        		                   lab2.getHeight(), Image.SCALE_SMOOTH)));}
-                     catch (Exception ex) {
+                        lab2.getHeight(), Image.SCALE_SMOOTH)));}
+                     
+                	catch (Exception ex) {
                         ex.printStackTrace();
                     }}}});
         
@@ -180,7 +182,7 @@ public class Staff_New_Product_Page {
 	    
 	    
 
-	    // product photo 3 label
+	    // product photo_3 label
 	    int lb3_x = (int) ((500*frame.getWidth())/900);
 	    int lb3_y = (int) ((10*frame.getHeight())/600);
 	    int lb3_width = (int) ((120*frame.getWidth())/900);
@@ -220,8 +222,9 @@ public class Staff_New_Product_Page {
                         
                          image_3 = ImageIO.read(selected_file_3);
                          lab3.setIcon(new ImageIcon(image_3.getScaledInstance(lab3.getWidth(),
-                        		                   lab3.getHeight(), Image.SCALE_SMOOTH)));}
-                     catch (Exception ex) {
+                         lab3.getHeight(), Image.SCALE_SMOOTH)));}
+                     
+                	catch (Exception ex) {
                         ex.printStackTrace();
                     }}}});
         
@@ -580,7 +583,7 @@ public class Staff_New_Product_Page {
             	
             	// the first photo should not be null
             	if(selected_file_1 == null) {
-            		
+            		empty = true;
             		// raise a message
                 	Custom_Message message = new Custom_Message(65,140,"Needed Images\\x_icon.png","Empty Photo",
                             "Please Dropp the first Photo");}
@@ -605,6 +608,10 @@ public class Staff_New_Product_Page {
                 	
                 	// insert the new product in the table produit
                 	new_product.add();
+                	
+                	// raise a message
+                	new Custom_Message(130,140,"Needed Images\\verification_icon.png",
+                	"Succussful Insertion","Product Added");
                     
             	}}});
 

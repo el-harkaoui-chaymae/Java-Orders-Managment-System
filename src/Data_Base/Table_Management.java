@@ -18,8 +18,8 @@ interface Table_Management {
 	boolean check_existance(int parameter_number);
 	
 	
-	// abstarct method to get an element information
-	String [] get_informations();
+	// abstarct method to get an element attributes
+	Object [] get_informations();
 	
 
 }

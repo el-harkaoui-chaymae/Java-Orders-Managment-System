@@ -362,9 +362,9 @@ public class Staff_Stock_Page {
 
         
 
-   	 // cancel button action
-   	 cancel.addActionListener(new ActionListener() {
-   	     public void actionPerformed(ActionEvent e) {
+   	    // cancel button action
+   	    cancel.addActionListener(new ActionListener() {
+   	       public void actionPerformed(ActionEvent e) {
    	         
    	    	 // if we did not changes yet
    	    	 if(changes_saved == false) {

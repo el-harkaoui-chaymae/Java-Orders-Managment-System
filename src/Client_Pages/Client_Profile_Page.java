@@ -540,7 +540,9 @@ public class Client_Profile_Page {
 	    
 	    
 	    
-	    // top bar buttons
+	    // ----  top bar buttons
+	    
+	    
 	    
 	    String btn_color = "#0496C7" ;
 	    

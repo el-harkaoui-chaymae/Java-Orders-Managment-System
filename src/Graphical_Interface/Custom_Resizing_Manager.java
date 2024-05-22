@@ -54,7 +54,7 @@ public class Custom_Resizing_Manager {
 		
 		
 		// handle panel resizing
-		if (container instanceof JPanel) {
+		if (container instanceof JPanel ) {
 			
 			JPanel conTainer = (JPanel) container;
 			
@@ -135,6 +135,7 @@ public class Custom_Resizing_Manager {
         for (Component component : components) {
             Rectangle bounds = component.getBounds();
             
+            
             // panel parameters before resizing
             float width_fb = panel.getWidth();
             float height_fb = panel.getHeight();
@@ -159,6 +160,11 @@ public class Custom_Resizing_Manager {
 
 
             return position_size_ratios;}
+    
+    
+    
+   
+    
     
     
     

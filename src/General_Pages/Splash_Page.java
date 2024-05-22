@@ -159,9 +159,9 @@ public class Splash_Page  {
         
         
         // handle resizing
-        Custom_Resizing_Manager resize_1 = new Custom_Resizing_Manager(frame);
-        Custom_Resizing_Manager resize_2 = new Custom_Resizing_Manager(splash);
-        Custom_Resizing_Manager resize_3 = new Custom_Resizing_Manager(bar); 
+        new Custom_Resizing_Manager(frame);
+        new Custom_Resizing_Manager(splash);
+        new Custom_Resizing_Manager(bar); 
 
 		
 		

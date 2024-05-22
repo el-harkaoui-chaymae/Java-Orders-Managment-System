@@ -106,11 +106,18 @@ public class Staff_Product_Details_Page {
                 lab1.setIcon(new ImageIcon(ImageIO.read(photo_1).getScaledInstance(lab1.getWidth(),
                 lab1.getHeight(), Image.SCALE_SMOOTH)));}
           
-      	catch (Exception ex) { ex.printStackTrace();}}
+      	    catch (Exception ex) { ex.printStackTrace();}}
     	
         
         
-        // product photo_2 label
+        
+    	
+    	
+    	
+    	
+    	
+    	
+    	// product photo_2 label
 	    int lb2_x = (int) ((40*frame.getWidth())/900);
 	    int lb2_y = (int) ((18*frame.getHeight())/600);
 	    int lb2_width = (int) ((120*frame.getWidth())/900);
@@ -132,6 +139,13 @@ public class Staff_Product_Details_Page {
                   lab2.getHeight(), Image.SCALE_SMOOTH)));}
             
         	catch (Exception ex) { ex.printStackTrace();} }
+        
+        
+        
+        
+        
+       
+        
         
         
         

@@ -102,6 +102,16 @@ CREATE TABLE commande_produit (
 );
 
 
+
+
+
+
+
+
+
+
+
+
 -- Table Facture
 
 CREATE TABLE Facture (
@@ -125,6 +135,28 @@ CREATE TABLE message (
     FOREIGN KEY (numeroclient) REFERENCES client(numeroclient)
     
 );
+
+
+use vertex_db;
+
+-- Table panier
+
+CREATE TABLE panier (
+    numeropanier INT NOT NULL AUTO_INCREMENT,
+    numeroclient INT NOT NULL,
+    numeroproduit INT NOT NULL,
+    quantite_produit INT NOT NULL DEFAULT 1,
+    PRIMARY KEY (numeropanier),
+    CONSTRAINT fk_panier_produit
+    FOREIGN KEY (numeroclient) REFERENCES client(numeroclient),
+    FOREIGN KEY (numeroproduit) REFERENCES produit(numeroproduit)
+    ON DELETE CASCADE
+);
+
+
+
+
+
 
 
 

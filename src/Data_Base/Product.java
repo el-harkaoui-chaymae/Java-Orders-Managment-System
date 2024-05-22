@@ -10,6 +10,8 @@ import java.io.InputStream;
 import java.io.FileNotFoundException;
 
 import java.util.ArrayList;
+import java.util.Random;
+
 
 
 
@@ -349,7 +351,8 @@ public class Product implements Table_Management{
     
     // a method to search a product
     public ArrayList<Object[]> search_product() {
-        Connection connection = null;
+        
+    	Connection connection = null;
         PreparedStatement prepared_search = null;
         ResultSet resultSet = null;
         ArrayList<Object[]> search_result = new ArrayList<>();
@@ -495,7 +498,169 @@ public class Product implements Table_Management{
     
     
     
+
+    // ------------------------------------------------------------------------------------------------
     
+    
+    
+    // method to count the total number of products
+    public int products_total_number() {
+    	
+    	
+    	Connection connection = null;
+        PreparedStatement prepared_selection = null;
+        ResultSet resultSet = null;
+        int products_total_number = 0;
+        
+        
+        try {
+            // establish a connection with the database server
+            connection = Database_Connector.getConnection();
+            
+            // the select statement
+            String select_query = "SELECT COUNT(*) AS total_number FROM produit";
+            
+            // prepare the selection query
+            prepared_selection = connection.prepareStatement(select_query);
+             
+            // execute selection query
+            resultSet = prepared_selection.executeQuery();
+            
+            // Iterate through the ResultSet 
+            if (resultSet.next()) {
+            	
+            	products_total_number = resultSet.getInt("total_number"); }
+       
+        
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) resultSet.close();
+                if (prepared_selection != null) prepared_selection.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        return products_total_number;
+    	
+    	
+    	
+    	
+    	
+    }
+    
+    
+    
+    
+    
+    // -----------------------------------------------------------------------------
+    
+    
+    
+    // a method to get the names and the first photos of 5 random products
+    public ArrayList<Object[]> get_4_random_products(){
+    	
+    	
+    	// generate 5 random numbers between 0 and products total number
+        Random random = new Random();
+        int index_1 = random.nextInt(this.products_total_number());
+        int index_2 = random.nextInt(this.products_total_number());
+        int index_3 = random.nextInt(this.products_total_number());
+        int index_4 = random.nextInt(this.products_total_number());
+        
+        
+        // ensure index_2 and index_3 are different from index_1
+        while (index_2 == index_1) {
+            
+        	index_2 = random.nextInt(this.products_total_number());}
+        
+    
+        while (index_3 == index_1 || index_3 == index_2) {
+            
+        	index_3 = random.nextInt(this.products_total_number());}
+        
+        while (index_4 == index_1 || index_4 == index_2|| index_4 == index_3) {
+            
+        	index_4 = random.nextInt(this.products_total_number());}
+
+        
+    	Connection connection = null;
+        PreparedStatement prepared_selection = null;
+        ResultSet resultSet = null;
+        ArrayList<Object[]> selection_result = new ArrayList<>();        
+        
+        try {
+            
+        	// establish a connection with the database server
+            connection = Database_Connector.getConnection();
+            
+            // the select statement
+            String select_query = "(SELECT * FROM produit ORDER BY numeroproduit LIMIT 1 OFFSET " + (index_1) + ") " +
+                                   "UNION ALL " +
+                                   "(SELECT * FROM produit ORDER BY numeroproduit LIMIT 1 OFFSET " + (index_2) + ") " +
+                                   "UNION ALL " +
+                                   "(SELECT * FROM produit ORDER BY numeroproduit LIMIT 1 OFFSET " + (index_3) + ")"+
+                                   "UNION ALL " +
+                                   "(SELECT * FROM produit ORDER BY numeroproduit LIMIT 1 OFFSET " + (index_4) + ")";
+                                   
+            
+            // prepare the selection query
+            prepared_selection = connection.prepareStatement(select_query);
+             
+            // execute selection query
+            resultSet = prepared_selection.executeQuery();
+            
+            // Iterate through the ResultSet 
+            while (resultSet.next()) {
+            	
+            	// get and store infos
+			    
+			    String product_name = resultSet.getString("nom_produit");
+			    InputStream photo_1 = resultSet.getBinaryStream("photo_1");
+			    
+			    
+			    // anarray to store the data for this row
+			    Object[] row_data = new Object[2];
+			    
+			    // Set the values in the rowData arra
+			    row_data[0] = product_name; 
+			    row_data[1] = photo_1;
+			    
+			    
+			    // add the row data array to the infos ArrayList
+			    selection_result.add(row_data);
+            	
+            	 }
+       
+        
+        } catch (SQLException e) {
+            e.printStackTrace();
+        
+        } finally {
+            try {
+                if (resultSet != null) resultSet.close();
+                if (prepared_selection != null) prepared_selection.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        return selection_result;
+    	
+  	
+    }
+    
+    	
+    	
+    	
+    	
+    	
+    	
+    	
     
     
     

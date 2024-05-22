@@ -470,7 +470,7 @@ public class Staff_Space {
         
         
         // handle resizing
-        Custom_Resizing_Manager resize_3 = new Custom_Resizing_Manager(menu);
+        new Custom_Resizing_Manager(menu);
 	}
 
 }

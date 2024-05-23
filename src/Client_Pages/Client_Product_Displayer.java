@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.io.ByteArrayInputStream;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -20,8 +22,11 @@ import Graphical_Interface.Custom_Label;
 import Graphical_Interface.Custom_Message;
 import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
-
+import Data_Base.Delivery;
+import Data_Base.Delivery_Destination;
+import Data_Base.Invoice;
 import Data_Base.Order;
+import Data_Base.Purchase;
 
 
 
@@ -45,6 +50,7 @@ public class Client_Product_Displayer {
 	Custom_Button increase_items ;
 	Custom_Button decrease_items ;
 	Custom_Button remove ;
+	
 	
 	Custom_Label product_ordered_quantity ;
 	
@@ -217,16 +223,24 @@ public class Client_Product_Displayer {
             	Client_Orders_Page.subtotal_pr.setText(String.valueOf(new_subtotal_price +" Dhs"));
             	
             	
-            	
-            	
-            	
+            	// update the total cost
+           	    if(Client_Orders_Page.delivery_fee.getText().equals("Delivery unavailable !") ) {
+           		       Client_Orders_Page.total_price.setText("0 Dhs");
+           		       Client_Orders_Page.total_price.setForeground(Color.red) ; }
+                
+                else {
+                	
+                        String del_fee =  
+                        Client_Orders_Page.delivery_fee.getText().substring(0, Client_Orders_Page.delivery_fee.getText().length() - 4);
+                       
+                        String sub_tot =  
+                        Client_Orders_Page.subtotal_pr.getText().substring(0, Client_Orders_Page.subtotal_pr.getText().length() - 4);
+                	    
+                        double total_cost = Double.valueOf(sub_tot) + Double.valueOf(del_fee) ;
+                        Client_Orders_Page.total_price.setText(String.valueOf(total_cost) + " Dhs");}
             	
             	
             }});
-        
-        
-        
-        
         
         
         
@@ -280,38 +294,24 @@ public class Client_Product_Displayer {
             	
             	
             	
+            	// update the total cost
+            	 if(Client_Orders_Page.delivery_fee.getText().equals("Delivery unavailable !") ) {
+            		 Client_Orders_Page.total_price.setText("0 Dhs");
+            		 Client_Orders_Page.total_price.setForeground(Color.red) ; }
+                 
+                 else {
+                 	
+                         String del_fee =  
+                         Client_Orders_Page.delivery_fee.getText().substring(0, Client_Orders_Page.delivery_fee.getText().length() - 4);
+                        
+                         String sub_tot =  
+                         Client_Orders_Page.subtotal_pr.getText().substring(0, Client_Orders_Page.subtotal_pr.getText().length() - 4);
+                 	    
+                         double total_cost = Double.valueOf(sub_tot) + Double.valueOf(del_fee) ;
+                         Client_Orders_Page.total_price.setText(String.valueOf(total_cost) + " Dhs");}
             	
             	
             }});
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -338,24 +338,63 @@ public class Client_Product_Displayer {
         remove.setVisible(false);
         
         
+        // action
+        remove.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	// order to be removed
+            	Order ord = new Order(client_id,product_id);
+            	ord.delete();
+            	
+            	// hide this product
+            	panel.setVisible(false);
+            	
+            	// --- update the beside infos
+            	
+            	// update the total number of items
+            	Order virtual_order = new Order(client_id,0);
+            	int total_items = virtual_order.get_total_ordered_items();
+            	Client_Orders_Page.total_ordered_items.setText(String.valueOf(total_items));
+            	
+            	// update the subtotal cost
+                double subtotal_price = virtual_order.get_total_orders_price();
+                Client_Orders_Page.subtotal_pr.setText(String.valueOf(subtotal_price) + " Dhs");
+                
+                // update the total cost
+                if(Client_Orders_Page.delivery_fee.getText().equals("Delivery unavailable !") 
+                		|| Client_Orders_Page.total_ordered_items.getText().equals("0")) {
+                	
+                	Client_Orders_Page.total_price.setText("0 Dhs");
+                	Client_Orders_Page.total_price.setForeground(Color.red) ; }
+                
+                else {
+                	    
+                	    int index_1 = Client_Orders_Page.delivery_fee.getText().lastIndexOf(" Dhs");
+                        String del_fee =  
+                        Client_Orders_Page.delivery_fee.getText().substring(0, index_1);
+                        
+                        int index_2 = Client_Orders_Page.subtotal_pr.getText().lastIndexOf(" Dhs");
+                        String sub_tot = 
+                        Client_Orders_Page.subtotal_pr.getText().substring(0, index_2);
+                	    
+                        double total_cost = Double.valueOf(sub_tot) + Double.valueOf(del_fee) ;
+                        Client_Orders_Page.total_price.setText(String.valueOf(total_cost) + " Dhs");}
+            	
+            }});
         
         
         
         
         
         
-        
-        
-        
-        
-        
+         
         
         
         
         
 
 		// product details button 
-	    int b_x = (int) ((6*frame.getWidth())/900);
+	    int b_x = (int) ((6*frame.getWidth())/900); 
 	    int b_y = (int) ((6*frame.getHeight())/600);
 	    int b_width = (int) ((138*frame.getWidth())/900);
 	    int b_height = (int) ((100*frame.getHeight())/600);

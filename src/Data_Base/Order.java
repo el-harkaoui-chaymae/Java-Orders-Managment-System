@@ -108,11 +108,7 @@ public class Order implements Table_Management{
 	public void modify() {}
 	
 	
-	
-	// mehtod delete
-    public void delete() {};
-	
-	
+
 	
 	// method check the exitance
 	@Override
@@ -428,8 +424,108 @@ public class Order implements Table_Management{
 	
 	
 	
+	// -----------------------------------------------------
 	
 	
+	
+	
+	
+	// mehtod to delete all orders related to a specific client after purchasing them
+    public static void empty_orders_list(int client_id) {
+    	
+    	
+    	Connection connection = null;
+		PreparedStatement prepared_update = null;
+		
+		try {
+			
+			// establish a connection with the database server
+			connection = Database_Connector.getConnection();
+			 
+			
+			// the delete statement
+			String delete_query = "DELETE FROM panier WHERE numeroclient = ?";
+
+			
+			// prepare the delete query
+			prepared_update = connection.prepareStatement(delete_query);
+			
+			// set paremeters values
+			prepared_update.setInt(1, client_id);
+		
+
+			// delete data 
+			prepared_update.executeUpdate(); }
+		
+		catch (SQLException e) {e.printStackTrace();}
+        
+		finally {
+            
+			try {
+                  if (prepared_update != null) prepared_update.close();
+                  if (connection != null) connection.close();}
+            
+			catch (SQLException e) {e.printStackTrace();}}
+    };
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// ---------------------------------------------------
+    
+    
+    
+    
+
+	// mehtod delete to remove a specific product from the orders list
+    public void delete() {
+    	
+    	Connection connection = null;
+		PreparedStatement prepared_update = null;
+		
+		try {
+			
+			// establish a connection with the database server
+			connection = Database_Connector.getConnection();
+			 
+			
+			// the delete statement
+			String delete_query = "DELETE FROM panier WHERE numeroclient = ? and numeroproduit = ?";
+
+			
+			// prepare the delete query
+			prepared_update = connection.prepareStatement(delete_query);
+			
+			// set paremeters values
+			prepared_update.setInt(1, client_id);
+			prepared_update.setInt(2, product_id);
+		
+
+			// delete data 
+			prepared_update.executeUpdate(); }
+		
+		catch (SQLException e) {e.printStackTrace();}
+        
+		finally {
+            
+			try {
+                  if (prepared_update != null) prepared_update.close();
+                  if (connection != null) connection.close();}
+            
+			catch (SQLException e) {e.printStackTrace();}}
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    }
 	
 	
 	

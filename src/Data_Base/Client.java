@@ -22,9 +22,9 @@ public class Client implements Table_Management{
 	String phone_number;
 	String mail;
 	String password;
-	LocalDate birth_date;
+	LocalDate birth_date; 
 	String gender;
-	String nationality;
+	String nationality; 
 	String education_level;
 	double low_income;
 	double high_income;

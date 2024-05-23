@@ -38,7 +38,7 @@ public class Client_Products_Page {
 	ByteArrayInputStream photo_5 ;
 	
 	static String Product_category;
-	
+	 
 	int horizontal_spacing = 30;
     int start_point = 25;
     

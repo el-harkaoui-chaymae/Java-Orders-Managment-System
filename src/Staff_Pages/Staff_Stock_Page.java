@@ -43,7 +43,7 @@ public class Staff_Stock_Page {
 	    staff_space.stock.change_style("#b39700","#b39700");
 	    staff_space.stock.change_color_background("#2F5597","#2F5597",staff_space.labs);
 
-	    
+	     
 	    
 	    
 	    // center page panel
@@ -241,7 +241,7 @@ public class Staff_Stock_Page {
 	    int height_s = (int) ((23*frame.getHeight())/600);
 	    int font_size_s = (int) ((11*frame.getWidth())/900);
 	    Custom_Text_Field search = new Custom_Text_Field(x_s,y_s,width_s,height_s,"Segoe Print",font_size_s,"#000000") ;
-	    search.setText(" search ...");
+	    search.setText(" search a product ...");
 	    center_panel.add(search);
 	    
 	    
@@ -366,7 +366,7 @@ public class Staff_Stock_Page {
    	    cancel.addActionListener(new ActionListener() {
    	       public void actionPerformed(ActionEvent e) {
    	         
-   	    	 // if we did not changes yet
+   	    	 // if we did not save changes yet
    	    	 if(changes_saved == false) {
    	    		 
 
@@ -388,17 +388,11 @@ public class Staff_Stock_Page {
    	                     table.setValueAt(similar_products.get(i)[0], i, 0);
    	                     table.setValueAt(similar_products.get(i)[2], i, 1);
    	                     table.setValueAt(similar_products.get(i)[3], i, 2);
-   	                     table.setValueAt(similar_products.get(i)[4], i, 3);
-   	                 }
-   	    	 }
-   	         
-   	    	 
-   	    	 
+   	                     table.setValueAt(similar_products.get(i)[4], i, 3); }}
+
    	         // Set other properties
    	         table.getTableHeader().setForeground(Color.decode("#b39700"));
-   	         table.setEnabled(false);
-   	     }
-   	 });
+   	         table.setEnabled(false); }});
 
         
         
@@ -506,25 +500,15 @@ public class Staff_Stock_Page {
                  
                 // raise a message
          	    new Custom_Message(75,140,"Needed Images\\verification_icon.png",
-         	    "Successfully Deletion","Product Deleted Successfully");
-                 
-           	 
-           	 }
-           	 
+         	    "Successfully Deletion","Product Deleted Successfully");}
            	 
            	else {
        		 
         		// raise a message
         	    new Custom_Message(95,140,"Needed Images\\x_icon.png",
-        	    "Selection Error","Select a populated row");
-        		 
-        	 }
+        	    "Selection Error","Select a populated row");}
            	     
 
-    	     
-            	
-            	
-            	
             	 table.setEnabled(false);
             	 table.getTableHeader().setForeground(Color.decode("#b39700"));
                

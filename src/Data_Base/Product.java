@@ -34,12 +34,12 @@ public class Product implements Table_Management{
 	
 	ArrayList<Object[]> infos;
 	ArrayList<Object[]> search_result;
-	
+	 
 	
 
 
 	
-	
+	 
 	
 	// constructor
 	public Product (String product_category,String product_name,double quantity,double price,
@@ -560,7 +560,7 @@ public class Product implements Table_Management{
     
     
     
-    // a method to get the names and the first photos of 5 random products
+    // a method to get the names and the first photos of 4 random products
     public ArrayList<Object[]> get_4_random_products(){
     	
     	

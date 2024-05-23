@@ -1,7 +1,4 @@
 
-
-
-
 -- first: we create a new user of the server under the name Vertex Group
 -- second: we give this user all privilleges
 -- third: we create a new connection under the name Vertex Group System
@@ -10,9 +7,6 @@
 CREATE DATABASE vertex_db;
 
 use vertex_db;
-
-
-
 
 
 
@@ -60,14 +54,29 @@ CREATE TABLE produit (
 
 
 
+-- Table destination_Livraison
 
--- Table livraison
+CREATE TABLE destination (
+    numerodestination INT NOT NULL auto_increment,
+    ville VARCHAR(100) NOT NULL,
+    prix_livraison_estime DOUBLE NOT NULL,
+    primary key (numerodestination),
+    UNIQUE KEY unique_destination_price (ville, prix_livraison_estime)
+);
+
+
+
+
 
 CREATE TABLE livraison (
-    numerolivraison INT NOT NULL auto_increment,
-    date_livraison DATE NOT NULL,
-    prix_livraison DOUBLE NOT NULL,
-    primary key (numerolivraison)
+    numerolivraison INT NOT NULL AUTO_INCREMENT,
+    numerodestination INT NOT NULL,
+    numerocommande INT NOT NULL,
+    PRIMARY KEY (numerolivraison),
+    CONSTRAINT fk_lv_dn FOREIGN KEY (numerodestination) REFERENCES destination(numerodestination),
+    CONSTRAINT fk_lv_commande FOREIGN KEY (numerocommande) REFERENCES commande(numerocommande)
+    
+    ON DELETE CASCADE
 );
 
 
@@ -81,32 +90,32 @@ CREATE TABLE livraison (
 CREATE TABLE commande (
     numerocommande INT NOT NULL AUTO_INCREMENT,
     date_commande DATE NOT NULL,
-    etat_commande VARCHAR(20),
-	numerolivraison INT NOT NULL,
-	numeroclient INT NOT NULL,
+    temps_commande TIME NOT NULL,
+    etat_commande VARCHAR(20) NOT NULL DEFAULT 'not shipped',
+    numeroclient INT NOT NULL,
     PRIMARY KEY (numerocommande),
-    FOREIGN KEY (numeroclient) REFERENCES client(numeroclient),
-    FOREIGN KEY (numerolivraison) REFERENCES livraison(numerolivraison)    
+    CONSTRAINT fk_commande_client FOREIGN KEY (numeroclient) REFERENCES client(numeroclient)
+    
+    ON DELETE CASCADE
+
 );
+
+
 
 
 -- Table commande_produit
 
 CREATE TABLE commande_produit (
+    
     numerocommande INT NOT NULL,
     numeroproduit INT NOT NULL,
     quantite_commandee INT NOT NULL,
-    PRIMARY KEY (numerocommande, numeroproduit),
-    FOREIGN KEY (numerocommande) REFERENCES commande(numerocommande),
-    FOREIGN KEY (numeroproduit) REFERENCES produit(numeroproduit)
+	PRIMARY KEY (numerocommande, numeroproduit),
+	CONSTRAINT fk_cmp_numerocommande FOREIGN KEY (numerocommande) REFERENCES commande(numerocommande),
+    CONSTRAINT fk_cmp_numeroproduit FOREIGN KEY (numeroproduit) REFERENCES produit(numeroproduit)
+    
+    ON DELETE CASCADE
 );
-
-
-
-
-
-
-
 
 
 
@@ -115,13 +124,18 @@ CREATE TABLE commande_produit (
 -- Table Facture
 
 CREATE TABLE Facture (
-    numerofacture INT NOT NULL auto_increment,
-    date_facture DATE NOT NULL,
+    numerofacture INT NOT NULL AUTO_INCREMENT,
     montant_total DOUBLE NOT NULL,
     numerocommande INT NOT NULL,
-    primary key (numerofacture),
-    FOREIGN KEY (numerocommande) REFERENCES commande(numerocommande)
+    PRIMARY KEY (numerofacture),
+    CONSTRAINT fk_facture_numerocmd FOREIGN KEY (numerocommande) REFERENCES commande(numerocommande)
+	
+    ON DELETE CASCADE
 );
+
+
+
+
 
 
 -- Table message
@@ -132,12 +146,13 @@ CREATE TABLE message (
     text_message TEXT NOT NULL,
     numeroclient INT NOT NULL,
     PRIMARY KEY (numeromessage),
-    FOREIGN KEY (numeroclient) REFERENCES client(numeroclient)
+	CONSTRAINT fk_message_client FOREIGN KEY (numeroclient) REFERENCES client(numeroclient)
+    
+    ON DELETE CASCADE
     
 );
 
 
-use vertex_db;
 
 -- Table panier
 
@@ -147,9 +162,9 @@ CREATE TABLE panier (
     numeroproduit INT NOT NULL,
     quantite_produit INT NOT NULL DEFAULT 1,
     PRIMARY KEY (numeropanier),
-    CONSTRAINT fk_panier_produit
-    FOREIGN KEY (numeroclient) REFERENCES client(numeroclient),
-    FOREIGN KEY (numeroproduit) REFERENCES produit(numeroproduit)
+	CONSTRAINT fk_panier_client FOREIGN KEY (numeroclient) REFERENCES client(numeroclient),
+	CONSTRAINT fk_panier_produit FOREIGN KEY (numeroproduit) REFERENCES produit(numeroproduit)
+
     ON DELETE CASCADE
 );
 

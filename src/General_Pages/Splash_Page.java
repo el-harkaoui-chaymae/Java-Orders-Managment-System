@@ -28,10 +28,10 @@ public class Splash_Page  {
 	    splash.add_background("Needed images\\logo_background.png");
 	    
 	    
-
+  
+	     
 	    
-	   
-	    // add bar menu panel 
+	    // add bar menu panel   
 	    int height = (int) ((70*frame.getHeight())/600);
 	    Custom_Panel bar = new Custom_Panel(0,0,frame.getWidth(),height,"#2F5597");
 	    splash.add(bar);

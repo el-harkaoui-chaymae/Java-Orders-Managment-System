@@ -95,7 +95,7 @@ public class Client_Buy_Products_Page {
         	
         	if((index % 4 == 0) && (index!=0)) {
         		start_point_x = 25 ;
-        		start_point_y += 70 + vertical_spacing;}
+        		start_point_y += 70 + vertical_spacing;} 
         	
         	if((page_capacity == 8) ) {
         		

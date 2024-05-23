@@ -38,7 +38,7 @@ public class Staff_New_Product_Page {
 	File selected_file_1;
 	Image image_2;
 	File selected_file_2;
-	Image image_3;
+	Image image_3; 
 	File selected_file_3;
 	
 	// constructor
@@ -148,7 +148,7 @@ public class Staff_New_Product_Page {
 	    int bt2_height = (int) ((40*frame.getHeight())/600);
 	    int bt2_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button drop_2 = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,
-        "Drop a Photo","#b39700","Segoe Print",bt2_font_size,false);
+        "Drop a Photo","#000000","Segoe Print",bt2_font_size,false);
         drop_2.change_style("#b39700","#000000");
         center_panel.add(drop_2);
         

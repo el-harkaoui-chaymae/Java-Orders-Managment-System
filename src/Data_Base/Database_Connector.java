@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Database_Connector {
 	
-	// attributes
+	// attributes 
 	private static Connection connection;
 	
 	// method to establish the connection
@@ -34,3 +34,5 @@ public class Database_Connector {
     }
 
 }
+
+

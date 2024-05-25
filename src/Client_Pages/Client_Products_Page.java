@@ -42,10 +42,12 @@ public class Client_Products_Page {
 	int horizontal_spacing = 30;
     int start_point = 25;
     
+   
+    
+	  
+	 
 	
-	
-	
-	// constructor
+	// constructor   
 	public Client_Products_Page (Custom_Frame frame) {
 		
 		// create the client space elements

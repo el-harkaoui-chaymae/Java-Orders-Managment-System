@@ -20,7 +20,7 @@ public class Custom_Panel extends JPanel {
 
     // attributes
     String type;
-    int x; 
+    int x;  
     int y;
     int width;
     int height;

@@ -26,6 +26,7 @@ import Data_Base.Delivery;
 import Data_Base.Delivery_Destination;
 import Data_Base.Invoice;
 import Data_Base.Order;
+import Data_Base.Product;
 import Data_Base.Purchase;
 
 
@@ -34,10 +35,10 @@ import Data_Base.Purchase;
 public class Client_Product_Displayer {
 	
 	
-	// attributes
+	// attributes     
 	int x;
 	int y;
-	int width;
+	int width; 
 	int height;
 	
 	public int ordered_quantity = 1;
@@ -51,6 +52,8 @@ public class Client_Product_Displayer {
 	Custom_Button decrease_items ;
 	Custom_Button remove ;
 	
+	public static int productId = 0 ;
+	 
 	
 	Custom_Label product_ordered_quantity ;
 	
@@ -58,11 +61,12 @@ public class Client_Product_Displayer {
 	
 	
 	// constructor
-	public Client_Product_Displayer(Custom_Frame frame,Custom_Panel center_panel,int x,int y,int width,int height,
-			ByteArrayInputStream photo_1,String name,String price,int product_id,int client_id) {
+	public Client_Product_Displayer(Custom_Frame frame,Custom_Panel center_panel,
+			int x,int y,int width,int height,ByteArrayInputStream photo_1,
+			String name,String price,int product_id,int client_id) {
 		
 		
-		
+		 
 		
 		
 		// transparent panel
@@ -114,13 +118,36 @@ public class Client_Product_Displayer {
             public void actionPerformed(ActionEvent e) {
             	
             	
-            	// add an order
-            	Order virtual_order = new Order(client_id,product_id);
-            	virtual_order.add();
+
+        	    // create a virtual product
+        	    Product virtual_product = new Product(null,null,0,0,null,null,null,null,null);
+        	    virtual_product.setId(product_id);
+        	    
+        	    // get the selcted product details
+        	    Object[] product_details = virtual_product.get_details();
             	
-            	// raise a message
-        		Custom_Message message = new Custom_Message(45,140,"Needed Images\\verification_icon.png",
-        		"Successful Order","Product successfully added to Cart");
+            	
+        	    if(Double.valueOf(product_details[3].toString())<= 0) {
+        	    	
+        	    	// raise a message
+            		new Custom_Message(30,140,"Needed Images\\x_icon.png",
+            		"Out Of Stock","This Product is Currently out Of Stock");
+        	    	
+        	    	
+        	    }
+        	    
+            	
+        	    else {
+        	    	 
+        	    	// add an order
+                	Order virtual_order = new Order(client_id,product_id);
+                	virtual_order.add();
+                	
+                	// raise a message
+            		new Custom_Message(45,140,"Needed Images\\verification_icon.png",
+            		"Successful Order","Product successfully added to Cart");
+        	    }
+            	
             	
             	}});
         
@@ -402,9 +429,44 @@ public class Client_Product_Displayer {
         "","#000000","Consolas",7,false);
         panel.add(details);
         
+        // action to perform
+        details.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+              // affect the product id
+              productId = product_id ;
+              
+              // remove products page
+              frame.getContentPane().removeAll();    
+              // open products details page 
+              new Client_Product_Details (frame);                       
+              // refresh the window
+              frame.revalidate();
+              frame.repaint(); }});
+        
         
         
 		
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         // Hoovering
         

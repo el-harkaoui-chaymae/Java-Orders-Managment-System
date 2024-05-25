@@ -35,7 +35,7 @@ public class Client_Sign_Up_Page {
 	    
 	    // add a welcoming expression - welcome back
 	    content.add_welcome_expression(frame, sign_up, 555, 120, 200, 100, 16, "welcome here");
-	    
+	     
      
         
 	    // label 5 - enter your first name

@@ -7,14 +7,11 @@ import java.sql.Time;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-
+import java.util.ArrayList;
 
 public class Purchase {
 	
@@ -32,21 +29,11 @@ public class Purchase {
 		
 		this.purchase_date = purchase_date ;
 		this.purchase_time = purchase_time ;
-		this.client_id = client_id ;
-		
-		
-	}
+		this.client_id = client_id ;}
 	
 	
 	
 	
-	
-	
-	
-	
-	
-	
-
 	
     // method modify
 	public void modify() {};
@@ -164,8 +151,87 @@ public class Purchase {
             }
         }
         
-        return id;
-    }
+        return id;}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// ----------------------------------------------------------------------------------
+	
+	
+	
+	
+	
+	
+	// method to get all purchases
+	public static ArrayList<Object[]> get_purchases_infos (){
+		
+		// an array to store infos
+		ArrayList<Object[]> infos = new ArrayList<>();
+		
+		Connection connection = null;
+		PreparedStatement prepared_selection = null;
+		ResultSet resultSet = null;
+		
+		try {
+			
+			// establish a connection with the database server
+			connection = Database_Connector.getConnection();
+			
+			// the select statement
+			String select_query = "SELECT * FROM commande";
+			
+			// prepare the selection query
+			prepared_selection = connection.prepareStatement(select_query);
+			
+			
+			// execute selsection query
+			resultSet = prepared_selection.executeQuery();
+			
+	
+
+			// Iterate through the ResultSet and populate the infos array
+			while (resultSet.next()) {
+			    
+				// get and store infos
+			    String id_purchase = resultSet.getString("numerocommande");
+			    String purchase_date = resultSet.getString("date_commande");
+			    String purchase_time = resultSet.getString("temps_commande");
+			    String purchase_state = resultSet.getString("etat_commande");
+			    String client_id = resultSet.getString("numeroclient");
+			    
+			    
+			    // anarray to store the data for this row
+			    Object[] row_data = new Object[5];
+			    // Set the values in the rowData array
+			    row_data[0] = id_purchase;
+			    row_data[1] = purchase_date;
+			    row_data[2] = purchase_time;
+			    row_data[3] = purchase_state;
+			    row_data[4] = client_id;
+			    
+			    
+			    // add the row data array to the infos ArrayList
+			    infos.add(row_data);}}
+			
+		catch(SQLException e) {e.printStackTrace();}
+        finally {
+            
+			try {
+                
+				  if (resultSet != null) resultSet.close();
+                  if (prepared_selection != null) prepared_selection.close();
+                  if (connection != null) connection.close();}
+            
+			catch (SQLException e) {e.printStackTrace();}}
+		
+		
+		return infos; }
 	
 
 }

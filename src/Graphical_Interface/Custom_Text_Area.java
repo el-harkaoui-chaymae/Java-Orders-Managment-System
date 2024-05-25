@@ -13,7 +13,7 @@ public class Custom_Text_Area extends JTextArea{
 	
 
     // attributes
-    public int x;
+    public int x; 
     public int y;
     public int width;
     public int height;
@@ -22,7 +22,8 @@ public class Custom_Text_Area extends JTextArea{
     String color;
 
     // constructor
-    public Custom_Text_Area(int x, int y, int width, int height, String font, int font_size, String color) {
+    public Custom_Text_Area(int x, int y, int width, int height, 
+    		                String font, int font_size, String color) {
         
         // size and position
         this.setBounds(x, y, width, height);

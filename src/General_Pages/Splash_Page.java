@@ -28,8 +28,8 @@ public class Splash_Page  {
 	    splash.add_background("Needed images\\logo_background.png");
 	    
 	    
-  
-	     
+   
+	      
 	    
 	    // add bar menu panel   
 	    int height = (int) ((70*frame.getHeight())/600);
@@ -51,7 +51,7 @@ public class Splash_Page  {
         
         
         
-        // services button
+        // services buttons
         int bt2_x = (int) ((580*frame.getWidth())/900);
 	    int bt2_width = (int) ((100*frame.getWidth())/900);
         Custom_Button services = new Custom_Button(bt2_x,bt1_y,bt2_width,bt1_height,

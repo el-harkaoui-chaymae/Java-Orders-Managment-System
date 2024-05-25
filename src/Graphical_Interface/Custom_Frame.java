@@ -21,7 +21,7 @@ public class Custom_Frame extends JFrame {
         this.setLayout(null); 
   
       
-     	// set size and position        
+     	// set size and position         
      	setBounds(400,100,900,600); 
         
  

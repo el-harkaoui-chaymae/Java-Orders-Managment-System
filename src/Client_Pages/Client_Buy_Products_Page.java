@@ -31,7 +31,7 @@ public class Client_Buy_Products_Page {
 	int current_page_start_index = 0 ;
 	int current_page_end_index = 7 ;
 	
-	
+	 
 	
 	ArrayList<Custom_Panel> products_displayers_panels = new ArrayList<>();
 	

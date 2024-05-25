@@ -27,7 +27,7 @@ public class Client_Sign_In_Page {
 	// constructor
 	public Client_Sign_In_Page(Custom_Frame frame) {
 		
-		
+		 
 		// sign in  panel
 	    Custom_Panel sign_in = new Custom_Panel(0,0,frame.getWidth(),frame.getHeight(),"#FFFFFF");
 	    

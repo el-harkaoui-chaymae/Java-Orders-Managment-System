@@ -43,9 +43,9 @@ public class Staff_Stock_Page {
 	    staff_space.stock.change_style("#b39700","#b39700");
 	    staff_space.stock.change_color_background("#2F5597","#2F5597",staff_space.labs);
 
+	      
+	    
 	     
-	    
-	    
 	    // center page panel
 	    int pn1_x = (int) ((140*frame.getWidth())/900);
 	    int pn1_y = (int) ((70*frame.getHeight())/600);

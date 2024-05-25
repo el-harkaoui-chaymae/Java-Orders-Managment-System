@@ -19,30 +19,7 @@ public class Delivery implements Table_Management{
 	public Delivery(int delivery_destination_id) {
 		
 		
-		this.delivery_destination_id = delivery_destination_id ;
-		
-	}
-	
-	
-	
-	
-	
-		
-    // method modify
-	public void modify() {};
-		
-		
-	// method delete
-	public void delete() {};
-		
-		
-	// method to check the existance of a delivery
-	public boolean check_existance(int parameter_number) {return true ;};
-		
-		
-	// abstarct method to get an element attributes
-	public Object [] get_informations() {return new Object[2];};
-	
+		this.delivery_destination_id = delivery_destination_id ;}
 	
 	
 	
@@ -100,7 +77,23 @@ public class Delivery implements Table_Management{
 	
 	
 	
+
 	
+	
+    // method modify
+	public void modify() {};
+		
+		
+	// method delete
+	public void delete() {};
+		
+		
+	// method to check the existance of a delivery
+	public boolean check_existance(int parameter_number) {return true ;};
+		
+		
+	// abstarct method to get an element attributes
+	public Object [] get_informations() {return new Object[2];};
 	
 	
 	

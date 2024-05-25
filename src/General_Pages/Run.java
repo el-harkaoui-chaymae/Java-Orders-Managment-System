@@ -17,6 +17,6 @@ public class Run{
         frame.setVisible(true);
 
 	}
-	 
+	  
 	  
 }

@@ -25,13 +25,13 @@ public class Staff_Deliveries_Page {
 	
 	ArrayList<Object[]> destinations;
 	boolean changes_saved = false ;
- 
+  
 	// constructor
 	public Staff_Deliveries_Page(Custom_Frame frame) {
 
 		// create the staff space elements
 		Staff_Space staff_space = new Staff_Space(frame);
-
+ 
 		
 		// change delivery button background to show that it's clicked
 		staff_space.delivery.setBackground(Color.decode("#2F5597"));
@@ -47,10 +47,6 @@ public class Staff_Deliveries_Page {
 		int pn1_height = (int) ((580 * frame.getHeight()) / 600);
 		Custom_Panel center_panel = new Custom_Panel(pn1_x, pn1_y, pn1_width, pn1_height, "#FFFFFF");
 		staff_space.space.add(center_panel);
-		
-		
-		
-		
 		
 		
 		

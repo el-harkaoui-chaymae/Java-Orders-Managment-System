@@ -34,7 +34,7 @@ public class Client_Space {
 	public Custom_Label labf;
 	public Custom_Label labg;
 	public Custom_Label labs;
-
+ 
 
 
 

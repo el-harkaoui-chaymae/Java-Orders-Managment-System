@@ -2,6 +2,8 @@ package Data_Base;
 
 interface Table_Management {
 	
+	
+	
 	// abstract method for adding a new element to a table
 	void add();
 	
@@ -23,3 +25,11 @@ interface Table_Management {
 	
 
 }
+
+
+
+
+
+
+
+

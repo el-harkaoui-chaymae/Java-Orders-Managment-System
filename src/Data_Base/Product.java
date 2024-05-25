@@ -25,7 +25,7 @@ public class Product implements Table_Management{
 	String product_category;
 	String product_name;
 	double quantity;
-	double price;
+	double price; 
 	File photo_1;
 	File photo_2;
 	File photo_3;
@@ -34,12 +34,10 @@ public class Product implements Table_Management{
 	
 	ArrayList<Object[]> infos;
 	ArrayList<Object[]> search_result;
-	 
+	  
 	
 
 
-	
-	 
 	
 	// constructor
 	public Product (String product_category,String product_name,double quantity,double price,

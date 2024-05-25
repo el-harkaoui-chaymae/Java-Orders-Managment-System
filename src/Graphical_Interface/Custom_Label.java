@@ -26,10 +26,11 @@ public class Custom_Label extends JLabel {
 
 	
 	// constructor
-	public Custom_Label(int x,int y,int width,int height,String text,String font,int font_size,String color) {
+	public Custom_Label(int x,int y,int width,int height,String text,
+			            String font,int font_size,String color) {
 		
 		// set the text
-		super(text);
+		super(text); 
 		
 		// set location and size
 		this.setBounds(x, y, width, height);

@@ -29,9 +29,8 @@ import Data_Base.Purchase;
 import Data_Base.Invoice;
 
 
-
 public class Client_Orders_Page {
-	
+	 
 	
 	// attributes
 	int start_point_x = 25 ;
@@ -55,11 +54,6 @@ public class Client_Orders_Page {
 	ArrayList<Custom_Panel> products_displayers_panels = new ArrayList<>();
 	
 
-	
-	
-	
-	
-	
 	
 	
     // constructor

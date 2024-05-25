@@ -23,14 +23,6 @@ public class Delivery_Destination implements Table_Management {
 
 	
 	
-	
-	
-	
-
-	
-	
-	
-	
 	// method check the exitance
 	@Override
 	public boolean check_existance(int parameter_number) {return true;}

@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 import java.sql.Date;
 import java.sql.Types;
-
+ 
 
 public class Client implements Table_Management{
 	
@@ -17,7 +17,7 @@ public class Client implements Table_Management{
 	int client_id;
 	String first_name;
 	String second_name;
-	String city;
+	String city; 
 	String adress;
 	String phone_number;
 	String mail;
@@ -26,8 +26,8 @@ public class Client implements Table_Management{
 	String gender;
 	String nationality; 
 	String education_level;
-	double low_income;
-	double high_income;
+	double low_income; 
+	double high_income; 
 	
 	// constructor
 	public Client(String first_name,String second_name,String city,String adress,

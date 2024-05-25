@@ -14,13 +14,14 @@ import java.io.IOException;
 public class Custom_Message extends JFrame {
 	
 	// contructor
-	public Custom_Message(int x1,int x2,String icon_path,String bar_text,String message) {
+	public Custom_Message(int x1,int x2,String icon_path,
+			              String bar_text,String message) {
 		
 
 		// Call the superclass constructor with a title
         super(bar_text);
 		
-		// set the Layout to null for absolute constrol
+		// set the Layout to null for absolute constrol 
         this.setLayout(null);
        
         

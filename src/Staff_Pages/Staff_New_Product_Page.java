@@ -35,7 +35,7 @@ public class Staff_New_Product_Page {
 	
 	// attributes
 	Image image_1;
-	File selected_file_1;
+	File selected_file_1; 
 	Image image_2;
 	File selected_file_2;
 	Image image_3; 

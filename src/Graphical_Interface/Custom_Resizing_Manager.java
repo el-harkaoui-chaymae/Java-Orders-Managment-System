@@ -23,7 +23,7 @@ public class Custom_Resizing_Manager {
 	// constructor
 	public Custom_Resizing_Manager(Container container) {
 		
-		
+		 
 		// handle frame resizing
 		if (container instanceof JFrame) {
 			

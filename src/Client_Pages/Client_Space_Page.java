@@ -24,16 +24,9 @@ public class Client_Space_Page {
 	    int lb3_width = (int) ((100*frame.getWidth())/900);
 	    int lb3_height = (int) ((110*frame.getHeight())/600);
 	    int lb3_font_size = (int) ((22*frame.getWidth())/900);
-        Custom_Label lab3 = new Custom_Label(lb3_x, lb3_y, lb3_width, lb3_height,"Hello !!","Consolas",lb3_font_size,"#C00000");
+        Custom_Label lab3 = new Custom_Label(lb3_x, lb3_y, lb3_width, 
+        lb3_height,"Hello !!","Consolas",lb3_font_size,"#C00000");
         client_space.space.add(lab3);
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         

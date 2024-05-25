@@ -23,7 +23,7 @@ import java.time.LocalDate;
 
 public class Client_Profile_Page {
 	
-	// attributes
+	// attributes 
 	boolean saving = false;
 	
 	
@@ -42,7 +42,7 @@ public class Client_Profile_Page {
     	client_space.profile.change_style("#b39700","#b39700");
     	
 		
-		
+		 
     	
     	// get the client informations
         

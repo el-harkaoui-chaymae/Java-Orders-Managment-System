@@ -7,11 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 	
-
+ 
 public class Order implements Table_Management{
 	
 	
-	// attributes
+	// attributes 
 	int order_id;
 	int client_id;
 	int product_id;
@@ -22,14 +22,7 @@ public class Order implements Table_Management{
 	public Order(int client_id,int product_id) {
 		
 		this.client_id = client_id;
-		this.product_id = product_id;
-		
-	}
-	
-	
-	
-	
-	
+		this.product_id = product_id;}
 	
 	
 	

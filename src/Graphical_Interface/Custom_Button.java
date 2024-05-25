@@ -31,7 +31,7 @@ public class Custom_Button extends JButton {
 	String font;
 	int font_size;  
 	boolean gradient;
-	int round_shape_x;
+	int round_shape_x; 
 	int round_shape_y;
 
     
@@ -39,6 +39,9 @@ public class Custom_Button extends JButton {
     public Custom_Button(int x,int y,int width, int height,String text,String text_color,
     		             String font,int font_size,boolean gradient) {
         
+    	
+    	
+    	
     	// Call the superclass constructor
         super(text);
         

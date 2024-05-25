@@ -29,7 +29,7 @@ public class Custom_Table extends JTable{
 	// attributes
 	int x;
 	int y;
-	int width;
+	int width; 
 	int height;
 	Object [][] rows_columns_number;
 	String[] column_names;

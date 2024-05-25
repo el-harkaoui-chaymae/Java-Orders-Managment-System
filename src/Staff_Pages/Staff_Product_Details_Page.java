@@ -35,7 +35,7 @@ public class Staff_Product_Details_Page {
 	Custom_Label visible_lab;
 	
 	ByteArrayInputStream photo_1 ;
-	ByteArrayInputStream photo_2 ;
+	ByteArrayInputStream photo_2 ; 
 	ByteArrayInputStream photo_3 ;
 	
 
@@ -64,9 +64,9 @@ public class Staff_Product_Details_Page {
 	    
 	    
 	    
-	     // create a virtual product
-	     Product virtual_product = new Product(null,null,0,0,null,null,null,null,null);
-	     virtual_product.setId(Staff_Stock_Page.product_identifier);
+	    // create a virtual product
+	    Product virtual_product = new Product(null,null,0,0,null,null,null,null,null);
+	    virtual_product.setId(Staff_Stock_Page.product_identifier);
 	    
 	    // get the selcted product details
 	    Object[] product_details = virtual_product.get_details();

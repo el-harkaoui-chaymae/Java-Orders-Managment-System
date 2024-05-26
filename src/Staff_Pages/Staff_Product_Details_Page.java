@@ -48,7 +48,7 @@ public class Staff_Product_Details_Page {
     
     // constructor
 	public Staff_Product_Details_Page (Custom_Frame frame) {
-		
+		 
 		
 		// create the staff space elements
 	    Staff_Space staff_space = new Staff_Space(frame);
@@ -264,7 +264,7 @@ public class Staff_Product_Details_Page {
 	    int bt_height = (int) ((30*frame.getHeight())/600);
 	    int bt_font_size = (int) ((16*frame.getWidth())/900);
         Custom_Button previous_image = new Custom_Button(bt_x,bt_y,bt_width,bt_height,
-        "<<","#808080","Consolas",bt_font_size,false);
+        "<<","#808080","Calibri",bt_font_size,false);
         photos_panel.add(previous_image);
         
         
@@ -326,7 +326,7 @@ public class Staff_Product_Details_Page {
 	    int bt2_height = (int) ((30*frame.getHeight())/600);
 	    int bt2_font_size = (int) ((16*frame.getWidth())/900);
         Custom_Button next_image = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,
-        ">>","#808080","Consolas",bt2_font_size,false);
+        ">>","#808080","Calibri",bt2_font_size,false);
         photos_panel.add(next_image);
         
         // next_image button action
@@ -557,6 +557,7 @@ public class Staff_Product_Details_Page {
 	    "Calibri",font_size_d,"#000000") ;
 	    description.setBorder(new EmptyBorder(0, 0, 0, 0));
 	    description.setText(product_details[8].toString());
+	    description.setEditable(false);
 	    description_infos.add(description);
         
         
@@ -604,7 +605,7 @@ public class Staff_Product_Details_Page {
 	    int font_size_q = (int) ((11*frame.getWidth())/900);
 	    Custom_Text_Field quantity = new Custom_Text_Field(x_q,y_q,width_q,height_q,"Calibri",font_size_q,"#000000");
 	    quantity.setBorder(new EmptyBorder(0, 0, 0, 0));
-	    //quantity.setEditable(false);
+	    quantity.setEditable(false);
 	    quantity.setBackground(Color.WHITE);
 	    quantity.setText(product_details[3].toString());
 	    stock_pricing_panel.add(quantity);
@@ -634,9 +635,9 @@ public class Staff_Product_Details_Page {
 	    int font_size_p = (int) ((11*frame.getWidth())/900);
 	    Custom_Text_Field price = new Custom_Text_Field(x_p,y_p,width_p,height_p,"Calibri",font_size_p,"#000000");
 	    price.setBorder(new EmptyBorder(0, 0, 0, 0));
-	    //price.setEditable(false);
+	    price.setEditable(false);
 	    price.setBackground(Color.WHITE);
-	    price.setText(product_details[4].toString());
+	    price.setText(product_details[4].toString() + " Dhs");
 	    stock_pricing_panel.add(price);
 	    
         

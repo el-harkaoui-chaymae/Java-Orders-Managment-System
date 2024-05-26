@@ -268,7 +268,7 @@ public class Client_Product_Details {
 	    int bt_height = (int) ((30*frame.getHeight())/600);
 	    int bt_font_size = (int) ((16*frame.getWidth())/900);
         Custom_Button previous_image = new Custom_Button(bt_x,bt_y,bt_width,bt_height,
-        "<<","#808080","Consolas",bt_font_size,false);
+        "<<","#808080","Calibri",bt_font_size,false);
         photos_panel.add(previous_image);
         
         
@@ -330,7 +330,7 @@ public class Client_Product_Details {
 	    int bt2_height = (int) ((30*frame.getHeight())/600);
 	    int bt2_font_size = (int) ((16*frame.getWidth())/900);
         Custom_Button next_image = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,
-        ">>","#808080","Consolas",bt2_font_size,false);
+        ">>","#808080","Calibri",bt2_font_size,false);
         photos_panel.add(next_image);
         
         // next_image button action
@@ -383,6 +383,24 @@ public class Client_Product_Details {
         
         
         
+        
+        // product name label
+        int x_n = (int) ((170*frame.getWidth())/900);
+	    int y_n = (int) ((14*frame.getHeight())/600);
+	    int width_n = (int) ((300*frame.getWidth())/900);
+	    int height_n = (int) ((23*frame.getHeight())/600);
+	    int font_size_n = (int) ((15*frame.getWidth())/900);
+	    Custom_Label product_name = new Custom_Label(x_n, y_n, width_n, height_n,"",
+	    "Segoe Print",font_size_n,"#b39700");
+	    product_name.setBackground(Color.WHITE);
+	    product_name.setText(product_details[2].toString());
+	    client_space.space.add(product_name);
+        
+        
+        
+        
+        
+        
 
 		// general information panel
 		int pn1_x = (int) ((390*frame.getWidth())/900);
@@ -405,40 +423,9 @@ public class Client_Product_Details {
         
         
         
-        
-        // label  - product id
-	    int lbi_x = (int) ((10*frame.getWidth())/900);
-	    int lbi_y = (int) ((65*frame.getHeight())/600);
-	    int lbi_width = (int) ((200*frame.getWidth())/900);
-	    int lbi_height = (int) ((30*frame.getHeight())/600);
-	    int lbi_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Label labi = new Custom_Label(lbi_x, lbi_y, lbi_width, lbi_height,"Product Identifier :",
-        "Calibri",lbi_font_size,"#b39700");
-        general_infos.add(labi);
-        
-        
-        // product id text field
-        int x_i = (int) ((130*frame.getWidth())/900);
-	    int y_i = (int) ((68*frame.getHeight())/600);
-	    int width_i = (int) ((300*frame.getWidth())/900);
-	    int height_i = (int) ((23*frame.getHeight())/600);
-	    int font_size_i = (int) ((11*frame.getWidth())/900);
-	    Custom_Text_Field product_id = new Custom_Text_Field(x_i,y_i,width_i,height_i,"Calibri",font_size_i,"#000000");
-	    product_id.setBorder(new EmptyBorder(0, 0, 0, 0));
-	    product_id.setEditable(false);
-	    product_id.setBackground(Color.WHITE);
-	    product_id.setText(product_details[0].toString());
-	    general_infos.add(product_id);
-        
-        
-       
-	    
-	    
-	    
-	    
 	    // label  - product category
 	    int lbc_x = (int) ((10*frame.getWidth())/900);
-	    int lbc_y = (int) ((95*frame.getHeight())/600);
+	    int lbc_y = (int) ((65*frame.getHeight())/600);
 	    int lbc_width = (int) ((200*frame.getWidth())/900);
 	    int lbc_height = (int) ((30*frame.getHeight())/600);
 	    int lbc_font_size = (int) ((12*frame.getWidth())/900);
@@ -449,7 +436,7 @@ public class Client_Product_Details {
         
         // product category text field
         int x_c = (int) ((130*frame.getWidth())/900);
-	    int y_c = (int) ((98*frame.getHeight())/600);
+	    int y_c = (int) ((68*frame.getHeight())/600);
 	    int width_c = (int) ((300*frame.getWidth())/900);
 	    int height_c = (int) ((23*frame.getHeight())/600);
 	    int font_size_c = (int) ((11*frame.getWidth())/900);
@@ -463,76 +450,87 @@ public class Client_Product_Details {
         
         
        
-	    
-	    
-	    
-	    
-	    // label  - product name
+	   
+        
+	    // label  - Status
 	    int lbn_x = (int) ((10*frame.getWidth())/900);
-	    int lbn_y = (int) ((125*frame.getHeight())/600);
+	    int lbn_y = (int) ((95*frame.getHeight())/600);
 	    int lbn_width = (int) ((200*frame.getWidth())/900);
 	    int lbn_height = (int) ((30*frame.getHeight())/600);
 	    int lbn_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Label labn = new Custom_Label(lbn_x, lbn_y, lbn_width, lbn_height,"Product Name :",
+        Custom_Label labn = new Custom_Label(lbn_x, lbn_y, lbn_width, lbn_height,"Status :",
         "Calibri",lbn_font_size,"#b39700");
         general_infos.add(labn);
-        
-        
-        // product name text field
-        int x_n = (int) ((130*frame.getWidth())/900);
-	    int y_n = (int) ((128*frame.getHeight())/600);
-	    int width_n = (int) ((300*frame.getWidth())/900);
-	    int height_n = (int) ((23*frame.getHeight())/600);
-	    int font_size_n = (int) ((11*frame.getWidth())/900);
-	    Custom_Text_Field product_name = new Custom_Text_Field(x_n,y_n,width_n,height_n,"Calibri",font_size_n,"#000000");
-	    product_name.setBorder(new EmptyBorder(0, 0, 0, 0));
-	    product_name.setEditable(false);
-	    product_name.setBackground(Color.WHITE);
-	    product_name.setText(product_details[2].toString());
-	    general_infos.add(product_name);
-        
-        
-        
+	    
        
 	    
+        
+        // status text field
+        int x_q = (int) ((130*frame.getWidth())/900);
+	    int y_q = (int) ((97*frame.getHeight())/600);
+	    int width_q = (int) ((300*frame.getWidth())/900);
+	    int height_q = (int) ((23*frame.getHeight())/600);
+	    int font_size_q = (int) ((11*frame.getWidth())/900);
+	    Custom_Text_Field status = new Custom_Text_Field(x_q,y_q,width_q,height_q,"Consolas",font_size_q,"#008000");
+	    status.setBorder(new EmptyBorder(0, 0, 0, 0));
+	    status.setEditable(false);
+	    status.setBackground(Color.WHITE);
+	    
+	    status.setText("In Stock");
+	    
+	    if(Double.valueOf(product_details[3].toString())<= 0) {
+	    	status.setText("Out of Stock");
+	    	status.setForeground(Color.red);}
+	   
+	    general_infos.add(status);
+        
+        
+        
+        
+        
+        
+        
 	    
 	    
-	    // label  - supplier
+	    // label - Price
 	    int lbs_x = (int) ((10*frame.getWidth())/900);
-	    int lbs_y = (int) ((155*frame.getHeight())/600);
+	    int lbs_y = (int) ((125*frame.getHeight())/600);
 	    int lbs_width = (int) ((200*frame.getWidth())/900);
 	    int lbs_height = (int) ((30*frame.getHeight())/600);
 	    int lbs_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Label labs = new Custom_Label(lbs_x, lbs_y, lbs_width, lbs_height,"Supplier :",
+        Custom_Label labs = new Custom_Label(lbs_x, lbs_y, lbs_width, lbs_height,"Price :",
         "Calibri",lbs_font_size,"#b39700");
         general_infos.add(labs);
         
         
-        // supplier text field
-        int x_s = (int) ((130*frame.getWidth())/900);
-	    int y_s = (int) ((158*frame.getHeight())/600);
-	    int width_s = (int) ((300*frame.getWidth())/900);
-	    int height_s = (int) ((23*frame.getHeight())/600);
-	    int font_size_s = (int) ((11*frame.getWidth())/900);
-	    Custom_Text_Field supplier = new Custom_Text_Field(x_s,y_s,width_s,height_s,"Calibri",font_size_s,"#000000");
-	    supplier.setBorder(new EmptyBorder(0, 0, 0, 0));
-	    supplier.setEditable(false);
-	    supplier.setBackground(Color.WHITE);
-	    supplier.setText(product_details[9].toString());
-	    general_infos.add(supplier);
+
+        // price text field
+        int x_p = (int) ((130*frame.getWidth())/900);
+	    int y_p = (int) ((128*frame.getHeight())/600);
+	    int width_p = (int) ((100*frame.getWidth())/900);
+	    int height_p = (int) ((23*frame.getHeight())/600);
+	    int font_size_p = (int) ((11*frame.getWidth())/900);
+	    Custom_Text_Field price = new Custom_Text_Field(x_p,y_p,width_p,height_p,"Calibri",font_size_p,"#000000");
+	    price.setBorder(new EmptyBorder(0, 0, 0, 0));
+	    price.setEditable(false);
+	    price.setBackground(Color.WHITE);
+	    price.setText(product_details[4].toString()+ " Dhs");
+	    general_infos.add(price );
         
         
         
         
         
+	    
+	    
+	    
         
-        
-    
+       
         
 		// description information panel
-		int pn2_x = (int) ((390*frame.getWidth())/900);
+		int pn2_x = (int) ((150*frame.getWidth())/900);
 	    int pn2_y = (int) ((320*frame.getHeight())/600);
-	    int pn2_width = (int) ((450*frame.getWidth())/900);
+	    int pn2_width = (int) ((690*frame.getWidth())/900);
 	    int pn2_height = (int) ((200*frame.getHeight())/600);
 	    Custom_Panel description_infos = new Custom_Panel(pn2_x,pn2_y,pn2_width,pn2_height,"#FFFFFF");
 	    client_space.space.add(description_infos);
@@ -554,7 +552,7 @@ public class Client_Product_Details {
         // product description text area
         int x_d = (int) ((10*frame.getWidth())/900);
 	    int y_d = (int) ((68*frame.getHeight())/600);
-	    int width_d = (int) ((425*frame.getWidth())/900);
+	    int width_d = (int) ((650*frame.getWidth())/900);
 	    int height_d = (int) ((110*frame.getHeight())/600);
 	    int font_size_d = (int) ((11*frame.getWidth())/900);
 	    Custom_Text_Area description = new Custom_Text_Area(x_d,y_d,width_d,height_d,
@@ -567,24 +565,6 @@ public class Client_Product_Details {
         
         
         
-        // stock and pricing panel
-	    int pn4_x = (int) ((150*frame.getWidth())/900);
-	    int pn4_y = (int) ((320*frame.getHeight())/600);
-	    int pn4_width = (int) ((200*frame.getWidth())/900);
-	    int pn4_height = (int) ((200*frame.getHeight())/600);
-	    Custom_Panel stock_pricing_panel = new Custom_Panel(pn4_x,pn4_y,pn4_width,pn4_height,"#FFFFFF");
-	    client_space.space.add(stock_pricing_panel);
-	    
-	    
-	    // label  - Product Availability and Cost
-	    int lb7_x = (int) ((10*frame.getWidth())/900);
-	    int lb7_y = (int) ((10*frame.getHeight())/600);
-	    int lb7_width = (int) ((200*frame.getWidth())/900);
-	    int lb7_height = (int) ((30*frame.getHeight())/600);
-	    int lb7_font_size = (int) ((16*frame.getWidth())/900);
-        Custom_Label lab7 = new Custom_Label(lb7_x, lb7_y, lb7_width, lb7_height,"Status and Cost",
-        "Segoe Print",lb7_font_size,"#2F5597");
-        stock_pricing_panel.add(lab7); 
 	    
         
         
@@ -592,94 +572,12 @@ public class Client_Product_Details {
         
         
         
-        // quantity text field
-        int x_q = (int) ((10*frame.getWidth())/900);
-	    int y_q = (int) ((65*frame.getHeight())/600);
-	    int width_q = (int) ((100*frame.getWidth())/900);
-	    int height_q = (int) ((23*frame.getHeight())/600);
-	    int font_size_q = (int) ((15*frame.getWidth())/900);
-	    Custom_Text_Field quantity = new Custom_Text_Field(x_q,y_q,width_q,height_q,"Consolas",font_size_q,"#008000");
-	    quantity.setBorder(new EmptyBorder(0, 0, 0, 0));
-	    quantity.setEditable(false);
-	    quantity.setBackground(Color.WHITE);
-	    
-	    quantity.setText("In Stock");
-	    
-	    if(Double.valueOf(product_details[3].toString())<= 0) {
-	    	quantity.setText("Out Of Stock");
-	    	quantity.setForeground(Color.red);}
-	   
-	    stock_pricing_panel.add(quantity);
+        
         
         
        
 	    
 	    
-	    
-	    
-	    // label  - price
-	    int lbp_x = (int) ((10*frame.getWidth())/900);
-	    int lbp_y = (int) ((95*frame.getHeight())/600);
-	    int lbp_width = (int) ((200*frame.getWidth())/900);
-	    int lbp_height = (int) ((30*frame.getHeight())/600);
-	    int lbp_font_size = (int) ((12*frame.getWidth())/900);
-        Custom_Label labp = new Custom_Label(lbp_x, lbp_y, lbp_width, lbp_height,"Price :",
-        "Calibri",lbp_font_size,"#b39700");
-        stock_pricing_panel.add(labp);
-        
-        
-        // price text field
-        int x_p = (int) ((65*frame.getWidth())/900);
-	    int y_p = (int) ((98*frame.getHeight())/600);
-	    int width_p = (int) ((100*frame.getWidth())/900);
-	    int height_p = (int) ((23*frame.getHeight())/600);
-	    int font_size_p = (int) ((11*frame.getWidth())/900);
-	    Custom_Text_Field price = new Custom_Text_Field(x_p,y_p,width_p,height_p,"Calibri",font_size_p,"#000000");
-	    price.setBorder(new EmptyBorder(0, 0, 0, 0));
-	    price.setEditable(false);
-	    price.setBackground(Color.WHITE);
-	    price.setText(product_details[4].toString()+ " Dhs");
-	    stock_pricing_panel.add(price );
-	    
-        
-       
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 
 	    // handle resizing
         new Custom_Resizing_Manager(frame);
@@ -687,7 +585,6 @@ public class Client_Product_Details {
         new Custom_Resizing_Manager(general_infos);
         new Custom_Resizing_Manager(description_infos);
         new Custom_Resizing_Manager(photos_panel);
-        new Custom_Resizing_Manager(stock_pricing_panel);
 
 	}
 

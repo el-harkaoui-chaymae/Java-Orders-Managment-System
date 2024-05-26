@@ -52,7 +52,7 @@ public class Client_Products_Page {
 		
 		// create the client space elements
 		Client_Space client_space = new Client_Space(frame);
-				
+				 
 
 
 		// change products button background to show that it's clicked

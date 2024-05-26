@@ -56,7 +56,7 @@ public class Client_Buy_Products_Page {
 
 		
 		// center page panel
-		int pn1_x = (int) ((140 * frame.getWidth()) / 900);
+		int pn1_x = (int) ((140 * frame.getWidth()) / 900); 
 		int pn1_y = (int) ((70 * frame.getHeight()) / 600);
 		int pn1_width = (int) ((800 * frame.getWidth()) / 900);
 		int pn1_height = (int) ((580 * frame.getHeight()) / 600);

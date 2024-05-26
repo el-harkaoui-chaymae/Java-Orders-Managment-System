@@ -39,7 +39,7 @@ public class Staff_Product_Details_Page {
 	ByteArrayInputStream photo_3 ;
 	
 
-	
+	 
 	
 	// array of photos labels 
 	ArrayList<Custom_Label> photo_labels = new ArrayList<>();
@@ -264,7 +264,7 @@ public class Staff_Product_Details_Page {
 	    int bt_height = (int) ((30*frame.getHeight())/600);
 	    int bt_font_size = (int) ((16*frame.getWidth())/900);
         Custom_Button previous_image = new Custom_Button(bt_x,bt_y,bt_width,bt_height,
-        "<<","#808080","Consolas",bt_font_size,false);
+        "<<","#808080","Calibri",bt_font_size,false);
         photos_panel.add(previous_image);
         
         
@@ -326,7 +326,7 @@ public class Staff_Product_Details_Page {
 	    int bt2_height = (int) ((30*frame.getHeight())/600);
 	    int bt2_font_size = (int) ((16*frame.getWidth())/900);
         Custom_Button next_image = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,
-        ">>","#808080","Consolas",bt2_font_size,false);
+        ">>","#808080","Calibri",bt2_font_size,false);
         photos_panel.add(next_image);
         
         // next_image button action

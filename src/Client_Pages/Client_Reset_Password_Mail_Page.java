@@ -36,7 +36,7 @@ public class Client_Reset_Password_Mail_Page {
         verification_code = random.nextInt(9000) + 1000;
     }
 	
-    
+     
     
 	// constructor
 	public  Client_Reset_Password_Mail_Page(Custom_Frame frame) {

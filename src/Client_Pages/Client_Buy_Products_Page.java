@@ -36,7 +36,7 @@ public class Client_Buy_Products_Page {
 	ArrayList<Custom_Panel> products_displayers_panels = new ArrayList<>();
 	
 
-	 
+	  
 	
 
 	// constructor

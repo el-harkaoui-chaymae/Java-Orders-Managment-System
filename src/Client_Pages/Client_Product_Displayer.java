@@ -79,7 +79,7 @@ public class Client_Product_Displayer {
 		
 		
 		
-		// product infos panel - it contains - organize - display product
+		// product infos panel - it contains - organizes - displays a product
 	    int pn_x = (int) ((x*frame.getWidth())/900);
 	    int pn_y = (int) ((y*frame.getHeight())/600);
 	    int pn_width = (int) ((width*frame.getWidth())/900);

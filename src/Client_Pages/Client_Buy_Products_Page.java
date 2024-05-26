@@ -36,7 +36,7 @@ public class Client_Buy_Products_Page {
 	ArrayList<Custom_Panel> products_displayers_panels = new ArrayList<>();
 	
 
-	
+	 
 	
 
 	// constructor
@@ -52,6 +52,7 @@ public class Client_Buy_Products_Page {
 		client_space.products.setBackground(Color.decode("#002F5E"));
 		client_space.labr.setBackground(Color.decode("#002F5E"));
 		client_space.products.change_color_background("#002F5E","#002F5E",client_space.labr);
+		client_space.products.setForeground(Color.decode("#b39700"));
 		client_space.products.change_style("#b39700","#b39700");
 
 		

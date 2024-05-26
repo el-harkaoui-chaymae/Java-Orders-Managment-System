@@ -32,7 +32,7 @@ import Data_Base.Invoice;
 public class Client_Orders_Page {
 	 
 	
-	// attributes
+	// attributes 
 	int start_point_x = 25 ;
 	int start_point_y = 20 ;
 	int horizontal_spacing = 27;
@@ -41,7 +41,7 @@ public class Client_Orders_Page {
 	int page_capacity = 0 ;
 	
 	int current_page_start_index = 0 ;
-	int current_page_end_index = 3 ;
+	int current_page_end_index = 3 ; 
 	
 	
 	public static Custom_Label total_ordered_items ;
@@ -470,12 +470,12 @@ public class Client_Orders_Page {
 
         // label - total cost
 	    int lg_x = (int) ((35*frame.getWidth())/900);
-	    int lg_y = (int) ((320*frame.getHeight())/600);
+	    int lg_y = (int) ((321*frame.getHeight())/600);
 	    int lg_width = (int) ((200*frame.getWidth())/900);
 	    int lg_height = (int) ((30*frame.getHeight())/600);
 	    int lg_font_size = (int) ((16*frame.getWidth())/900);
         Custom_Label lg = new Custom_Label(lg_x, lg_y, lg_width, lg_height,
-        "Total Cost :","Segoe Print",lg_font_size,"#C00000");
+        "Total Cost :","Consolas",lg_font_size,"#C00000");
         lg.setHorizontalAlignment(SwingConstants.LEFT);
         right_panel.add(lg);
          
@@ -509,17 +509,18 @@ public class Client_Orders_Page {
         
         
         
+
         // confirm purchase button 
 	    int bt2_x = (int) ((35*frame.getWidth())/900);
 	    int bt2_y = (int) ((400*frame.getHeight())/600);
 	    int bt2_width = (int) ((245*frame.getWidth())/900);
 	    int bt2_height = (int) ((30*frame.getHeight())/600);
-	    int bt2_font_size = (int) ((12*frame.getWidth())/900);
+	    int bt2_font_size = (int) ((16*frame.getWidth())/900);
         Custom_Button confirm = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,
-        "Confirm Your Purchase","#FFFFFF","Consolas",bt2_font_size,true);
-        confirm.setRound_shape_variables(35, 35);
+        "Confirm your Purchase","#2F5597","Segoe Print",bt2_font_size,false);
+        confirm.change_style("#64dd07","#2F5597");
         confirm.setHorizontalAlignment(SwingConstants.CENTER);
-        right_panel.add(confirm); 
+        right_panel.add(confirm);
         
         // action
         confirm.addActionListener(new ActionListener() {

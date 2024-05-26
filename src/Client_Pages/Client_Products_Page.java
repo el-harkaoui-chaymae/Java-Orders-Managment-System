@@ -43,7 +43,7 @@ public class Client_Products_Page {
     int start_point = 25;
     
    
-    
+     
 	  
 	 
 	
@@ -534,7 +534,7 @@ public class Client_Products_Page {
 	    int height_s = (int) ((23*frame.getHeight())/600);
 	    int font_size_s = (int) ((11*frame.getWidth())/900);
 	    Custom_Text_Field search = new Custom_Text_Field(x_s,y_s,width_s,height_s,"Segoe Print",font_size_s,"#000000") ;
-	    search.setText(" search ...");
+	    search.setText(" search products ...");
 	    center_panel.add(search);
 	    
 	    

@@ -7,8 +7,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.io.ByteArrayInputStream;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -22,12 +20,9 @@ import Graphical_Interface.Custom_Label;
 import Graphical_Interface.Custom_Message;
 import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
-import Data_Base.Delivery;
-import Data_Base.Delivery_Destination;
-import Data_Base.Invoice;
+
 import Data_Base.Order;
 import Data_Base.Product;
-import Data_Base.Purchase;
 
 
 

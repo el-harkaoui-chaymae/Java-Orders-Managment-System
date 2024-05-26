@@ -29,7 +29,7 @@ public class Staff_Stock_Page {
 	boolean changes_saved = false ;
 	static int product_identifier;
 	    
-
+ 
 	// constructor
 	public Staff_Stock_Page(Custom_Frame frame) {
 		
@@ -426,7 +426,8 @@ public class Staff_Stock_Page {
             	 // get the selected row values
             	 int selected_row = table.getSelectedRow();
             	 // Check if a row is selected
-            	 if (selected_row != -1 && table.getValueAt(selected_row, 0)!=null) { 
+            	 if (selected_row != -1 && table.getValueAt(selected_row, 0)!=null 
+            			                && !(table.getValueAt(selected_row, 0).equals(""))) { 
             		 int id_product = Integer.parseInt(table.getValueAt(selected_row, 0).toString());
             	     String product_name = table.getValueAt(selected_row, 1).toString();
             	     double quantity = Double.parseDouble(table.getValueAt(selected_row, 3).toString());
@@ -481,7 +482,8 @@ public class Staff_Stock_Page {
              // get the selected row id
            	 int selected_row = table.getSelectedRow();
            	 // Check if a row is selected
-           	 if (selected_row != -1 && table.getValueAt(selected_row, 0)!=null) { 
+           	 if (selected_row != -1 && table.getValueAt(selected_row, 0)!=null 
+           			                && !(table.getValueAt(selected_row, 0).equals(""))) { 
            		 int id_product = Integer.parseInt(table.getValueAt(selected_row, 0).toString());
            		 
            	     // create a virtual product
@@ -538,7 +540,8 @@ public class Staff_Stock_Page {
             	// get the selected row id
               	 int selected_row = table.getSelectedRow();
               	 // Check if a row is selected
-              	 if (selected_row != -1 && table.getValueAt(selected_row, 0)!=null) { 
+              	 if (selected_row != -1 && table.getValueAt(selected_row, 0)!=null 
+              			                && !(table.getValueAt(selected_row, 0).equals(""))) { 
               		 product_identifier = Integer.parseInt(table.getValueAt(selected_row, 0).toString());
               		 
               	     // remove staff stock space page 

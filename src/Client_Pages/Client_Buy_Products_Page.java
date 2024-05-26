@@ -20,12 +20,13 @@ import Graphical_Interface.Custom_Resizing_Manager;
 public class Client_Buy_Products_Page {
 	
 	// attributes
+	
 	String Product_Category;
 	int start_point_x = 25 ;
 	int start_point_y = 20 ;
 	int horizontal_spacing = 27;
 	int vertical_spacing = 160;
-	int index = 0;
+	int index = 0; 
 	int page_capacity = 0 ;
 	
 	int current_page_start_index = 0 ;
@@ -51,8 +52,9 @@ public class Client_Buy_Products_Page {
 		client_space.products.setBackground(Color.decode("#002F5E"));
 		client_space.labr.setBackground(Color.decode("#002F5E"));
 		client_space.products.change_color_background("#002F5E", "#002F5E", client_space.labr);
+		client_space.products.setForeground(Color.decode("#b39700")); 
 		client_space.products.change_style("#b39700", "#b39700");
-
+ 
 		
 		// center page panel
 		int pn1_x = (int) ((140 * frame.getWidth()) / 900);

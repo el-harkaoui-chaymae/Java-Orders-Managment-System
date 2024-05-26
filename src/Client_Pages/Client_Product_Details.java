@@ -58,6 +58,7 @@ public class Client_Product_Details {
 		client_space.products.setBackground(Color.decode("#002F5E"));
 		client_space.labr.setBackground(Color.decode("#002F5E"));
 		client_space.products.change_color_background("#002F5E", "#002F5E", client_space.labr);
+		client_space.products.setForeground(Color.decode("#b39700"));
 		client_space.products.change_style("#b39700", "#b39700");
 
 		
@@ -560,6 +561,7 @@ public class Client_Product_Details {
 	    "Calibri",font_size_d,"#000000") ;
 	    description.setBorder(new EmptyBorder(0, 0, 0, 0));
 	    description.setText(product_details[8].toString());
+	    description.setEditable(false);
 	    description_infos.add(description);
         
         
@@ -595,10 +597,10 @@ public class Client_Product_Details {
 	    int y_q = (int) ((65*frame.getHeight())/600);
 	    int width_q = (int) ((100*frame.getWidth())/900);
 	    int height_q = (int) ((23*frame.getHeight())/600);
-	    int font_size_q = (int) ((14*frame.getWidth())/900);
-	    Custom_Text_Field quantity = new Custom_Text_Field(x_q,y_q,width_q,height_q,"Calibri",font_size_q,"#008000");
+	    int font_size_q = (int) ((15*frame.getWidth())/900);
+	    Custom_Text_Field quantity = new Custom_Text_Field(x_q,y_q,width_q,height_q,"Consolas",font_size_q,"#008000");
 	    quantity.setBorder(new EmptyBorder(0, 0, 0, 0));
-	    //quantity.setEditable(false);
+	    quantity.setEditable(false);
 	    quantity.setBackground(Color.WHITE);
 	    
 	    quantity.setText("In Stock");
@@ -627,14 +629,14 @@ public class Client_Product_Details {
         
         
         // price text field
-        int x_p = (int) ((80*frame.getWidth())/900);
+        int x_p = (int) ((65*frame.getWidth())/900);
 	    int y_p = (int) ((98*frame.getHeight())/600);
 	    int width_p = (int) ((100*frame.getWidth())/900);
 	    int height_p = (int) ((23*frame.getHeight())/600);
 	    int font_size_p = (int) ((11*frame.getWidth())/900);
 	    Custom_Text_Field price = new Custom_Text_Field(x_p,y_p,width_p,height_p,"Calibri",font_size_p,"#000000");
 	    price.setBorder(new EmptyBorder(0, 0, 0, 0));
-	    //price.setEditable(false);
+	    price.setEditable(false);
 	    price.setBackground(Color.WHITE);
 	    price.setText(product_details[4].toString()+ " Dhs");
 	    stock_pricing_panel.add(price );

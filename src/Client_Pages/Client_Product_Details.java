@@ -20,7 +20,6 @@ import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
 import Graphical_Interface.Custom_Text_Area;
 import Graphical_Interface.Custom_Text_Field;
-import Staff_Pages.Staff_Stock_Page;
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;

@@ -50,7 +50,7 @@ public class Client_Product_Displayer {
 	Custom_Button like ;
 	Custom_Button increase_items ;
 	Custom_Button decrease_items ;
-	Custom_Button remove ;
+	Custom_Button remove ; 
 	
 	public static int productId = 0 ;
 	 
@@ -118,7 +118,6 @@ public class Client_Product_Displayer {
             public void actionPerformed(ActionEvent e) {
             	
             	
-
         	    // create a virtual product
         	    Product virtual_product = new Product(null,null,0,0,null,null,null,null,null);
         	    virtual_product.setId(product_id);
@@ -126,7 +125,7 @@ public class Client_Product_Displayer {
         	    // get the selcted product details
         	    Object[] product_details = virtual_product.get_details();
             	
-            	
+            	// if this product is not out of stock
         	    if(Double.valueOf(product_details[3].toString())<= 0) {
         	    	
         	    	// raise a message
@@ -200,9 +199,9 @@ public class Client_Product_Displayer {
         
         
         // - item button 
-	    int bt3_x = (int) ((21*frame.getWidth())/900);
+	    int bt3_x = (int) ((14*frame.getWidth())/900);
 	    int bt3_y = (int) ((160*frame.getHeight())/600);
-	    int bt3_width = (int) ((33*frame.getWidth())/900);
+	    int bt3_width = (int) ((40*frame.getWidth())/900);
 	    int bt3_height = (int) ((25*frame.getHeight())/600);
 	    int bt3_font_size = (int) ((14*frame.getWidth())/900);
         decrease_items = new Custom_Button(bt3_x,bt3_y,bt3_width,bt3_height,
@@ -278,7 +277,7 @@ public class Client_Product_Displayer {
         // + item button 
 	    int bt4_x = (int) ((93*frame.getWidth())/900);
 	    int bt4_y = (int) ((160*frame.getHeight())/600);
-	    int bt4_width = (int) ((33*frame.getWidth())/900);
+	    int bt4_width = (int) ((42*frame.getWidth())/900);
 	    int bt4_height = (int) ((25*frame.getHeight())/600);
 	    int bt4_font_size = (int) ((14*frame.getWidth())/900);
         increase_items = new Custom_Button(bt4_x,bt4_y,bt4_width,bt4_height,
@@ -295,47 +294,83 @@ public class Client_Product_Displayer {
         increase_items.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	
-            	// change the value of the items number of the product displayer
-            	ordered_quantity += 1;
-            	product_ordered_quantity.setText(String.valueOf(ordered_quantity));
             	
-            	// update the product ordered quantity in the DB
-            	Order virtual_order = new Order(client_id,product_id);
-            	
-            	int original_qantity = virtual_order.get_product_ordered_quantity();
-            	
-            	virtual_order.product_oredered_items = original_qantity + 1 ;
-            	
-            	virtual_order.change_product_ordered_quantity();
+            	// if the original ordered quantity less than the product quantity in the stock by 2
             	
             	
-            	// update the value of the total ordered items
-            	int original_Q = virtual_order.get_total_ordered_items();
+            	// ----------- the product stock quantity
             	
-            	Client_Orders_Page.total_ordered_items.setText(String.valueOf(original_Q));
+            	// create a virtual product
+        	    Product virtual_product = new Product(null,null,0,0,null,null,null,null,null);
+        	    virtual_product.setId(product_id);
+        	    
+        	    // get the selcted product details - stock qunatity
+        	    Object[] product_details = virtual_product.get_details();
+        	    double product_stock_quantity = Double.valueOf(product_details[3].toString());
+        	    
+        	    
+        	    // ----------- the product original ordered quantity
+        	    
+        	    // create a virtual order
+                Order virtual_order = new Order(client_id,product_id);
+                
+                // its original ordered quantity
+            	int original_ordered_qantity = virtual_order.get_product_ordered_quantity();
             	
+        	   
+            	// ---------- if the product is still availible in the stock the clients can add items of it
+            	
+        	    if(original_ordered_qantity + 1 <= product_stock_quantity) {
+        	    	
+        	    	// change the value of the items number of the product displayer
+                	ordered_quantity += 1;
+                	product_ordered_quantity.setText(String.valueOf(ordered_quantity));
+                	
+                	// update the product ordered quantity in the DB            	
+                	virtual_order.product_oredered_items = original_ordered_qantity + 1 ;
+                	virtual_order.change_product_ordered_quantity();
+                	
+                	
+                	// update the value of the total ordered items
+                	int original_Q = virtual_order.get_total_ordered_items();
+                	
+                	Client_Orders_Page.total_ordered_items.setText(String.valueOf(original_Q));
+                	
 
-            	// update the subtotal price
-            	double new_subtotal_price = virtual_order.get_total_orders_price();
-            	Client_Orders_Page.subtotal_pr.setText(String.valueOf(new_subtotal_price)+" Dhs");
+                	// update the subtotal price
+                	double new_subtotal_price = virtual_order.get_total_orders_price();
+                	Client_Orders_Page.subtotal_pr.setText(String.valueOf(new_subtotal_price)+" Dhs");
+                	
+                	
+                	
+                	// update the total cost
+                	 if(Client_Orders_Page.delivery_fee.getText().equals("Delivery unavailable !") ) {
+                		 Client_Orders_Page.total_price.setText("0 Dhs");
+                		 Client_Orders_Page.total_price.setForeground(Color.red) ; }
+                     
+                     else {
+                     	
+                             String del_fee =  
+                             Client_Orders_Page.delivery_fee.getText().substring(0, Client_Orders_Page.delivery_fee.getText().length() - 4);
+                            
+                             String sub_tot =  
+                             Client_Orders_Page.subtotal_pr.getText().substring(0, Client_Orders_Page.subtotal_pr.getText().length() - 4);
+                     	    
+                             double total_cost = Double.valueOf(sub_tot) + Double.valueOf(del_fee) ;
+                             Client_Orders_Page.total_price.setText(String.valueOf(total_cost) + " Dhs");}}
             	
-            	
-            	
-            	// update the total cost
-            	 if(Client_Orders_Page.delivery_fee.getText().equals("Delivery unavailable !") ) {
-            		 Client_Orders_Page.total_price.setText("0 Dhs");
-            		 Client_Orders_Page.total_price.setForeground(Color.red) ; }
-                 
-                 else {
-                 	
-                         String del_fee =  
-                         Client_Orders_Page.delivery_fee.getText().substring(0, Client_Orders_Page.delivery_fee.getText().length() - 4);
-                        
-                         String sub_tot =  
-                         Client_Orders_Page.subtotal_pr.getText().substring(0, Client_Orders_Page.subtotal_pr.getText().length() - 4);
-                 	    
-                         double total_cost = Double.valueOf(sub_tot) + Double.valueOf(del_fee) ;
-                         Client_Orders_Page.total_price.setText(String.valueOf(total_cost) + " Dhs");}
+            	  
+        	    
+        	    
+        	       // ---------- the product is out of stock
+        	    
+        	    
+        	    else {
+        	    	
+        	    	// raise a message
+            		new Custom_Message(50,140,"Needed Images\\x_icon.png",
+            		"Out Of Stock","Insufficient stock for addition");
+        	    }
             	
             	
             }});
@@ -436,7 +471,8 @@ public class Client_Product_Displayer {
               // affect the product id
               productId = product_id ;
               
-              // remove products page
+                            
+              // remove buy products page
               frame.getContentPane().removeAll();    
               // open products details page 
               new Client_Product_Details (frame);                       

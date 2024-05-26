@@ -29,7 +29,7 @@ public class Client_Buy_Products_Page {
 	int page_capacity = 0 ;
 	
 	int current_page_start_index = 0 ;
-	int current_page_end_index = 7 ;
+	int current_page_end_index = 7 ; 
 	
 	 
 	
@@ -45,13 +45,14 @@ public class Client_Buy_Products_Page {
 		
 		// create the client space elements
 		Client_Space client_space = new Client_Space(frame);
+						
 
-		
+
 		// change products button background to show that it's clicked
 		client_space.products.setBackground(Color.decode("#002F5E"));
 		client_space.labr.setBackground(Color.decode("#002F5E"));
-		client_space.products.change_color_background("#002F5E", "#002F5E", client_space.labr);
-		client_space.products.change_style("#b39700", "#b39700");
+		client_space.products.change_color_background("#002F5E","#002F5E",client_space.labr);
+		client_space.products.change_style("#b39700","#b39700");
 
 		
 		// center page panel

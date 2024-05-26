@@ -36,12 +36,13 @@ public class Client_Orders_Page {
 	int start_point_x = 25 ;
 	int start_point_y = 20 ;
 	int horizontal_spacing = 27;
-	int vertical_spacing = 160;
+	int vertical_spacing = 160; 
 	int index = 0;
 	int page_capacity = 0 ;
 	
 	int current_page_start_index = 0 ;
 	int current_page_end_index = 3 ;
+	
 	
 	public static Custom_Label total_ordered_items ;
 	public static Custom_Label subtotal_pr ;
@@ -527,7 +528,8 @@ public class Client_Orders_Page {
             	
             	if(!(total_ordered_items.getText().equals("0"))) {
             		
-            		// ----- add new purchase - commande in the DB
+            		
+            		// --------- add new purchase - commande in the DB
                 	
                 	// get the actual date
                 	LocalDate purchase_date = LocalDate.now();

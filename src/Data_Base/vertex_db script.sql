@@ -107,16 +107,14 @@ CREATE TABLE commande (
 -- Table commande_produit
 
 CREATE TABLE commande_produit (
-    
     numerocommande INT NOT NULL,
     numeroproduit INT NOT NULL,
     quantite_commandee INT NOT NULL,
-	PRIMARY KEY (numerocommande, numeroproduit),
-	CONSTRAINT fk_cmp_numerocommande FOREIGN KEY (numerocommande) REFERENCES commande(numerocommande),
-    CONSTRAINT fk_cmp_numeroproduit FOREIGN KEY (numeroproduit) REFERENCES produit(numeroproduit)
-    
-    ON DELETE CASCADE
+    PRIMARY KEY (numerocommande, numeroproduit),
+    CONSTRAINT fk_cmp_numerocommande FOREIGN KEY (numerocommande) REFERENCES commande(numerocommande) ON DELETE CASCADE,
+    CONSTRAINT fk_cmp_numeroproduit FOREIGN KEY (numeroproduit) REFERENCES produit(numeroproduit) ON DELETE CASCADE
 );
+
 
 
 

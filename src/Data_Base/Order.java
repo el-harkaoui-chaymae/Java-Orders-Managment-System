@@ -27,7 +27,7 @@ public class Order implements Table_Management{
 	
 	
 	
-	
+	 
 	// method add
 	@Override
 	public void add() {
@@ -340,7 +340,7 @@ public class Order implements Table_Management{
 	
 	
 	
-	// a method to gete the total price of ordered itemes
+	// a method to get the total price of ordered items
 	
 	public double get_total_orders_price() {
 	    double total_price = 0;
@@ -523,6 +523,69 @@ public class Order implements Table_Management{
 	
 	
 	
+    
+    
+    
+    // -------------------------------------------------------------------------------
+    
+    
+    
+    
+    // a method to get a specific client purchased products and their quantities
+    public ArrayList<Object[]> get_purchased_products_quantities(){
+    	
+    	ArrayList<Object[]> products_quantities = new ArrayList();
+    	
+    
+	    Connection connection = null;
+        PreparedStatement prepared_selection = null;
+        ResultSet resultSet = null;
+        
+        try {
+            // establish a connection with the database server
+            connection = Database_Connector.getConnection();
+            
+            // the select statement
+            String select_search = "SELECT numeroproduit,quantite_produit FROM panier WHERE numeroclient = ?";
+            
+            // prepare the selection query
+            prepared_selection = connection.prepareStatement(select_search);
+            
+            // set parameter values
+            prepared_selection.setInt(1, client_id);
+            
+            // execute selection query
+            resultSet = prepared_selection.executeQuery();
+            
+            // Iterate through the ResultSet 
+            while (resultSet.next()) {
+                
+            	int id_product = resultSet.getInt("numeroproduit");
+            	double product_Q = resultSet.getDouble("quantite_produit");
+            	Object[] pr_q = new Object[2];
+            	pr_q[0] = id_product;
+            	pr_q[1] = product_Q;
+            	products_quantities.add(pr_q);
+                
+            }} 
+        
+        catch (SQLException e) {
+            e.printStackTrace();} 
+        
+        finally {
+            
+        	try {
+                
+        		if (resultSet != null) resultSet.close();
+                if (prepared_selection != null) prepared_selection.close();
+                if (connection != null) connection.close();} 
+        	
+        	catch (SQLException e) {
+                e.printStackTrace();
+            }}
+    	
+    	
+        return products_quantities;}
 	
 	
 	

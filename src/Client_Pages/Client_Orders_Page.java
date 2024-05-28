@@ -27,6 +27,7 @@ import Data_Base.Product;
 import Data_Base.Delivery;
 import Data_Base.Purchase;
 import Data_Base.Invoice;
+import Data_Base.Purchase_Product;
 
 
 public class Client_Orders_Page {
@@ -534,7 +535,8 @@ public class Client_Orders_Page {
             		
             		// --------- add new purchase - commande in the DB
                 	
-                	// get the actual date
+                	
+            		// get the actual date
                 	LocalDate purchase_date = LocalDate.now();
                 	
                 	// get the actual time
@@ -549,6 +551,7 @@ public class Client_Orders_Page {
                 	
                 	
                 	// ---------- add a new delivery - livraison in the DB
+                	
                 	
                 	// delivery destination id
                 	double delivery_cost = Double.valueOf(delivery_fee.getText().substring(0,delivery_fee.getText().length() - 4));
@@ -568,6 +571,7 @@ public class Client_Orders_Page {
                     
                     // ---------- add a new invoice - facture in the DB
                     
+                    
                     // total cost
                     double total_pr =  total_cost ;
                     
@@ -577,32 +581,65 @@ public class Client_Orders_Page {
                     
                     
                     
-                    // --------- add new purchase_product - commande_produit in the DB 
+                    
                  
-                	
-                    
-                    
-                    
-                    
-                  // raise a message
-           	      new Custom_Message(70,140,"Needed Images\\verification_icon.png",
-           	      "Purchase Done","Your purchase is confiremed");
+           	       // -------- add new purchase_product  - commande_produit in the DB
+           	       
+            	
+            	   
+           	       // get all the purchased products and their items number
+           	       
+           	       // virtual order
+           	       Order ord = new Order(client_id,0);
+           	       
+           	       // get the products in the shopping cart and their quantities
+           	       ArrayList<Object[]> purchased_products_Q = ord.get_purchased_products_quantities();
+           	       
+           	       
+           	       // for each product-qunantity 
+           	       for (Object[] prd_q:purchased_products_Q ) {
+           	    	   
+           	    	   int id_prod = Integer.valueOf(prd_q[0].toString());
+           	    	   double quant = Double.valueOf(prd_q[1].toString());
+           	    	   
+           	    	   // create a new purchase_product element
+           	    	   Purchase_Product new_purchase_product = new Purchase_Product(purch_id,id_prod,quant);
+           	    	   
+           	    	   // add it
+           	    	   new_purchase_product.add();
+           	    	   
+           	    	   
+           	       }
+           	       
+           	       
+           	       
+           	       
+           	       
+           	        // raise a message
+           	        new Custom_Message(70,140,"Needed Images\\verification_icon.png",
+           	        "Purchase Done","Your purchase is confiremed");
                   
-           	      // remove products from orders list
-           	      for(Custom_Panel pn:products_displayers_panels) {pn.setVisible(false);}
+           	       // remove products from orders list
+           	       for(Custom_Panel pn:products_displayers_panels) {pn.setVisible(false);}
            	      
            	      
-           	      // evacuate this client related orders
-           	      Order.empty_orders_list(client_id);;
+           	       // evacuate this client related orders
+           	       Order.empty_orders_list(client_id);;
            	      
            	      
-           	      // reset values
-           	      total_ordered_items.setText("0");
-           	      subtotal_pr.setText("0 Dhs");
-           	      total_price.setText("0 Dhs");
-           	      
-            		
-            		
+           	       // reset values
+           	       total_ordered_items.setText("0");
+           	       subtotal_pr.setText("0 Dhs");
+           	       total_price.setText("0 Dhs");
+           	       
+           	       
+           	       
+           	       
+            	
+            	
+            	
+            	
+            	
             	}
             	
             	else {

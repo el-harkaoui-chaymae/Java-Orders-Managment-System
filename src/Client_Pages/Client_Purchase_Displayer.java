@@ -29,7 +29,7 @@ public class Client_Purchase_Displayer {
 		int pn2_width = (int) ((width * frame.getWidth()) / 900);
 		int pn2_height = (int) ((height * frame.getHeight()) / 600);
 		Custom_Panel purchase_displayer = new Custom_Panel(pn2_x, pn2_y, pn2_width, pn2_height, "#FFFFFF");
-		Border border = BorderFactory.createMatteBorder(2, 2, 2, 2, Color.decode("#B4B4B4")); // Top-left-bottom-right
+		Border border = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.decode("#B4B4B4")); // Top-left-bottom-right
 		purchase_displayer.setBorder(border);
 		center_panel.add(purchase_displayer);
 		
@@ -160,7 +160,7 @@ public class Client_Purchase_Displayer {
 	    int bt1_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button details = new Custom_Button(bt1_x,bt1_y,bt1_width,bt1_height,
         "Details","#2F5597","Segoe Print",bt1_font_size,false);
-        details.setHorizontalAlignment(SwingConstants.CENTER);
+        details.setHorizontalAlignment(SwingConstants.LEFT);
         details.change_style("#0e9bdd","#2F5597");
         purchase_displayer.add(details);
         

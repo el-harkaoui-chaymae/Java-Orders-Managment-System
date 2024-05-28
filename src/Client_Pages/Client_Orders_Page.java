@@ -33,7 +33,7 @@ import Data_Base.Purchase_Product;
 public class Client_Orders_Page {
 	 
 	
-	// attributes 
+	// attributes  
 	int start_point_x = 25 ;
 	int start_point_y = 20 ;
 	int horizontal_spacing = 27;
@@ -43,7 +43,7 @@ public class Client_Orders_Page {
 	
 	int current_page_start_index = 0 ;
 	int current_page_end_index = 3 ; 
-	
+	 
 	
 	public static Custom_Label total_ordered_items ;
 	public static Custom_Label subtotal_pr ;
@@ -109,6 +109,40 @@ public class Client_Orders_Page {
      	Border border = BorderFactory.createMatteBorder(0, 1, 0, 0, Color.decode("#B4B4B4")); // Top-left-bottom-right
      	right_panel.setBorder(border);
      	client_space.space.add(right_panel);
+     	
+     	
+     	
+     	
+
+        // label -  empty cart
+	    int ly_x = (int) ((55*frame.getWidth())/900);
+	    int ly_y = (int) ((100*frame.getHeight())/600);
+	    int ly_width = (int) ((240*frame.getWidth())/900);
+	    int ly_height = (int) ((220*frame.getHeight())/600);
+        Custom_Label ly = new Custom_Label(ly_x, ly_y, ly_width, ly_height,
+        "","Consolas",7,"#2F5597");
+        ly.add_background("Needed images\\empty_cart.png");
+        center_panel.add(ly);
+        ly.setVisible(false);     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
      	
      	
      	
@@ -185,25 +219,25 @@ public class Client_Orders_Page {
         
         
         // previous image button 
-	    int bt_x = (int) ((50*frame.getWidth())/900);
+	    int bt_x = (int) ((45*frame.getWidth())/900);
 	    int bt_y = (int) ((465*frame.getHeight())/600);
 	    int bt_width = (int) ((150*frame.getWidth())/900);
 	    int bt_height = (int) ((30*frame.getHeight())/600);
 	    int bt_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button previous = new Custom_Button(bt_x,bt_y,bt_width,bt_height,
-        "<< previous","#808080","Segoe Print",bt_font_size,false);
+        "<<  previous","#808080","Calibri",bt_font_size,false);
         center_panel.add(previous);
         
         
         
         // next image button 
-	    int bn_x = (int) ((210*frame.getWidth())/900);
+	    int bn_x = (int) ((205*frame.getWidth())/900);
 	    int bn_y = (int) ((465*frame.getHeight())/600);
 	    int bn_width = (int) ((100*frame.getWidth())/900);
 	    int bn_height = (int) ((30*frame.getHeight())/600);
 	    int bn_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button next = new Custom_Button(bn_x,bn_y,bn_width,bn_height,
-        "next >>","#808080","Segoe Print",bn_font_size,false);
+        "next  >>","#808080","Calibri",bn_font_size,false);
         center_panel.add(next);
 		
         
@@ -325,7 +359,8 @@ public class Client_Orders_Page {
         total_ordered_items.setHorizontalAlignment(SwingConstants.LEFT);
         right_panel.add(total_ordered_items);
         
-        
+        if(total_items == 0 ) { ly.setVisible(true);}
+        else { ly.setVisible(false); }
         
                 
         
@@ -633,7 +668,7 @@ public class Client_Orders_Page {
            	       total_price.setText("0 Dhs");
            	       
            	       
-           	       
+           	       ly.setVisible(true);
            	       
             	
             	

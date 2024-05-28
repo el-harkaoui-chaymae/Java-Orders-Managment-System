@@ -35,9 +35,9 @@ public class Splash_Page  {
 	    int height = (int) ((70*frame.getHeight())/600);
 	    Custom_Panel bar = new Custom_Panel(0,0,frame.getWidth(),height,"#2F5597");
 	    splash.add(bar);
+	     
 	    
-	    
-	    
+	     
 	    // about us button 
 	    int bt1_x = (int) ((700*frame.getWidth())/900);
 	    int bt1_y = (int) ((30*frame.getHeight())/600);

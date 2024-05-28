@@ -32,7 +32,7 @@ public class Staff_Clients_Page {
 		int pn1_x = (int) ((140 * frame.getWidth()) / 900);
 		int pn1_y = (int) ((70 * frame.getHeight()) / 600);
 		int pn1_width = (int) ((800 * frame.getWidth()) / 900);
-		int pn1_height = (int) ((580 * frame.getHeight()) / 600);
+		int pn1_height = (int) ((580 * frame.getHeight()) / 600); 
 		Custom_Panel center_panel = new Custom_Panel(pn1_x, pn1_y, pn1_width, pn1_height, "#FFFFFF");
 		staff_space.space.add(center_panel);
 		

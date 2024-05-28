@@ -23,13 +23,13 @@ public class Client_Favorites_Page {
 			
 			
 			
-			
-			
+			 
+			 
 			
 			
 			// handle resizing
-	        Custom_Resizing_Manager resize_1 = new Custom_Resizing_Manager(frame);
-	        Custom_Resizing_Manager resize_2 = new Custom_Resizing_Manager(client_space.space);
+	        new Custom_Resizing_Manager(frame);
+	        new Custom_Resizing_Manager(client_space.space);
 	        
 			    	
 			    	

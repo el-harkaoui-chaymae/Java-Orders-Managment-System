@@ -233,5 +233,104 @@ public class Purchase {
 		
 		return infos; }
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// -------------------------------------------------------------------------------
+	
+	
+	
+	// method to get sepecific client purchases
+    public  ArrayList<Object[]> get_client_purchases_infos (){
+		
+		// an array to store infos
+		ArrayList<Object[]> infos = new ArrayList<>();
+		
+		Connection connection = null;
+		PreparedStatement prepared_selection = null;
+		ResultSet resultSet = null;
+		
+		try {
+			
+			// establish a connection with the database server
+			connection = Database_Connector.getConnection();
+			
+			// the select statement
+			String select_query = "SELECT * FROM commande WHERE numeroclient = ?";
+			
+			// prepare the selection query
+			prepared_selection = connection.prepareStatement(select_query);
+			
+			// Set the parameter value
+            
+            prepared_selection.setInt(1, client_id);
+			
+			
+			// execute selsection query
+			resultSet = prepared_selection.executeQuery();
+			
+	
+
+			// Iterate through the ResultSet and populate the infos array
+			while (resultSet.next()) {
+			    
+				// get and store infos
+			    String id_purchase = resultSet.getString("numerocommande");
+			    String purchase_date = resultSet.getString("date_commande");
+			    String purchase_time = resultSet.getString("temps_commande");
+			    String purchase_state = resultSet.getString("etat_commande");
+			    
+			    
+			    // anarray to store the data for this row
+			    Object[] row_data = new Object[4];
+			    // Set the values in the rowData array
+			    row_data[0] = id_purchase;
+			    row_data[1] = purchase_date;
+			    row_data[2] = purchase_time;
+			    row_data[3] = purchase_state;
+			    
+			    
+			    // add the row data array to the infos ArrayList
+			    infos.add(row_data);}}
+			
+		catch(SQLException e) {e.printStackTrace();}
+        finally {
+            
+			try {
+                
+				  if (resultSet != null) resultSet.close();
+                  if (prepared_selection != null) prepared_selection.close();
+                  if (connection != null) connection.close();}
+            
+			catch (SQLException e) {e.printStackTrace();}}
+		
+		
+		return infos; }
+    
+    
+    
+    
+    
+    
+    
+    
+    // -------------------------------------------------------------------
+    
+    
+    
+    
+    
+    
+	
+	
 
 }

@@ -2,6 +2,7 @@ package Data_Base;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Purchase_Product implements Table_Management {
@@ -77,7 +78,66 @@ public class Purchase_Product implements Table_Management {
 		
 		
 		
-		
+	// -------------------------------------------------------
+	
+	
+	// method to get a specific purchase total purchased items
+    public double get_total_purchased_items() {
+    	
+    	double total_items = 0 ;
+    	
+
+    	Connection connection = null;
+        PreparedStatement prepared_selection = null;
+        ResultSet resultSet = null;
+        
+        
+        
+        try {
+            // establish a connection with the database server
+            connection = Database_Connector.getConnection();
+            
+            // the select statement
+            String select_query = "SELECT SUM(quantite_commandee) AS total_purchased_quantity FROM "
+            		            + "commande_produit WHERE numerocommande = ?" ;
+            		
+            
+            // prepare the selection query
+            prepared_selection = connection.prepareStatement(select_query);
+            
+            // set parameter value
+            prepared_selection.setInt(1, purchase_id);
+             
+            // execute selection query
+            resultSet = prepared_selection.executeQuery();
+            
+            // Iterate through the ResultSet 
+            if (resultSet.next()) {
+            	
+            	total_items = resultSet.getDouble("total_purchased_quantity"); }
+       
+        
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) resultSet.close();
+                if (prepared_selection != null) prepared_selection.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    	
+    	
+    	
+    	
+    	return total_items;
+    	
+    	
+    	
+    }
+    
 	
 	
 	
@@ -130,6 +190,7 @@ public class Purchase_Product implements Table_Management {
 	
 	
 	
+	// ------------------------------------------------------------------
 	
 	
 	

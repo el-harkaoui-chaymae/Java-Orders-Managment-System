@@ -34,7 +34,7 @@ public class Client_Space {
 	public Custom_Label labf;
 	public Custom_Label labg;
 	public Custom_Label labs;
- 
+  
 
 
 
@@ -66,9 +66,7 @@ public class Client_Space {
 	    int lbm_height = (int) ((41*frame.getHeight())/600);
         Custom_Label labm = new Custom_Label(lbm_x, lbm_y, lbm_width, lbm_height,
         "","Segoe Print",7,"#2F5597");
-        labm.setBackground(Color.decode("#b7c9e2"));
-        labm.setOpaque(true);
-        labm.add_background("Needed images\\menu_icon.png");
+        labm.add_background("Needed images\\menu_icon_2.png");
         menu.add(labm);
 		
 		
@@ -81,23 +79,13 @@ public class Client_Space {
 	    int lb1_height = (int) ((41*frame.getHeight())/600);
 	    int lb1_font_size = (int) ((18*frame.getWidth())/900);
         Custom_Label lab1 = new Custom_Label(lb1_x, lb1_y, lb1_width, lb1_height,
-        "Menu","Segoe Print",lb1_font_size,"#2F5597");
+        "Menu","Segoe Print",lb1_font_size,"#FFFFFF");
         lab1.setHorizontalAlignment(SwingConstants.CENTER);
-        lab1.setBackground(Color.decode("#b7c9e2"));
+        lab1.setBackground(Color.decode("#2F5597"));
         lab1.setOpaque(true);
         menu.add(lab1);
         
         
-        // label - above menu
-	    int lb_x = (int) ((0*frame.getWidth())/900);
-	    int lb_y = (int) ((0*frame.getHeight())/600);
-	    int lb_width = (int) ((120*frame.getWidth())/900);
-	    int lb_height = (int) ((15*frame.getHeight())/600);
-        Custom_Label lab = new Custom_Label(lb_x, lb_y, lb_width, lb_height,
-        "","Segoe Print",7,"#2F5597");
-        lab.setBackground(Color.decode("#b7c9e2"));
-        lab.setOpaque(true);
-        menu.add(lab);
         
         
         
@@ -162,7 +150,7 @@ public class Client_Space {
         
         // profile button 
 	    int bt1_x = (int) ((30*frame.getWidth())/900);
-	    int bt1_y = (int) ((77*frame.getHeight())/600);
+	    int bt1_y = (int) ((87*frame.getHeight())/600);
 	    int bt1_width = (int) ((90*frame.getWidth())/900);
 	    int bt1_height = (int) ((40*frame.getHeight())/600);
 	    int bt1_font_size = (int) ((12*frame.getWidth())/900);
@@ -181,7 +169,7 @@ public class Client_Space {
                 frame.getContentPane().removeAll();    
                 
                 // open client profile page 
-                Client_Profile_Page client_page = new Client_Profile_Page (frame);                       
+                new Client_Profile_Page (frame);                       
                 
                 // refresh the window
                 frame.revalidate();
@@ -192,7 +180,7 @@ public class Client_Space {
         
         // label  - profile icon
 	    int lbp_x = (int) ((0*frame.getWidth())/900);
-	    int lbp_y = (int) ((77*frame.getHeight())/600);
+	    int lbp_y = (int) ((87*frame.getHeight())/600);
 	    int lbp_width = (int) ((30*frame.getWidth())/900);
 	    int lbp_height = (int) ((40*frame.getHeight())/600);
         labp = new Custom_Label(lbp_x, lbp_y, lbp_width, lbp_height,
@@ -210,7 +198,7 @@ public class Client_Space {
         
         // products button 
 	    int bt2_x = (int) ((30*frame.getWidth())/900);
-	    int bt2_y = (int) ((140*frame.getHeight())/600);
+	    int bt2_y = (int) ((150*frame.getHeight())/600);
 	    int bt2_width = (int) ((90*frame.getWidth())/900);
 	    int bt2_height = (int) ((40*frame.getHeight())/600);
 	    int bt2_font_size = (int) ((12*frame.getWidth())/900);
@@ -229,7 +217,7 @@ public class Client_Space {
                 frame.getContentPane().removeAll();    
                 
                 // open client products page 
-                Client_Products_Page client_page = new Client_Products_Page (frame);                       
+                new Client_Products_Page (frame);                       
                 
                 // refresh the window
                 frame.revalidate();
@@ -240,7 +228,7 @@ public class Client_Space {
         
         // label  - products icon
 	    int lbr_x = (int) ((0*frame.getWidth())/900);
-	    int lbr_y = (int) ((140*frame.getHeight())/600);
+	    int lbr_y = (int) ((150*frame.getHeight())/600);
 	    int lbr_width = (int) ((30*frame.getWidth())/900);
 	    int lbr_height = (int) ((40*frame.getHeight())/600);
         labr = new Custom_Label(lbr_x, lbr_y, lbr_width, lbr_height,
@@ -258,7 +246,7 @@ public class Client_Space {
         
         // purchase button 
 	    int bt3_x = (int) ((30*frame.getWidth())/900);
-	    int bt3_y = (int) ((203*frame.getHeight())/600);
+	    int bt3_y = (int) ((213*frame.getHeight())/600);
 	    int bt3_width = (int) ((90*frame.getWidth())/900);
 	    int bt3_height = (int) ((40*frame.getHeight())/600);
 	    int bt3_font_size = (int) ((12*frame.getWidth())/900);
@@ -277,7 +265,7 @@ public class Client_Space {
                 frame.getContentPane().removeAll();    
                 
                 // open client purchases page 
-                Client_Purchases_Page client_page = new Client_Purchases_Page (frame);                       
+                new Client_Purchases_Page (frame);                       
                 
                 // refresh the window
                 frame.revalidate();
@@ -287,7 +275,7 @@ public class Client_Space {
         
         // label  - purchase icon
 	    int lbpr_x = (int) ((0*frame.getWidth())/900);
-	    int lbpr_y = (int) ((203*frame.getHeight())/600);
+	    int lbpr_y = (int) ((213*frame.getHeight())/600);
 	    int lbpr_width = (int) ((30*frame.getWidth())/900);
 	    int lbpr_height = (int) ((40*frame.getHeight())/600);
         labpr = new Custom_Label(lbpr_x, lbpr_y, lbpr_width, lbpr_height,
@@ -306,7 +294,7 @@ public class Client_Space {
         
         // orders button 
 	    int bt4_x = (int) ((30*frame.getWidth())/900);
-	    int bt4_y = (int) ((266*frame.getHeight())/600);
+	    int bt4_y = (int) ((276*frame.getHeight())/600);
 	    int bt4_width = (int) ((90*frame.getWidth())/900);
 	    int bt4_height = (int) ((40*frame.getHeight())/600);
 	    int bt4_font_size = (int) ((12*frame.getWidth())/900);
@@ -325,7 +313,7 @@ public class Client_Space {
                 frame.getContentPane().removeAll();    
                 
                 // open client orders page 
-                Client_Orders_Page client_page = new Client_Orders_Page (frame);                       
+                new Client_Orders_Page (frame);                       
                 
                 // refresh the window
                 frame.revalidate();
@@ -335,7 +323,7 @@ public class Client_Space {
         
         // label  - orders icon
 	    int lbo_x = (int) ((0*frame.getWidth())/900);
-	    int lbo_y = (int) ((266*frame.getHeight())/600);
+	    int lbo_y = (int) ((276*frame.getHeight())/600);
 	    int lbo_width = (int) ((30*frame.getWidth())/900);
 	    int lbo_height = (int) ((40*frame.getHeight())/600);
         labo = new Custom_Label(lbo_x, lbo_y, lbo_width, lbo_height,
@@ -354,7 +342,7 @@ public class Client_Space {
         
         // favorites button 
 	    int bt5_x = (int) ((30*frame.getWidth())/900);
-	    int bt5_y = (int) ((329*frame.getHeight())/600);
+	    int bt5_y = (int) ((339*frame.getHeight())/600);
 	    int bt5_width = (int) ((90*frame.getWidth())/900);
 	    int bt5_height = (int) ((40*frame.getHeight())/600);
 	    int bt5_font_size = (int) ((12*frame.getWidth())/900);
@@ -373,7 +361,7 @@ public class Client_Space {
                 frame.getContentPane().removeAll();    
                 
                 // open client favorites page 
-                Client_Favorites_Page client_page = new Client_Favorites_Page (frame);                       
+                new Client_Favorites_Page (frame);                       
                 
                 // refresh the window
                 frame.revalidate();
@@ -384,7 +372,7 @@ public class Client_Space {
         
         // label  - favorites icon
 	    int lbf_x = (int) ((0*frame.getWidth())/900);
-	    int lbf_y = (int) ((329*frame.getHeight())/600);
+	    int lbf_y = (int) ((339*frame.getHeight())/600);
 	    int lbf_width = (int) ((30*frame.getWidth())/900);
 	    int lbf_height = (int) ((40*frame.getHeight())/600);
         labf = new Custom_Label(lbf_x, lbf_y, lbf_width, lbf_height,
@@ -406,7 +394,7 @@ public class Client_Space {
         
         // log out button 
 	    int bt6_x = (int) ((30*frame.getWidth())/900);
-	    int bt6_y = (int) ((392*frame.getHeight())/600);
+	    int bt6_y = (int) ((402*frame.getHeight())/600);
 	    int bt6_width = (int) ((90*frame.getWidth())/900);
 	    int bt6_height = (int) ((40*frame.getHeight())/600);
 	    int bt6_font_size = (int) ((12*frame.getWidth())/900);
@@ -422,7 +410,7 @@ public class Client_Space {
               // remove client space  page
               frame.getContentPane().removeAll();    
               // create an instance client sign in page 
-              Client_Sign_In_Page sign_in__page = new Client_Sign_In_Page (frame);                       
+              new Client_Sign_In_Page (frame);                       
               // refresh the window
               frame.revalidate();
               frame.repaint(); }});
@@ -430,7 +418,7 @@ public class Client_Space {
         
         // label  - log out icon
 	    int lbg_x = (int) ((0*frame.getWidth())/900);
-	    int lbg_y = (int) ((392*frame.getHeight())/600);
+	    int lbg_y = (int) ((402*frame.getHeight())/600);
 	    int lbg_width = (int) ((30*frame.getWidth())/900);
 	    int lbg_height = (int) ((40*frame.getHeight())/600);
         labg = new Custom_Label(lbg_x, lbg_y, lbg_width, lbg_height,
@@ -455,7 +443,7 @@ public class Client_Space {
         
         
         // handle resizing
-        Custom_Resizing_Manager resize_3 = new Custom_Resizing_Manager(menu);
+        new Custom_Resizing_Manager(menu);
          
 
 		

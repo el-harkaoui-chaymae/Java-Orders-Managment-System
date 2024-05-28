@@ -45,7 +45,7 @@ public class Client_Products_Page {
    
      
 	  
-	 
+	  
 	
 	// constructor   
 	public Client_Products_Page (Custom_Frame frame) {
@@ -56,7 +56,7 @@ public class Client_Products_Page {
 
 
 		// change products button background to show that it's clicked
-		client_space.products.setBackground(Color.decode("#002F5E"));
+		client_space.products.setBackground(Color.decode("#002F5E")); 
 		client_space.labr.setBackground(Color.decode("#002F5E"));
 		client_space.products.change_color_background("#002F5E","#002F5E",client_space.labr);
 		client_space.products.change_style("#b39700","#b39700");

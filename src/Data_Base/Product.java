@@ -34,7 +34,7 @@ public class Product implements Table_Management{
 	
 	ArrayList<Object[]> infos;
 	ArrayList<Object[]> search_result;
-	  
+	   
 	
 
 

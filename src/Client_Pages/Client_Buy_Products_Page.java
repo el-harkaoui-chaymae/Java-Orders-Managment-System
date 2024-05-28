@@ -151,7 +151,7 @@ public class Client_Buy_Products_Page {
 	    int bt_height = (int) ((30*frame.getHeight())/600);
 	    int bt_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button previous = new Custom_Button(bt_x,bt_y,bt_width,bt_height,
-        "<< previous","#808080","Segoe Print",bt_font_size,false);
+        "<<  previous","#808080","Calibri",bt_font_size,false);
         center_panel.add(previous);
         
         
@@ -163,7 +163,7 @@ public class Client_Buy_Products_Page {
 	    int bn_height = (int) ((30*frame.getHeight())/600);
 	    int bn_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button next = new Custom_Button(bn_x,bn_y,bn_width,bn_height,
-        "next >>","#808080","Segoe Print",bn_font_size,false);
+        "next  >>","#808080","Calibri",bn_font_size,false);
         center_panel.add(next);
 		
         

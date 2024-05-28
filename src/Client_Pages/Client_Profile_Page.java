@@ -27,11 +27,11 @@ public class Client_Profile_Page {
 	boolean saving = false;
 	
 	
-	// constructor
+	// constructor 
 	public Client_Profile_Page(Custom_Frame frame) {
-		
+		 
        		
-
+ 
 		// create the client space elements
 		Client_Space client_space = new Client_Space(frame);
 		

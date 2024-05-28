@@ -2,6 +2,7 @@ package Data_Base;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Invoice implements Table_Management {
@@ -97,7 +98,74 @@ public class Invoice implements Table_Management {
 		
 	
 	
+	// ---------------------------------------------
 	
+	
+	
+	// method to get a specific invoice total cost
+	public double get_total_cost() {
+		
+		double total_cost = 0 ;
+		
+		
+		Connection connection = null;
+        PreparedStatement prepared_selection = null;
+        ResultSet resultSet = null;
+        
+        
+        
+        try {
+            // establish a connection with the database server
+            connection = Database_Connector.getConnection();
+            
+            // the select statement
+            String select_query = "SELECT montant_total FROM facture WHERE numerocommande = ?" ;
+            		
+            
+            // prepare the selection query
+            prepared_selection = connection.prepareStatement(select_query);
+            
+            // set parameter value
+            prepared_selection.setInt(1, purchase_id);
+             
+            // execute selection query
+            resultSet = prepared_selection.executeQuery();
+            
+            // Iterate through the ResultSet 
+            if (resultSet.next()) {
+            	
+            	total_cost = resultSet.getDouble("montant_total"); }
+       
+        
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) resultSet.close();
+                if (prepared_selection != null) prepared_selection.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		return total_cost ;
+		
+	}
 	
 	
 	

@@ -3,6 +3,9 @@ package Staff_Pages;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.Component;
+
 
 import javax.swing.SwingConstants;
 
@@ -18,6 +21,7 @@ public class Staff_Space {
 	// attributes
 	
 	public Custom_Panel space;
+	Custom_Panel menu;
 
 	public Custom_Button stock;
 	public Custom_Button new_product;
@@ -34,12 +38,13 @@ public class Staff_Space {
 	public Custom_Label labpr;
 	public Custom_Label labre;
 	public Custom_Label labq;
+	
  
  
 
 	
 
-	
+	 
 
      
 	// constructor
@@ -50,11 +55,122 @@ public class Staff_Space {
 		space = new Custom_Panel(0,0,frame.getWidth(),frame.getHeight(),"#FFFFFF");
 		space.add_background("Needed images\\client_space.png");
 		
-		// menu bar panel
-		int pn1_x = (int) ((0*frame.getWidth())/900);
-	    int pn1_width = (int) ((120*frame.getWidth())/900);
-		Custom_Panel menu = new Custom_Panel(pn1_x,0,pn1_width,frame.getHeight(),"#002F5E");
-		space.add(menu);
+		
+		
+
+        // toggle button 
+	    int bt0_x = (int) ((0*frame.getWidth())/900);
+	    int bt0_y = (int) ((15*frame.getHeight())/600);
+	    int bt0_width = (int) ((30*frame.getWidth())/900);
+	    int bt0_height = (int) ((41*frame.getHeight())/600);
+	    Custom_Button btn = new Custom_Button(bt0_x,bt0_y,bt0_width,bt0_height,
+        "","#FFFFFF","Arial",7,false);
+        space.add(btn);
+        
+        // action
+        btn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	Thread th1 = new Thread() {
+            		@Override
+            		public void run() {
+            			
+            			for(int i = 0 ; i<85 ; i++) {
+            				
+            				// menu 
+            				int pn1_x = (int) (((0-i)*frame.getWidth())/900);
+            				menu.setLocation(pn1_x, 0);
+            				
+            				// stock icon
+            				int lbs_x = (int) (((i)*frame.getWidth())/900);
+            			    int lbs_y = (int) ((97*frame.getHeight())/600);
+            				labs.setLocation(lbs_x, lbs_y);
+            				
+            			    
+            		        // new product icon
+            			    int lbn_y = (int) ((160*frame.getHeight())/600);
+            			    labn.setLocation(lbs_x,lbn_y);
+            			    
+            			    
+            			    // client icon
+            			    int lbr_y = (int) ((223*frame.getHeight())/600);
+                            labr.setLocation(lbs_x,lbr_y);
+            			    
+            			    
+                            // delivery icon
+                    	    int lbpr_y = (int) ((286*frame.getHeight())/600);
+            			    labpr.setLocation(lbs_x, lbpr_y);
+            			    
+            			    
+            			    // reports icon
+            			    int lbre_y = (int) ((349*frame.getHeight())/600);
+                            labre.setLocation(lbs_x,lbre_y);
+            			    
+                            
+                            // quit icon
+            			    int lbq_y = (int) ((412*frame.getHeight())/600);
+            			    labq.setLocation(lbs_x, lbq_y);
+            			    
+            			    
+            			    if(i>=90) {
+            			    	int lbs_x2 = (int) ((90*frame.getWidth())/900);
+            			    	labs.setLocation(lbs_x2,lbs_y);
+            			    	labn.setLocation(lbs_x2,lbn_y);
+            			    	labr.setLocation(lbs_x2,lbr_y);
+            			    	labpr.setLocation(lbs_x2,lbpr_y);
+            			    	labre.setLocation(lbs_x2,lbre_y);
+            			    	labq.setLocation(lbs_x2,lbq_y);}
+            			    
+            			    
+            			    
+            			    try {Thread.sleep(6);}
+            				catch(InterruptedException e) {e.printStackTrace();}
+            			    
+            			}}};
+            			
+            			
+            			
+            			
+            			Thread th2 = new Thread() {
+                    		@Override
+                    		public void run() {
+                    			
+                    			try {Thread.sleep(60);}
+                 			   catch(InterruptedException e) {e.printStackTrace();}
+                    			
+
+                			    ArrayList<Component> component = new ArrayList();
+                			    for(Component comp:space.getComponents()) {
+                			    	
+                			    	if(comp instanceof Custom_Panel) {component.add(comp);}
+                			    }
+                			    		
+                			    		
+                			    // The component is a JPanel
+                		        Custom_Panel pn = (Custom_Panel) component.get(1);
+                    			
+                    			for(int i = 0 ; i<70 ; i++) {
+                    			
+                    			  	
+                    		       //int pn1_y = (int) ((70*frame.getHeight())/600);
+                    		       int pn1_x = (int) (((140-i)*frame.getWidth())/900);
+
+                    		       pn.setLocation(pn1_x,pn.getY());
+                    		            	
+                    		      
+                    			   try {Thread.sleep(6);}
+                    			   catch(InterruptedException e) {e.printStackTrace();}
+                
+                    			}}};		
+            	
+                
+                th1.setPriority(10);
+            	th1.start();
+            	th2.start();
+            	
+            	}});
+		
+		
 		
 		// label  - menu icon
 	    int lbm_x = (int) ((0*frame.getWidth())/900);
@@ -66,8 +182,18 @@ public class Staff_Space {
         labm.setBackground(Color.decode("#002F5E"));
         labm.setOpaque(true);
         labm.add_background("Needed images\\menu_icon.png");
-        menu.add(labm);
+        space.add(labm);
         
+		
+		
+		
+		// menu bar panel
+		int pn1_x = (int) ((0*frame.getWidth())/900);
+	    int pn1_width = (int) ((120*frame.getWidth())/900);
+		menu = new Custom_Panel(pn1_x,0,pn1_width,frame.getHeight(),"#002F5E");
+		space.add(menu);
+		
+		
         
         // label 2 - menu
 	    int lb1_x = (int) ((30*frame.getWidth())/900);
@@ -83,25 +209,15 @@ public class Staff_Space {
         menu.add(lab1);
         
         
-        // label - above menu
-	    int lb_x = (int) ((0*frame.getWidth())/900);
-	    int lb_y = (int) ((0*frame.getHeight())/600);
-	    int lb_width = (int) ((120*frame.getWidth())/900);
-	    int lb_height = (int) ((15*frame.getHeight())/600);
-        Custom_Label lab = new Custom_Label(lb_x, lb_y, lb_width, lb_height,
-        "","Segoe Print",7,"#2F5597");
-        lab.setBackground(Color.decode("#002F5E"));
-        lab.setOpaque(true);
-        menu.add(lab);
         
         
         
         
 
         // label 4 - -------
-	    int lb4_x = (int) ((120*frame.getWidth())/900);
+	    int lb4_x = (int) ((20*frame.getWidth())/900);
 	    int lb4_y = (int) ((46*frame.getHeight())/600);
-	    int lb4_width = (int) ((780*frame.getWidth())/900);
+	    int lb4_width = (int) ((880*frame.getWidth())/900);
 	    int lb4_height = (int) ((10*frame.getHeight())/600);
         Custom_Label lab4 = new Custom_Label(lb4_x, lb4_y, lb4_width, lb4_height,"","Consolas",7,"#808080");
         lab4.create_bottom_border(1,"#B4B4B4");

@@ -20,7 +20,7 @@ public class Purchase {
 	int purchase_id ;
 	LocalDate purchase_date ;
 	LocalTime purchase_time;
-	String purchase_state ;
+	public String purchase_state ;
 	int client_id ;
 	
 	
@@ -38,9 +38,6 @@ public class Purchase {
     // method modify
 	public void modify() {};
 		
-		
-	// method delete
-	public void delete() {};
 		
 		
 	// method to check the existance of a delivery
@@ -327,6 +324,51 @@ public class Purchase {
     
     
     
+    
+    
+    
+	
+	// method delete
+	public void delete() {
+		
+		
+		Connection connection = null;
+	    PreparedStatement prepared_deletion = null;
+		
+		try {
+	        // Get the connection
+	        connection = Database_Connector.getConnection();
+	        
+	        // The query
+	        String delete_query = "DELETE FROM commande WHERE date_commande = ? AND temps_commande = ? AND etat_commande = ? AND numeroclient = ?";
+	        
+	        // Prepare the query
+	        prepared_deletion = connection.prepareStatement(delete_query);
+	        
+	        // Set parameter values
+	        prepared_deletion.setDate(1, Date.valueOf(purchase_date));
+	        prepared_deletion.setTime(2, Time.valueOf(purchase_time));
+	        prepared_deletion.setString(3, purchase_state);
+	        prepared_deletion.setInt(4, client_id);
+	        
+	        // Execute the query
+	        prepared_deletion.executeUpdate();}
+		
+		catch (SQLException e) {e.printStackTrace();} 
+		
+		finally {
+	        
+			// Close resources
+	        try {
+	            if (prepared_deletion != null) {
+	                prepared_deletion.close();
+	            }
+	            if (connection != null) {
+	                connection.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }}}
     
     
     

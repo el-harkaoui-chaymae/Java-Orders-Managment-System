@@ -86,7 +86,7 @@ public class Product implements Table_Management{
 	
 	
 	
-	
+	 
 	
 	
 	// the method add to insert a new product 

@@ -215,7 +215,7 @@ public class Client_Sign_In_Page {
         
         
        
-	    
+	     
 	    // add sign_up page to the frame
         frame.getContentPane().add(sign_in);
         

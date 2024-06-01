@@ -29,7 +29,7 @@ public class Splash_Page  {
 	    
 	    
    
-	      
+	       
 	     
 	    // add bar menu panel   
 	    int height = (int) ((70*frame.getHeight())/600);

@@ -34,6 +34,6 @@ public class Client_Space_Page {
         Custom_Resizing_Manager resize_1 = new Custom_Resizing_Manager(frame);
         Custom_Resizing_Manager resize_2 = new Custom_Resizing_Manager(client_space.space);
 	}
-	
+	 
 
 }

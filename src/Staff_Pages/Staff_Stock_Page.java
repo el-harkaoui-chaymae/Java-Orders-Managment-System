@@ -32,7 +32,7 @@ public class Staff_Stock_Page {
  
 	// constructor
 	public Staff_Stock_Page(Custom_Frame frame) {
-		
+		 
 		// create the staff space elements
 	    Staff_Space staff_space = new Staff_Space(frame);
 		
@@ -44,7 +44,7 @@ public class Staff_Stock_Page {
 	    staff_space.stock.change_color_background("#2F5597","#2F5597",staff_space.labs);
 
 	      
-	    
+	     
 	     
 	    // center page panel
 	    int pn1_x = (int) ((140*frame.getWidth())/900);

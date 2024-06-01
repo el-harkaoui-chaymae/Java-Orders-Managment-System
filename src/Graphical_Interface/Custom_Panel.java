@@ -29,7 +29,8 @@ public class Custom_Panel extends JPanel {
 
     // Constructor 
     public Custom_Panel(int x, int y, int width, int height, String color) {
-        // set the attributes
+        
+    	// set the attributes
         this.x = x;
         this.y = y;
         this.width = width;
@@ -37,7 +38,7 @@ public class Custom_Panel extends JPanel {
         this.color = color;  
         
 
-        // Set layout 
+        // Set layout  
         this.setLayout(null);
 
         // Set background color

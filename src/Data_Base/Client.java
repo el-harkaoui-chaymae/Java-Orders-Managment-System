@@ -36,7 +36,7 @@ public class Client implements Table_Management{
 		
 		this.first_name = first_name;
 		this.second_name = second_name;
-		this.city = city;
+		this.city = city; 
 		this.adress = adress;
 		this.phone_number = phone_number;
 		this.mail = mail;

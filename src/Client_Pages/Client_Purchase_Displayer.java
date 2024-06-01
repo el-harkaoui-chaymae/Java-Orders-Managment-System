@@ -1,6 +1,10 @@
 package Client_Pages;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.swing.BorderFactory;
 import javax.swing.SwingConstants;
@@ -9,8 +13,11 @@ import javax.swing.border.Border;
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
+import Graphical_Interface.Custom_Message;
 import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
+
+import Data_Base.Purchase;
 
 public class Client_Purchase_Displayer {
 	
@@ -18,6 +25,13 @@ public class Client_Purchase_Displayer {
 	
 	// attributes
 	public Custom_Panel panel ;
+	
+	
+	public LocalDate purchase_date ;
+	public LocalTime purchase_time;
+	public int client_id ;
+	
+	
 
 	
 	
@@ -34,7 +48,7 @@ public class Client_Purchase_Displayer {
 		int pn2_width = (int) ((width * frame.getWidth()) / 900);
 		int pn2_height = (int) ((height * frame.getHeight()) / 600);
 		panel = new Custom_Panel(pn2_x, pn2_y, pn2_width, pn2_height, "#FFFFFF");
-		Border border = BorderFactory.createMatteBorder(1, 0, 2, 0, Color.decode("#B4B4B4")); // Top-left-bottom-right
+		Border border = BorderFactory.createMatteBorder(0, 4, 1, 0, Color.decode("#B4B4B4")); // Top-left-bottom-right
 		panel.setBorder(border);
 		center_panel.add(panel);
 		
@@ -47,7 +61,7 @@ public class Client_Purchase_Displayer {
 		
 		
 		// label - Purchase 
-	    int lp_x = (int) ((20*frame.getWidth())/900);
+	    int lp_x = (int) ((50*frame.getWidth())/900);
 	    int lp_y = (int) ((15*frame.getHeight())/600);
 	    int lp_width = (int) ((100*frame.getWidth())/900);
 	    int lp_height = (int) ((25*frame.getHeight())/600);
@@ -60,7 +74,7 @@ public class Client_Purchase_Displayer {
         
         
         // label - date 
-	    int ld_x = (int) ((130*frame.getWidth())/900);
+	    int ld_x = (int) ((160*frame.getWidth())/900);
 	    int ld_y = (int) ((18*frame.getHeight())/600);
 	    int ld_width = (int) ((250*frame.getWidth())/900);
 	    int ld_height = (int) ((25*frame.getHeight())/600);
@@ -74,7 +88,7 @@ public class Client_Purchase_Displayer {
         
         
         // label - total cost 
-	    int lc_x = (int) ((350*frame.getWidth())/900);
+	    int lc_x = (int) ((380*frame.getWidth())/900);
 	    int lc_y = (int) ((18*frame.getHeight())/600);
 	    int lc_width = (int) ((250*frame.getWidth())/900);
 	    int lc_height = (int) ((25*frame.getHeight())/600);
@@ -88,7 +102,7 @@ public class Client_Purchase_Displayer {
         
         
         // label - total items 
-	    int li_x = (int) ((20*frame.getWidth())/900);
+	    int li_x = (int) ((50*frame.getWidth())/900);
 	    int li_y = (int) ((50*frame.getHeight())/600);
 	    int li_width = (int) ((250*frame.getWidth())/900);
 	    int li_height = (int) ((25*frame.getHeight())/600);
@@ -101,7 +115,7 @@ public class Client_Purchase_Displayer {
         
 
         // label - total items number
-	    int lt_x = (int) ((130*frame.getWidth())/900);
+	    int lt_x = (int) ((160*frame.getWidth())/900);
 	    int lt_y = (int) ((50*frame.getHeight())/600);
 	    int lt_width = (int) ((250*frame.getWidth())/900);
 	    int lt_height = (int) ((25*frame.getHeight())/600);
@@ -115,7 +129,7 @@ public class Client_Purchase_Displayer {
 	   
         
         // label - satatus 
-	    int ls_x = (int) ((20*frame.getWidth())/900);
+	    int ls_x = (int) ((50*frame.getWidth())/900);
 	    int ls_y = (int) ((75*frame.getHeight())/600);
 	    int ls_width = (int) ((250*frame.getWidth())/900);
 	    int ls_height = (int) ((25*frame.getHeight())/600);
@@ -129,7 +143,7 @@ public class Client_Purchase_Displayer {
 	    
 
         // label - purchase status
-	    int lss_x = (int) ((130*frame.getWidth())/900);
+	    int lss_x = (int) ((160*frame.getWidth())/900);
 	    int lss_y = (int) ((75*frame.getHeight())/600);
 	    int lss_width = (int) ((250*frame.getWidth())/900);
 	    int lss_height = (int) ((25*frame.getHeight())/600);
@@ -144,7 +158,7 @@ public class Client_Purchase_Displayer {
 	    
 
         // cancel purchase button 
-	    int bt2_x = (int) ((140*frame.getWidth())/900);
+	    int bt2_x = (int) ((170*frame.getWidth())/900);
 	    int bt2_y = (int) ((120*frame.getHeight())/600);
 	    int bt2_width = (int) ((200*frame.getWidth())/900);
 	    int bt2_height = (int) ((25*frame.getHeight())/600);
@@ -155,10 +169,53 @@ public class Client_Purchase_Displayer {
         cancel.change_style("#C00000","#2F5597");
         panel.add(cancel);
         
+        //action
+        cancel.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	// deleting purchases is possible only if they are still not shipped
+            	if(status.equals("not shipped")) {
+            		
+
+                	// virtual purchase
+                	Purchase purchase = new Purchase(purchase_date,purchase_time,client_id);
+                	purchase.purchase_state = status;
+                	
+                	purchase.delete();
+                	
+                	panel.setVisible(false);
+                	
+                	// raise a message
+					new Custom_Message(70, 140, "Needed Images\\verification_icon.png", "Cancellation done",
+					"This purchase is cancelled");
+            		
+            		
+            	} 
+            	
+            	else {
+            		
+
+					// raise a message
+					new Custom_Message(45, 140, "Needed Images\\x_icon.png", "Cancellation Unavailable",
+					"Cancellation is no longer possible");
+            	}
+              
+            
+            
+            
+            }});
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         // purchase details button 
-	    int bt1_x = (int) ((10*frame.getWidth())/900);
+	    int bt1_x = (int) ((40*frame.getWidth())/900);
 	    int bt1_y = (int) ((120*frame.getHeight())/600);
 	    int bt1_width = (int) ((100*frame.getWidth())/900);
 	    int bt1_height = (int) ((25*frame.getHeight())/600);

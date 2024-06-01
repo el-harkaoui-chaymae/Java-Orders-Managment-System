@@ -38,7 +38,7 @@ public class Staff_New_Product_Page {
 	File selected_file_1; 
 	Image image_2;
 	File selected_file_2;
-	Image image_3; 
+	Image image_3;  
 	File selected_file_3;
 	
 	// constructor
@@ -106,7 +106,7 @@ public class Staff_New_Product_Page {
                 	// Read the image file and set it into the Label
                 	try {
                         
-                         image_1 = ImageIO.read(selected_file_1);
+                        image_1 = ImageIO.read(selected_file_1);
                         lab1.setIcon(new ImageIcon(image_1.getScaledInstance(lab1.getWidth(),
                         lab1.getHeight(), Image.SCALE_SMOOTH)));}
                      

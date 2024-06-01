@@ -12,6 +12,8 @@ import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
 
+import javax.swing.BorderFactory;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 import Data_Base.Client;
@@ -24,7 +26,7 @@ import java.time.LocalDate;
 public class Client_Profile_Page {
 	
 	// attributes 
-	boolean saving = false;
+	boolean saving = false; 
 	
 	
 	// constructor 
@@ -76,6 +78,8 @@ public class Client_Profile_Page {
 	    int pn1_width = (int) ((330*frame.getWidth())/900);
 	    int pn1_height = (int) ((200*frame.getHeight())/600);
 	    Custom_Panel personal_panel = new Custom_Panel(pn1_x,pn1_y,pn1_width,pn1_height,"#FFFFFF");
+	    Border border = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.decode("#2F5597")); // Top-left-bottom-right
+	    personal_panel.setBorder(border);
 	    client_space.space.add(personal_panel);
 	    
 	    
@@ -222,6 +226,7 @@ public class Client_Profile_Page {
      	int pn2_width = (int) ((330*frame.getWidth())/900);
      	int pn2_height = (int) ((200*frame.getHeight())/600);
      	Custom_Panel adress_panel = new Custom_Panel(pn2_x,pn2_y,pn2_width,pn2_height,"#FFFFFF");
+     	adress_panel.setBorder(border);
      	client_space.space.add(adress_panel);
      	
      	
@@ -338,6 +343,7 @@ public class Client_Profile_Page {
      	int pn3_width = (int) ((690*frame.getWidth())/900);
      	int pn3_height = (int) ((190*frame.getHeight())/600);
      	Custom_Panel additional_panel = new Custom_Panel(pn3_x,pn3_y,pn3_width,pn3_height,"#FFFFFF");
+     	additional_panel.setBorder(border);
      	client_space.space.add(additional_panel);
      	
      	
@@ -553,8 +559,8 @@ public class Client_Profile_Page {
 	    int bt1_height = (int) ((40*frame.getHeight())/600);
 	    int bt1_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button edit = new Custom_Button(bt1_x,bt1_y,bt1_width,bt1_height,
-        "Edit","#000000","Consolas",bt1_font_size,false);
-        edit.change_style(btn_color,"#000000");
+        "Edit","#2F5597","Consolas",bt1_font_size,false);
+        edit.change_style(btn_color,"#2F5597");
         edit.add_buttom_border(190, 50, 47, btn_color, frame, client_space.space);
         client_space.space.add(edit);
         
@@ -620,8 +626,8 @@ public class Client_Profile_Page {
 	    int bt2_height = (int) ((40*frame.getHeight())/600);
 	    int bt2_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button cancel = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,
-        "Cancel","#000000","Consolas",bt2_font_size,false);
-        cancel.change_style(btn_color,"#000000");
+        "Cancel","#2F5597","Consolas",bt2_font_size,false);
+        cancel.change_style(btn_color,"#2F5597");
         cancel.add_buttom_border(300, 50, 52, btn_color, frame, client_space.space);
         client_space.space.add(cancel);
         
@@ -702,8 +708,8 @@ public class Client_Profile_Page {
 	    int bt3_height = (int) ((40*frame.getHeight())/600);
 	    int bt3_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button save = new Custom_Button(bt3_x,bt3_y,bt3_width,bt3_height,
-        "Save","#000000","Consolas",bt3_font_size,false);
-        save.change_style(btn_color,"#000000");
+        "Save","#2F5597","Consolas",bt3_font_size,false);
+        save.change_style(btn_color,"#2F5597");
         save.add_buttom_border(413, 50, 47, btn_color, frame, client_space.space);
         client_space.space.add(save);
         
@@ -816,8 +822,8 @@ public class Client_Profile_Page {
 	    int bt4_height = (int) ((40*frame.getHeight())/600);
 	    int bt4_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button delete = new Custom_Button(bt4_x,bt4_y,bt4_width,bt4_height,
-        "Delete Account","#000000","Consolas",bt4_font_size,false);
-        delete.change_style(btn_color,"#000000");
+        "Delete Account","#2F5597","Consolas",bt4_font_size,false);
+        delete.change_style(btn_color,"#2F5597");
         delete.add_buttom_border(517, 50, 112, btn_color, frame, client_space.space);
         client_space.space.add(delete);
         

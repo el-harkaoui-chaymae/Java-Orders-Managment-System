@@ -85,9 +85,7 @@ public class Client_Product_Displayer {
 	    int pn_width = (int) ((width*frame.getWidth())/900);
 	    int pn_height = (int) ((height*frame.getHeight())/600);
 	    panel = new Custom_Panel(pn_x,pn_y,pn_width,pn_height,"#F9F9F8");
-	    panel.setBackground(Color.white);
-	    Border border6 = BorderFactory.createLineBorder(Color.decode("#b39700"), 0);
-        panel.setBorder(border6);	   
+	    panel.setBackground(Color.white);	   
         center_panel.add(panel);
         
         

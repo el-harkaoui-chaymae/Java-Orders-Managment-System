@@ -4,6 +4,11 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+
+import javax.swing.SwingConstants;
 
 import Data_Base.Client;
 import Graphical_Interface.Custom_Button;
@@ -35,12 +40,6 @@ public class Client_Purchases_Page {
 	
 	
 	
-	
-	
-	
-	
-	
-	
 	// constructor
 	public Client_Purchases_Page(Custom_Frame frame) {
 
@@ -63,7 +62,16 @@ public class Client_Purchases_Page {
 		client_space.space.add(center_panel);
 
 		
-		
+		// purchases title
+	    int ls_x = (int) ((170*frame.getWidth())/900);
+	    int ls_y = (int) ((14*frame.getHeight())/600);
+	    int ls_width = (int) ((500*frame.getWidth())/900);
+	    int ls_height = (int) ((30*frame.getHeight())/600);
+	    int ls_font_size = (int) ((16*frame.getWidth())/900);
+        Custom_Label ls = new Custom_Label(ls_x, ls_y, ls_width, ls_height,
+	    "Purchases History  ..." ,"Segoe Print",ls_font_size,"#008080");
+        ls.setHorizontalAlignment(SwingConstants.LEFT);
+        client_space.space.add(ls);
 		
 		
 		
@@ -176,7 +184,7 @@ public class Client_Purchases_Page {
 			
 			
 			// retrieve infos
-			String date_time = purchase_info[0].toString() + " ---  " + purchase_info[1].toString() ;
+			String date_time = purchase_info[0].toString() + "  ---  " + purchase_info[1].toString() ;
 			String total_price = purchase_info[2].toString() ;
 			String total_items = purchase_info[3].toString() ;
 			String status = purchase_info[4].toString();
@@ -185,6 +193,16 @@ public class Client_Purchases_Page {
 			// display purchase
 			Client_Purchase_Displayer displayer = new Client_Purchase_Displayer(frame, center_panel, 20, start_point_y, 687, 165,
 			date_time,total_price,total_items,status);
+			
+			// set displayer needed attributes for deleting this purchase
+			displayer.purchase_date = LocalDate.parse(purchase_info[0].toString());
+			displayer.purchase_time = LocalTime.parse(purchase_info[1].toString());
+			displayer.client_id = client_id ;
+		
+			
+			
+			
+			
 			
 			purchases_displayers_panels.add(displayer.panel);
 			

@@ -40,7 +40,7 @@ public class Client_Orders_Page {
 	int vertical_spacing = 160; 
 	int index = 0; 
 	int page_capacity = 0 ;
-	
+	 
 	int current_page_start_index = 0 ;
 	int current_page_end_index = 3 ; 
 	 
@@ -119,28 +119,11 @@ public class Client_Orders_Page {
 	    int ly_y = (int) ((100*frame.getHeight())/600);
 	    int ly_width = (int) ((240*frame.getWidth())/900);
 	    int ly_height = (int) ((220*frame.getHeight())/600);
-        Custom_Label ly = new Custom_Label(ly_x, ly_y, ly_width, ly_height,
+        Custom_Label empty_cart_icon = new Custom_Label(ly_x, ly_y, ly_width, ly_height,
         "","Consolas",7,"#2F5597");
-        ly.add_background("Needed images\\empty_cart.png");
-        center_panel.add(ly);
-        ly.setVisible(false);     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
+        empty_cart_icon.add_background("Needed images\\empty_cart.png");
+        center_panel.add(empty_cart_icon);
+        empty_cart_icon.setVisible(false);     	
      	
      	
      	
@@ -193,7 +176,8 @@ public class Client_Orders_Page {
         	
         	
         	// display the products
-        	Client_Product_Displayer displayer = new Client_Product_Displayer(frame,center_panel,start_point_x,start_point_y,150,200,
+        	Client_Product_Displayer displayer = new Client_Product_Displayer(frame,center_panel,start_point_x,
+        	start_point_y,150,200,
         	photo_1,product_name,price,id,id_client);
         	
         	// set the ordered item quantity for each product
@@ -305,12 +289,6 @@ public class Client_Orders_Page {
 		
 		
 		
-
-		
-		
-		
-        
-        
         
         // label - purchase your orders
 	    int la_x = (int) ((35*frame.getWidth())/900);
@@ -359,8 +337,8 @@ public class Client_Orders_Page {
         total_ordered_items.setHorizontalAlignment(SwingConstants.LEFT);
         right_panel.add(total_ordered_items);
         
-        if(total_items == 0 ) { ly.setVisible(true);}
-        else { ly.setVisible(false); }
+        if(total_items == 0 ) { empty_cart_icon.setVisible(true);}
+        else { empty_cart_icon.setVisible(false); }
         
                 
         
@@ -616,8 +594,6 @@ public class Client_Orders_Page {
                     
                     
                     
-                    
-                 
            	       // -------- add new purchase_product  - commande_produit in the DB
            	       
             	
@@ -641,54 +617,36 @@ public class Client_Orders_Page {
            	    	   Purchase_Product new_purchase_product = new Purchase_Product(purch_id,id_prod,quant);
            	    	   
            	    	   // add it
-           	    	   new_purchase_product.add();
-           	    	   
-           	    	   
-           	       }
+           	    	   new_purchase_product.add();}
            	       
            	       
-           	       
-           	       
-           	       
-           	        // raise a message
-           	        new Custom_Message(70,140,"Needed Images\\verification_icon.png",
-           	        "Purchase Done","Your purchase is confiremed");
-                  
-           	       // remove products from orders list
-           	       for(Custom_Panel pn:products_displayers_panels) {pn.setVisible(false);}
-           	      
-           	      
-           	       // evacuate this client related orders
-           	       Order.empty_orders_list(client_id);;
-           	      
-           	      
-           	       // reset values
-           	       total_ordered_items.setText("0");
-           	       subtotal_pr.setText("0 Dhs");
-           	       total_price.setText("0 Dhs");
-           	       
-           	       
-           	       ly.setVisible(true);
-           	       
+					// raise a message
+					new Custom_Message(70, 140, "Needed Images\\verification_icon.png", "Purchase Done",
+							"Your purchase is confiremed");
+
+					// remove products from orders list
+					for (Custom_Panel pn : products_displayers_panels) {
+						pn.setVisible(false);}
+
+					// evacuate this client related orders
+					Order.empty_orders_list(client_id);
+					
+
+					// reset values
+					total_ordered_items.setText("0");
+					subtotal_pr.setText("0 Dhs");
+					total_price.setText("0 Dhs");
+
+					// hide empty cart icon
+					empty_cart_icon.setVisible(true);}
             	
             	
-            	
-            	
-            	
-            	}
             	
             	else {
             		
             		// raise a message
              	    new Custom_Message(85,140,"Needed Images\\x_icon.png",
-             	    "Empty Cart","No Products to Purchase"); }
-            	
-            	
-            	
-            	
-       	      
-            	
-            }});
+             	    "Empty Cart","No Products to Purchase"); }}});
         
         
         
@@ -703,26 +661,7 @@ public class Client_Orders_Page {
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+          
         
         
      // handle resizing

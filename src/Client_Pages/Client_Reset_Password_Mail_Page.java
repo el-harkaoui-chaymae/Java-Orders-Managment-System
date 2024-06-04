@@ -29,13 +29,15 @@ import Data_Base.Client;
 public class Client_Reset_Password_Mail_Page {
 	
 	//attributes
-	static int verification_code;
+	public static int verification_code;
+	public static String client_mail;
+	
 	// Generate a random verification code xxxx once for all instances
     static {
     	Random random = new Random();
         verification_code = random.nextInt(9000) + 1000;
     }
-	
+	 
      
     
 	// constructor
@@ -107,6 +109,8 @@ public class Client_Reset_Password_Mail_Page {
             	// check if the entered mail already exist in the DB
             	if(client.check_existance(1) == true) {
             		
+            		client_mail = mail.getText();
+            		
             		// create the email message holding the verification code
             		// that will be sent to the client
                  	String to = mail.getText();
@@ -124,7 +128,7 @@ public class Client_Reset_Password_Mail_Page {
                     
                     Session session = Session.getInstance(props, new javax.mail.Authenticator() {
                   	     protected PasswordAuthentication getPasswordAuthentication() {
-                  	         return new PasswordAuthentication(from, "bpjuynnwrclvkwgp");
+                  	         return new PasswordAuthentication(from, "kxry tkrz gpts ykdz");
                   	     }
                   	 });
                     
@@ -140,12 +144,12 @@ public class Client_Reset_Password_Mail_Page {
                   	     Transport.send(message);
                   	     
                   	     // raise a message
-                    	 Custom_Message no_error_message = new Custom_Message(90,135,"Needed Images\\verification_icon.png",
+                    	 new Custom_Message(90,135,"Needed Images\\verification_icon.png",
                     			                                              "Verification","Verification Code Sent");
                     	 // remove reset password mail page
                          frame.getContentPane().removeAll();    
                          // create an instance reset password verification page 
-                         Client_Reset_Password_Verification_Page next_page = new Client_Reset_Password_Verification_Page (frame);                       
+                         new Client_Reset_Password_Verification_Page (frame);                       
                          // refresh the window
                          frame.revalidate();
                          frame.repaint();
@@ -154,12 +158,12 @@ public class Client_Reset_Password_Mail_Page {
                     
                     catch (MessagingException e1) {
                   	     e1.printStackTrace();
-                  	     Custom_Message error_message = new Custom_Message(30,135,"Needed Images\\x_icon.png","Error",
+                  	     new Custom_Message(30,135,"Needed Images\\x_icon.png","Error",
                   			                                               "Error sending email Please try again");}}
                   	 else {
                   		 
                   	     // raise a message
-                    	 Custom_Message unfound_mail_message = new Custom_Message(90,135,"Needed Images\\x_icon.png",
+                    	 new Custom_Message(90,135,"Needed Images\\x_icon.png",
                     			                                              "Unfound Error","you're not registered");
                   		 
                   		 
@@ -179,24 +183,24 @@ public class Client_Reset_Password_Mail_Page {
         
         
         // label 6 - enter your E-mail Adress and
-        int lb6_x = (int) ((516*frame.getWidth())/900);
+        int lb6_x = (int) ((519*frame.getWidth())/900);
 	    int lb6_y = (int) ((330*frame.getHeight())/600);
 	    int lb6_width = (int) ((250*frame.getWidth())/900);
 	    int lb6_height = (int) ((100*frame.getHeight())/600);
 	    int lb6_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Label lab6 = new Custom_Label(lb6_x, lb6_y, lb6_width, lb6_height,
-        "Enter your E-mail Adress and we","Segoe Print",lb6_font_size ,"#000000");
+        "Enter your E-mail Adress and a","Consolas",lb6_font_size ,"#000000");
         lab6.setHorizontalAlignment(SwingConstants.LEFT);
         reset_password_mail.add(lab6);
         
         // label 7 - will send you a Verification code
-        int lb7_x = (int) ((516*frame.getWidth())/900);
+        int lb7_x = (int) ((519*frame.getWidth())/900);
 	    int lb7_y = (int) ((350*frame.getHeight())/600);
 	    int lb7_width = (int) ((250*frame.getWidth())/900);
 	    int lb7_height = (int) ((100*frame.getHeight())/600);
 	    int lb7_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Label lab7 = new Custom_Label(lb7_x, lb7_y, lb7_width, lb7_height,
-        "Will Send You A Verification Code","Segoe Print",lb7_font_size ,"#000000");
+        "Verification Code will be sent","Consolas",lb7_font_size ,"#000000");
         lab7.setHorizontalAlignment(SwingConstants.LEFT);
         reset_password_mail.add(lab7);
         
@@ -215,7 +219,7 @@ public class Client_Reset_Password_Mail_Page {
               // remove reset password page
               frame.getContentPane().removeAll();    
               // create an instance sign in page 
-              Client_Sign_In_Page previous_page = new Client_Sign_In_Page (frame);                       
+              new Client_Sign_In_Page (frame);                       
               // refresh the window
               frame.revalidate();
               frame.repaint(); }});
@@ -231,9 +235,9 @@ public class Client_Reset_Password_Mail_Page {
         
         
         // handle resizing
-        Custom_Resizing_Manager resize_1 = new Custom_Resizing_Manager(frame);
-        Custom_Resizing_Manager resize_2 = new Custom_Resizing_Manager(reset_password_mail);
-        Custom_Resizing_Manager resize_3 = new Custom_Resizing_Manager(content.getLeftPanel());
+        new Custom_Resizing_Manager(frame);
+        new Custom_Resizing_Manager(reset_password_mail);
+        new Custom_Resizing_Manager(content.getLeftPanel());
 		
 		
 		

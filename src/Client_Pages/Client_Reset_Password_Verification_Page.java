@@ -39,7 +39,7 @@ public class Client_Reset_Password_Verification_Page {
 	    
 	    
 	    // label 1 - enter your verification code
-	    int lb1_x = (int) ((494*frame.getWidth())/900);
+	    int lb1_x = (int) ((494*frame.getWidth())/900); 
 	    int lb1_y = (int) ((195*frame.getHeight())/600);
 	    int lb1_width = (int) ((250*frame.getWidth())/900);
 	    int lb1_height = (int) ((100*frame.getHeight())/600);
@@ -55,8 +55,8 @@ public class Client_Reset_Password_Verification_Page {
 	    int width_m = (int) ((250*frame.getWidth())/900);
 	    int height_m = (int) ((23*frame.getHeight())/600);
 	    int font_size_m = (int) ((11*frame.getWidth())/900);
-        Custom_Text_Field mail = new Custom_Text_Field(x_m,y_m,width_m,height_m,"Calibri",font_size_m,"#000000") ; 
-        reset_password_verification.add(mail);
+        Custom_Text_Field verification = new Custom_Text_Field(x_m,y_m,width_m,height_m,"Calibri",font_size_m,"#000000") ; 
+        reset_password_verification.add(verification);
         
         
         
@@ -73,15 +73,24 @@ public class Client_Reset_Password_Verification_Page {
         // verify button action
         verify.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	// raise a message
-            	Custom_Message message = new Custom_Message(70,140,"Needed Images\\x_icon.png","Code Error","Verification Code incorrect");
-            	// remove reset password verification page
-                frame.getContentPane().removeAll();    
-                // create an instance of reset password  page 
-                Client_Reset_Password_Page next_page = new Client_Reset_Password_Page (frame);                       
-                // refresh the window
-                frame.revalidate();
-                frame.repaint(); }});
+            	
+            	// the verification code is correct
+            	if(verification.getText().equals(String.valueOf(Client_Reset_Password_Mail_Page.verification_code))) {
+            		
+            		// remove reset password verification page
+                    frame.getContentPane().removeAll();    
+                    // create an instance of reset password  page 
+                    new Client_Reset_Password_Page (frame);                       
+                    // refresh the window
+                    frame.revalidate();
+                    frame.repaint();}
+            	
+            	
+            	else {
+            		
+            		// raise a message
+                	new Custom_Message(70,140,"Needed Images\\x_icon.png","Code Error","Verification Code incorrect");}
+            	 }});
         
         
         
@@ -92,7 +101,7 @@ public class Client_Reset_Password_Verification_Page {
 	    int lb2_height = (int) ((100*frame.getHeight())/600);
 	    int lb2_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Label lab2 = new Custom_Label(lb2_x, lb2_y, lb2_width, lb2_height,
-        "Enter the Code we send you","Segoe Print",lb2_font_size ,"#000000");
+        "Enter the Code we send you","Consolas",lb2_font_size ,"#000000");
         lab2.setHorizontalAlignment(SwingConstants.LEFT);
         reset_password_verification.add(lab2);
 	    
@@ -110,7 +119,7 @@ public class Client_Reset_Password_Verification_Page {
               // remove reset password page
               frame.getContentPane().removeAll();    
               // create an instance of client reset password mail_Page page 
-              Client_Reset_Password_Mail_Page previous_page = new Client_Reset_Password_Mail_Page (frame);                       
+              new Client_Reset_Password_Mail_Page (frame);                       
               // refresh the window
               frame.revalidate();
               frame.repaint(); }});
@@ -123,9 +132,9 @@ public class Client_Reset_Password_Verification_Page {
         
         
         // handle resizing
-        Custom_Resizing_Manager resize_1 = new Custom_Resizing_Manager(frame);
-        Custom_Resizing_Manager resize_2 = new Custom_Resizing_Manager(reset_password_verification);
-        Custom_Resizing_Manager resize_3 = new Custom_Resizing_Manager(content.getLeftPanel());
+        new Custom_Resizing_Manager(frame);
+        new Custom_Resizing_Manager(reset_password_verification);
+        new Custom_Resizing_Manager(content.getLeftPanel());
 	}
 
 	

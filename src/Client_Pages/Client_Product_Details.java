@@ -1,6 +1,7 @@
 package Client_Pages;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,7 +21,6 @@ import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
 import Graphical_Interface.Custom_Text_Area;
 import Graphical_Interface.Custom_Text_Field;
-import Staff_Pages.Staff_Stock_Page;
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
@@ -67,6 +67,62 @@ public class Client_Product_Details {
 		
 		
 		
+		
+		// return button 
+	    int b_x = (int) ((150*frame.getWidth())/900); 
+	    int b_y = (int) ((14*frame.getHeight())/600);
+	    int b_width = (int) ((50*frame.getWidth())/900);
+	    int b_height = (int) ((23*frame.getHeight())/600);
+        Custom_Button return_btn = new Custom_Button(b_x,b_y,b_width,b_height,
+        "","#000000","Consolas",7,false);
+        client_space.space.add(return_btn);
+        
+        // action to perform
+        return_btn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            
+              
+              
+              // Hide all components in the frame
+              for (Component comp : frame.getContentPane().getComponents()) {
+                  
+            	  if(comp.isVisible()) {frame.remove(comp);}
+            	  else {comp.setVisible(true);}
+              }
+              
+              
+                 
+              }});
+        
+
+	    // return icon
+	    int l_x = (int) ((170*frame.getWidth())/900);
+	    int l_y = (int) ((14*frame.getHeight())/600);
+	    int l_width = (int) ((20*frame.getWidth())/900);
+	    int l_height = (int) ((23*frame.getHeight())/600);
+        Custom_Label lb = new Custom_Label(l_x, l_y, l_width, l_height,"",
+        "Calibri",7,"#b39700");
+        lb.add_background("Needed images\\return.png");
+        client_space.space.add(lb);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	    // create a virtual product
 	    Product virtual_product = new Product(null,null,0,0,null,null,null,null,null);
@@ -92,10 +148,10 @@ public class Client_Product_Details {
 	    
 	    
 	    // product photo_1 label
-	    int lb1_x = (int) ((40*frame.getWidth())/900);
-	    int lb1_y = (int) ((18*frame.getHeight())/600);
-	    int lb1_width = (int) ((120*frame.getWidth())/900);
-	    int lb1_height = (int) ((130*frame.getHeight())/600);
+	    int lb1_x = (int) ((0*frame.getWidth())/900);
+	    int lb1_y = (int) ((0*frame.getHeight())/600);
+	    int lb1_width = (int) ((200*frame.getWidth())/900);
+	    int lb1_height = (int) ((200*frame.getHeight())/600);
         Custom_Label lab1 = new Custom_Label(lb1_x, lb1_y, lb1_width, lb1_height,"",
         "Calibri",7,"#b39700");
         Border border = BorderFactory.createLineBorder(Color.decode("#2F5597"), 3);
@@ -122,10 +178,10 @@ public class Client_Product_Details {
     	
     	
     	// product photo_2 label
-	    int lb2_x = (int) ((40*frame.getWidth())/900);
-	    int lb2_y = (int) ((18*frame.getHeight())/600);
-	    int lb2_width = (int) ((120*frame.getWidth())/900);
-	    int lb2_height = (int) ((130*frame.getHeight())/600);
+	    int lb2_x = (int) ((0*frame.getWidth())/900);
+	    int lb2_y = (int) ((0*frame.getHeight())/600);
+	    int lb2_width = (int) ((200*frame.getWidth())/900);
+	    int lb2_height = (int) ((200*frame.getHeight())/600);
         Custom_Label lab2 = new Custom_Label(lb2_x, lb2_y, lb2_width, lb2_height,"",
         "Calibri",7,"#b39700");
         Border border2 = BorderFactory.createLineBorder(Color.decode("#b39700"), 3);
@@ -156,10 +212,10 @@ public class Client_Product_Details {
         
         
         // product photo_3 label
-	    int lb3_x = (int) ((40*frame.getWidth())/900);
-	    int lb3_y = (int) ((18*frame.getHeight())/600);
-	    int lb3_width = (int) ((120*frame.getWidth())/900);
-	    int lb3_height = (int) ((130*frame.getHeight())/600);
+	    int lb3_x = (int) ((0*frame.getWidth())/900);
+	    int lb3_y = (int) ((0*frame.getHeight())/600);
+	    int lb3_width = (int) ((200*frame.getWidth())/900);
+	    int lb3_height = (int) ((200*frame.getHeight())/600);
         Custom_Label lab3 = new Custom_Label(lb3_x, lb3_y, lb3_width, lb3_height,"",
         "Calibri",7,"#b39700");
         Border border_3 = BorderFactory.createLineBorder(Color.decode("#C00000"), 3);
@@ -236,14 +292,14 @@ public class Client_Product_Details {
         
         
         // photo number label
-	    int lb4_x = (int) ((95*frame.getWidth())/900);
-	    int lb4_y = (int) ((160*frame.getHeight())/600);
+	    int lb4_x = (int) ((243*frame.getWidth())/900);
+	    int lb4_y = (int) ((280*frame.getHeight())/600);
 	    int lb4_width = (int) ((30*frame.getWidth())/900);
-	    int lb4_font_size = (int) ((14*frame.getWidth())/900);
+	    int lb4_font_size = (int) ((10*frame.getWidth())/900);
 	    int lb4_height = (int) ((30*frame.getHeight())/600);
         Custom_Label lab4 = new Custom_Label(lb4_x, lb4_y, lb4_width, lb4_height,"1",
         "Calibri",lb4_font_size,"#808080");
-        photos_panel.add(lab4);
+        client_space.space.add(lab4);
         
         
         
@@ -262,14 +318,14 @@ public class Client_Product_Details {
         
         
         // previous image button 
-	    int bt_x = (int) ((35*frame.getWidth())/900);
-	    int bt_y = (int) ((160*frame.getHeight())/600);
+	    int bt_x = (int) ((180*frame.getWidth())/900);
+	    int bt_y = (int) ((280*frame.getHeight())/600);
 	    int bt_width = (int) ((70*frame.getWidth())/900);
 	    int bt_height = (int) ((30*frame.getHeight())/600);
-	    int bt_font_size = (int) ((16*frame.getWidth())/900);
+	    int bt_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button previous_image = new Custom_Button(bt_x,bt_y,bt_width,bt_height,
         "<<","#808080","Calibri",bt_font_size,false);
-        photos_panel.add(previous_image);
+        client_space.space.add(previous_image);
         
         
          
@@ -324,14 +380,14 @@ public class Client_Product_Details {
         
         
         // next image button 
-	    int bt2_x = (int) ((95*frame.getWidth())/900);
-	    int bt2_y = (int) ((160*frame.getHeight())/600);
+	    int bt2_x = (int) ((240*frame.getWidth())/900);
+	    int bt2_y = (int) ((280*frame.getHeight())/600);
 	    int bt2_width = (int) ((70*frame.getWidth())/900);
 	    int bt2_height = (int) ((30*frame.getHeight())/600);
-	    int bt2_font_size = (int) ((16*frame.getWidth())/900);
+	    int bt2_font_size = (int) ((12*frame.getWidth())/900);
         Custom_Button next_image = new Custom_Button(bt2_x,bt2_y,bt2_width,bt2_height,
         ">>","#808080","Calibri",bt2_font_size,false);
-        photos_panel.add(next_image);
+        client_space.space.add(next_image);
         
         // next_image button action
         next_image.addActionListener(new ActionListener() {
@@ -385,7 +441,7 @@ public class Client_Product_Details {
         
         
         // product name label
-        int x_n = (int) ((170*frame.getWidth())/900);
+        int x_n = (int) ((220*frame.getWidth())/900);
 	    int y_n = (int) ((14*frame.getHeight())/600);
 	    int width_n = (int) ((300*frame.getWidth())/900);
 	    int height_n = (int) ((23*frame.getHeight())/600);
@@ -408,6 +464,8 @@ public class Client_Product_Details {
 	    int pn1_width = (int) ((450*frame.getWidth())/900);
 	    int pn1_height = (int) ((200*frame.getHeight())/600);
 	    Custom_Panel general_infos = new Custom_Panel(pn1_x,pn1_y,pn1_width,pn1_height,"#FFFFFF");
+	    Border border4 = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.decode("#2F5597")); // Top-left-bottom-right
+	    general_infos.setBorder(border4);
 	    client_space.space.add(general_infos);
 	    
 	    
@@ -533,6 +591,7 @@ public class Client_Product_Details {
 	    int pn2_width = (int) ((690*frame.getWidth())/900);
 	    int pn2_height = (int) ((200*frame.getHeight())/600);
 	    Custom_Panel description_infos = new Custom_Panel(pn2_x,pn2_y,pn2_width,pn2_height,"#FFFFFF");
+	    description_infos.setBorder(border4);
 	    client_space.space.add(description_infos);
 	    
 	    

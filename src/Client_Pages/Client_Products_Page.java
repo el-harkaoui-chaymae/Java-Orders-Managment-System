@@ -37,10 +37,12 @@ public class Client_Products_Page {
 	
 	ByteArrayInputStream photo_5 ;
 	
-	static String Product_category;
+	static String Product_category; 
 	 
 	int horizontal_spacing = 30;
     int start_point = 25;
+    
+    public static String searched_words;
     
    
      
@@ -538,45 +540,30 @@ public class Client_Products_Page {
 	    center_panel.add(search);
 	    
 	    
+        //search btn action
+	    button_search.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	searched_words = search.getText();
+            	
+            	// remove client product page
+                frame.getContentPane().removeAll();    
+                // create an instance client searched products page 
+                new Client_Searched_Products_Page (frame);                       
+                // refresh the window
+                frame.revalidate();
+                frame.repaint();  }});
         
         
-        
-        
-        
-
-    	
-        
-        
-       
-        
-        
-        
-        
-        
+      
+		
+		
+		
+		
 	    
-	   
-        
-        
 	    
 	    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-		
-		
-		
-		
+	    
 		
 		
 		// handle resizing
@@ -595,9 +582,6 @@ public class Client_Products_Page {
 	
 	
 	
-	
-	
-	// ------------------------------------------------------------------------------
 	
 	
 	

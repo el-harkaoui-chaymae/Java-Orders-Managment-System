@@ -6,7 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.Component;
+
 import java.io.ByteArrayInputStream;
+
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -32,7 +35,7 @@ public class Client_Product_Displayer {
 	
 	// attributes     
 	int x;
-	int y;
+	int y; 
 	int width; 
 	int height;
 	
@@ -464,9 +467,14 @@ public class Client_Product_Displayer {
               // affect the product id
               productId = product_id ;
               
-                            
-              // remove buy products page
-              frame.getContentPane().removeAll();    
+              
+              // Hide all components in the frame
+              for (Component comp : frame.getContentPane().getComponents()) {
+                  comp.setVisible(false);
+              }
+              
+              
+                 
               // open products details page 
               new Client_Product_Details (frame);                       
               // refresh the window
@@ -476,17 +484,6 @@ public class Client_Product_Displayer {
         
         
 		
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -645,7 +642,7 @@ public class Client_Product_Displayer {
 		
 		
 			
-		
+		 
 	}
 	
 	

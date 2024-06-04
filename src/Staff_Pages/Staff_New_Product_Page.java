@@ -39,7 +39,7 @@ public class Staff_New_Product_Page {
 	Image image_2;
 	File selected_file_2;
 	Image image_3;  
-	File selected_file_3;
+	File selected_file_3; 
 	
 	// constructor
 	public Staff_New_Product_Page(Custom_Frame frame) {
@@ -555,7 +555,7 @@ public class Staff_New_Product_Page {
             		
             		if((text_field.getText()).isEmpty()) {
             			// raise a message
-                    	Custom_Message message = new Custom_Message(90,140,"Needed Images\\x_icon.png","Empty Field",
+                    	new Custom_Message(90,140,"Needed Images\\x_icon.png","Empty Field",
                     			                                    "Please fill all fields");
                     	empty = true;
                 		break;
@@ -565,7 +565,7 @@ public class Staff_New_Product_Page {
             	if((product_category.getText().equals(" select ...")) || (supplier.getText().equals(" select ..."))) {
             		
             		// raise a message
-                	Custom_Message message = new Custom_Message(85,140,"Needed Images\\x_icon.png","Selection Not Done",
+                	new Custom_Message(85,140,"Needed Images\\x_icon.png","Selection Not Done",
                 			                                    "Please Make a Selection");
                 	empty = true;
             	}
@@ -575,7 +575,7 @@ public class Staff_New_Product_Page {
             	if(description.getText().isEmpty()) {
             		
             		// raise a message
-                	Custom_Message message = new Custom_Message(42,140,"Needed Images\\x_icon.png","Empty Description",
+                	new Custom_Message(42,140,"Needed Images\\x_icon.png","Empty Description",
                 			                                    "Please add the Product's Desciption");
                 	empty = true;
             	}
@@ -585,7 +585,7 @@ public class Staff_New_Product_Page {
             	if(selected_file_1 == null) {
             		empty = true;
             		// raise a message
-                	Custom_Message message = new Custom_Message(65,140,"Needed Images\\x_icon.png","Empty Photo",
+                	new Custom_Message(65,140,"Needed Images\\x_icon.png","Empty Photo",
                             "Please Dropp the first Photo");}
             	
             	
@@ -612,6 +612,17 @@ public class Staff_New_Product_Page {
                 	// raise a message
                 	new Custom_Message(130,140,"Needed Images\\verification_icon.png",
                 	"Succussful Insertion","Product Added");
+                	
+                	// reset fields and images
+                	product_category.setText(" select ...");
+            	    supplier.setText(" select ...");
+            	    product_name.setText("");
+            	    quantity.setText("");
+            	    price.setText("");
+            	    description.setText("");
+            	    lab1.setIcon(null);
+            	    lab2.setIcon(null);
+            	    lab3.setIcon(null);
                     
             	}}});
 

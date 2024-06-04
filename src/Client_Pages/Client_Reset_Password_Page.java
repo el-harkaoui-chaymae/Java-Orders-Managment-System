@@ -13,6 +13,8 @@ import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
 import Graphical_Interface.Custom_Text_Field;
 
+import Data_Base.Client;
+
 public class Client_Reset_Password_Page {
 
 	// constructor
@@ -31,7 +33,7 @@ public class Client_Reset_Password_Page {
 		content.add_welcome_expression(frame, reset_password, 555, 120, 200, 100, 16, "welcome back");
 		
 		
-		
+		 
 		// label 1 - enter your new password
 	    int lb1_x = (int) ((494*frame.getWidth())/900);
 	    int lb1_y = (int) ((195*frame.getHeight())/600);
@@ -90,16 +92,35 @@ public class Client_Reset_Password_Page {
         // reset action
         reset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	
+              // different passwords	
+              if(!(Confirmed_password.getText().equals(password.getText()))) {
+            	  
+            	// raise a message
+              	new Custom_Message(90,140,"Needed Images\\x_icon.png","Password Error",
+              			                                    "Passwords do not match");}
               
-              // raise a message
-              Custom_Message message = new Custom_Message(70,140,"Needed Images\\verification_icon.png","Password","Password reset successfully");	
-              // remove reset password page
-              frame.getContentPane().removeAll();    
-              // create an instance of client sign in  page 
-              Client_Sign_In_Page sign_in_page = new Client_Sign_In_Page (frame);                       
-              // refresh the window
-              frame.revalidate();
-              frame.repaint(); }});
+              else {
+            	  
+            	  //create a virtual client
+            	  Client virtual_client = new Client(null,null,null,null,
+        		  null,Client_Reset_Password_Mail_Page.client_mail,password.getText());
+            	  
+            	  // update the password
+            	  virtual_client.reset_password();
+            	  
+            	  // raise a message
+                  new Custom_Message(70,140,"Needed Images\\verification_icon.png","Password","Password reset successfully");	
+                  
+                  // remove reset password page
+                  frame.getContentPane().removeAll();    
+                  // create an instance of client sign in  page 
+                  new Client_Sign_In_Page (frame);                       
+                  // refresh the window
+                  frame.revalidate();
+                  frame.repaint();
+            	  
+              }}});
         
         
         
@@ -110,12 +131,14 @@ public class Client_Reset_Password_Page {
         // return button and its action 
         int panel_original_width = 360;
 	    int panel_original_height = 600;
-	    content.getLeftPanel().add_return_button(40, 230, 15, 20, panel_original_width, panel_original_height).addActionListener(new ActionListener() {
+	    content.getLeftPanel().add_return_button(40, 230, 15, 20, panel_original_width, 
+	    panel_original_height).addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-              // remove reset password page
+              
+            	// remove reset password page
               frame.getContentPane().removeAll();    
               // create an instance of client reset password verification page 
-              Client_Reset_Password_Verification_Page previous_page = new Client_Reset_Password_Verification_Page (frame);                       
+              new Client_Reset_Password_Verification_Page (frame);                       
               // refresh the window
               frame.revalidate();
               frame.repaint(); }});
@@ -130,9 +153,9 @@ public class Client_Reset_Password_Page {
         
         
         // handle resizing
-        Custom_Resizing_Manager resize_1 = new Custom_Resizing_Manager(frame);
-        Custom_Resizing_Manager resize_2 = new Custom_Resizing_Manager(reset_password);
-        Custom_Resizing_Manager resize_3 = new Custom_Resizing_Manager(content.getLeftPanel());
+        new Custom_Resizing_Manager(frame);
+        new Custom_Resizing_Manager(reset_password);
+        new Custom_Resizing_Manager(content.getLeftPanel());
 
 	}
 

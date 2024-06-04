@@ -3,11 +3,8 @@ package Client_Pages;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
-import javax.swing.SwingConstants;
-
 import java.io.ByteArrayInputStream;
+import java.util.ArrayList;
 
 import Data_Base.Client;
 import Data_Base.Product;
@@ -17,10 +14,10 @@ import Graphical_Interface.Custom_Label;
 import Graphical_Interface.Custom_Panel;
 import Graphical_Interface.Custom_Resizing_Manager;
 
-public class Client_Buy_Products_Page {
+public class Client_Searched_Products_Page {
+	
 	
 	// attributes
-	String Product_Category;
 	int start_point_x = 25 ;
 	int start_point_y = 20 ;
 	int horizontal_spacing = 27;
@@ -32,30 +29,28 @@ public class Client_Buy_Products_Page {
 	int current_page_end_index = 7 ; 
 	
 	ArrayList<Custom_Panel> products_displayers_panels = new ArrayList<>();
-	 
-
-	  
+	
+	
 	
 
 	// constructor
-	public Client_Buy_Products_Page(Custom_Frame frame) {
+	public Client_Searched_Products_Page(Custom_Frame frame) {
 
-		
 		// create the client space elements
 		Client_Space client_space = new Client_Space(frame);
-						
 
 
 		// change products button background to show that it's clicked
-		client_space.products.setBackground(Color.decode("#002F5E"));
+		client_space.products.setBackground(Color.decode("#002F5E")); 
 		client_space.labr.setBackground(Color.decode("#002F5E"));
 		client_space.products.change_color_background("#002F5E","#002F5E",client_space.labr);
 		client_space.products.setForeground(Color.decode("#b39700"));
 		client_space.products.change_style("#b39700","#b39700");
 
 		
+		
 		// center page panel
-		int pn1_x = (int) ((140 * frame.getWidth()) / 900); 
+		int pn1_x = (int) ((140 * frame.getWidth()) / 900);
 		int pn1_y = (int) ((70 * frame.getHeight()) / 600);
 		int pn1_width = (int) ((800 * frame.getWidth()) / 900);
 		int pn1_height = (int) ((580 * frame.getHeight()) / 600);
@@ -63,34 +58,27 @@ public class Client_Buy_Products_Page {
 		client_space.space.add(center_panel);
 		
 		
-		
-		// category title
-	    int ls_x = (int) ((170*frame.getWidth())/900);
-	    int ls_y = (int) ((14*frame.getHeight())/600);
-	    int ls_width = (int) ((400*frame.getWidth())/900);
-	    int ls_height = (int) ((30*frame.getHeight())/600);
-	    int ls_font_size = (int) ((16*frame.getWidth())/900);
-        Custom_Label ls = new Custom_Label(ls_x, ls_y, ls_width, ls_height,
-        Client_Products_Page.Product_category+"  ...","Segoe Print",ls_font_size,"#008080");
-        ls.setHorizontalAlignment(SwingConstants.LEFT);
-        client_space.space.add(ls);
-	    
-	    
-	    // ============================================================================================
-	    
-	    
-	    
-	    
-	    // selected product category
-        String selected_category = Client_Products_Page.Product_category;
+		// label  - Searched Product
+	    int lb_x = (int) ((170*frame.getWidth())/900);
+	    int lb_y = (int) ((14*frame.getHeight())/600);
+	    int lb_width = (int) ((400*frame.getWidth())/900);
+	    int lb_height = (int) ((30*frame.getHeight())/600);
+	    int lb_font_size = (int) ((16*frame.getWidth())/900);
+        Custom_Label lab = new Custom_Label(lb_x, lb_y, lb_width, lb_height,"Searched Product  ...",
+        "Segoe Print",lb_font_size,"#008080");
+        client_space.space.add(lab);
+        
+        
+        
         
         // virtual product
-        Product virtual_product = new Product(selected_category,null,0,0,null,null,null,null,null);
+        Product virtual_product = new Product(null,Client_Products_Page.searched_words,0,0,null,null,null,null,null);
         
-        // get this category products
-        ArrayList<Object[]> products = virtual_product.get_similar_products();
+        // get the products names that contains the searched words
+        ArrayList<Object[]> products = virtual_product.search_product();
         
-        for(Object[] product:products) {
+        
+       for(Object[] product:products) {
         	
         	
         	if((index % 4 == 0) && (index!=0)) {
@@ -107,8 +95,8 @@ public class Client_Buy_Products_Page {
         	
         	// needed infos
         	ByteArrayInputStream photo_1 =  (ByteArrayInputStream )product[5];
-        	String product_name = product[2].toString();
-        	String price = product[4].toString();
+        	String product_name = product[1].toString();
+        	String price = product[2].toString();
         	int product_id = (int) product[0];
         	
         	// create a virtual client with the same valid entered mail in the sign in page
@@ -172,7 +160,8 @@ public class Client_Buy_Products_Page {
             	// Check if there is a previous partition to show
                 if (current_page_start_index > 0) {
                     // Hide the current partition
-                    for (int i = current_page_start_index; i <= current_page_end_index && i < products_displayers_panels.size(); i++) {
+                    for (int i = current_page_start_index; i <= current_page_end_index &&
+                    i < products_displayers_panels.size(); i++) {
                         products_displayers_panels.get(i).setVisible(false);}
                     
                     // Move to previous partition
@@ -194,6 +183,8 @@ public class Client_Buy_Products_Page {
                 
                 }}});
 
+        
+        
         
         
         next.addActionListener(new ActionListener() {
@@ -220,15 +211,15 @@ public class Client_Buy_Products_Page {
                 }}});
 
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
 		// handle resizing
         new Custom_Resizing_Manager(frame);
@@ -236,5 +227,5 @@ public class Client_Buy_Products_Page {
         new Custom_Resizing_Manager(center_panel);
 
 	}
-            
+
 }

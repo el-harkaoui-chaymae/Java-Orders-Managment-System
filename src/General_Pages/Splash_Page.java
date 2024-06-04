@@ -34,10 +34,10 @@ public class Splash_Page  {
 	    // add bar menu panel   
 	    int height = (int) ((70*frame.getHeight())/600);
 	    Custom_Panel bar = new Custom_Panel(0,0,frame.getWidth(),height,"#2F5597");
-	    splash.add(bar);
+	    splash.add(bar); 
 	     
-	    
 	     
+	      
 	    // about us button 
 	    int bt1_x = (int) ((700*frame.getWidth())/900);
 	    int bt1_y = (int) ((30*frame.getHeight())/600);
@@ -77,7 +77,7 @@ public class Splash_Page  {
             	Container contentPane = frame.getContentPane(); 
                 contentPane.remove(splash); 
             	// open the client sign in page panel
-                Client_Sign_In_Page page = new Client_Sign_In_Page(frame);
+                new Client_Sign_In_Page(frame);
                 // refresh the window
                 frame.revalidate();
                 frame.repaint();
@@ -103,7 +103,7 @@ public class Splash_Page  {
             	Container contentPane = frame.getContentPane(); 
                 contentPane.remove(splash); 
             	// open the staff sign in page panel
-                Staff_Sign_In_Page page = new Staff_Sign_In_Page(frame);
+                new Staff_Sign_In_Page(frame);
                 // refresh the window
                 frame.revalidate();
                 frame.repaint();

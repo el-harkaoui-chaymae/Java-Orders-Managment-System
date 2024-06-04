@@ -5,12 +5,14 @@ import Graphical_Interface.Custom_Resizing_Manager;
 import Graphical_Interface.Custom_Text_Field;
 
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Graphical_Interface.Custom_Button;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
+import Graphical_Interface.Custom_Message;
 
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
@@ -27,6 +29,7 @@ public class Client_Profile_Page {
 	
 	// attributes 
 	boolean saving = false; 
+	public static boolean delete;
 	
 	
 	// constructor 
@@ -36,7 +39,7 @@ public class Client_Profile_Page {
  
 		// create the client space elements
 		Client_Space client_space = new Client_Space(frame);
-		
+		 
 		// change profile button background to show that it's clicked
     	client_space.profile.setBackground(Color.decode("#002F5E"));
     	client_space.labp.setBackground(Color.decode("#002F5E"));
@@ -44,7 +47,7 @@ public class Client_Profile_Page {
     	client_space.profile.change_style("#b39700","#b39700");
     	
 		
-		 
+		  
     	
     	// get the client informations
         
@@ -662,12 +665,24 @@ public class Client_Profile_Page {
             	    number.setText(Number);
             	    city.setText(City);
             	    adress.setText(Adress);
+            	    
             	    birth_date.setText(Birth_date);
+            	    if(Birth_date==null) {birth_date.setText("----");}
+            	    
             	    gender.setText(Gender);
+            	    if(Gender==null) {gender.setText("----");}
+            	    
             	    nationality.setText(Nationality);
+            	    if(Nationality==null) {nationality.setText("----");}
+            	    
             	    education.setText(Education_level);
+            	    if(Education_level==null) {education.setText("----");}
+            	    
             	    low_income.setText(Low_income);
+            	    if(Low_income==null) {low_income.setText("----");}
+            	    
             	    high_income.setText(High_income);
+            	    if(High_income==null) {high_income.setText("----");}
                     
                     // forbid text editting
             	    first_name.setEditable(false);
@@ -799,6 +814,11 @@ public class Client_Profile_Page {
         	    
         	    // update the original client proprities with the new edited virtual client attributes
         	    edited_client.modify();
+        	    
+        	    
+        	   // raise a message
+			   new Custom_Message(90, 140, "Needed Images\\verification_icon.png", "Update Done",
+						"Your changes are saved");
             	           		
             	}});
         
@@ -827,6 +847,28 @@ public class Client_Profile_Page {
         delete.add_buttom_border(517, 50, 112, btn_color, frame, client_space.space);
         client_space.space.add(delete);
         
+        // action
+        delete.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+                
+ 				   // delete the account
+ 				   client.delete();
+ 				   
+ 				   // raise a message
+ 	               new Custom_Message(90, 140, "Needed Images\\verification_icon.png", 
+ 	               "Deletion Done","Your account is deleted");
+ 				   
+ 	                // remove client profile page 
+ 	                frame.getContentPane().removeAll();    
+ 	                
+ 	            	// open the client sign in page panel
+ 	                new Client_Sign_In_Page(frame);
+ 	                // refresh the window
+ 	                frame.revalidate();
+ 	                frame.repaint();
+ 			   }});
+        
         
         
         
@@ -834,11 +876,6 @@ public class Client_Profile_Page {
         
         
        
-        
-        
-        
-        
-        
         
         
         
@@ -897,11 +934,11 @@ public class Client_Profile_Page {
 	    
 	    
 	    // handle resizing
-        Custom_Resizing_Manager resize_1 = new Custom_Resizing_Manager(frame);
-        Custom_Resizing_Manager resize_2 = new Custom_Resizing_Manager(client_space.space);
-        Custom_Resizing_Manager resize_3 = new Custom_Resizing_Manager(personal_panel);
-        Custom_Resizing_Manager resize_4 = new Custom_Resizing_Manager(adress_panel);
-        Custom_Resizing_Manager resize_5 = new Custom_Resizing_Manager(additional_panel);
+        new Custom_Resizing_Manager(frame);
+        new Custom_Resizing_Manager(client_space.space);
+        new Custom_Resizing_Manager(personal_panel);
+        new Custom_Resizing_Manager(adress_panel);
+        new Custom_Resizing_Manager(additional_panel);
 
 		
 		

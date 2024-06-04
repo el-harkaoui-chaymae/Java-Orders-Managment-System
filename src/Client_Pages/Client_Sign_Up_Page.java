@@ -37,7 +37,7 @@ public class Client_Sign_Up_Page {
 	    content.add_welcome_expression(frame, sign_up, 555, 120, 200, 100, 16, "welcome here");
 	     
      
-        
+         
 	    // label 5 - enter your first name
 	    int lb5_x = (int) ((405*frame.getWidth())/900);
 	    int lb5_y = (int) ((145*frame.getHeight())/600);
@@ -212,7 +212,7 @@ public class Client_Sign_Up_Page {
             		for(Custom_Text_Field  text_field:text_filds) {
             			if ((text_field.getText()).isEmpty()) {
             				// raise a message
-                        	Custom_Message message = new Custom_Message(90,140,"Needed Images\\x_icon.png","Empty field",
+                        	new Custom_Message(90,140,"Needed Images\\x_icon.png","Empty field",
                         			                                    "Please fill all fields");
                         	empty = true;
                         	break;}}
@@ -226,7 +226,7 @@ public class Client_Sign_Up_Page {
                         	// add the new client to client table
                         	new_client.add();
                         	// raise a message
-                    		Custom_Message message = new Custom_Message(65,140,"Needed Images\\verification_icon.png",
+                    		new Custom_Message(65,140,"Needed Images\\verification_icon.png",
                     				                                    "Successful Sign Up",
                     				                                    "Account created - Log in now");
                     		
@@ -240,7 +240,7 @@ public class Client_Sign_Up_Page {
                     		
                 		else {
                     		// raise a message
-                        	Custom_Message message = new Custom_Message(90,140,"Needed Images\\x_icon.png","Password Error",
+                        	new Custom_Message(90,140,"Needed Images\\x_icon.png","Password Error",
                         			                                    "Passwords do not match");}
                 	
             		}}	
@@ -250,8 +250,8 @@ public class Client_Sign_Up_Page {
             		// remove the reference to the client object
             		new_client = null;
             		// raise a message
-            		Custom_Message message = new Custom_Message(10,140,"Needed Images\\x_icon.png","Membership Error",
-                			                                     "You have already an account, please log in");
+            		new Custom_Message(10,140,"Needed Images\\x_icon.png","Membership Error",
+                			                  "You have already an account, please log in");
             	}}});
         
         

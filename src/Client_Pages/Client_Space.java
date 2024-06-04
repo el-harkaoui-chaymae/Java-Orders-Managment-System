@@ -37,7 +37,7 @@ public class Client_Space {
   
 
 
-
+ 
 	
 	// construtor
 	public Client_Space(Custom_Frame frame){

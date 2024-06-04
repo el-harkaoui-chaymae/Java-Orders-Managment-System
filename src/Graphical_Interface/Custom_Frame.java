@@ -28,7 +28,7 @@ public class Custom_Frame extends JFrame {
         // Set default close operation 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-
+ 
         // Load the frame icon - logo
         Image icon = null;
         try { icon = ImageIO.read(new File("Needed Images\\frame_icon.png")); }

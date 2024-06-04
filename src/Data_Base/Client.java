@@ -25,7 +25,7 @@ public class Client implements Table_Management{
 	LocalDate birth_date; 
 	String gender;
 	String nationality; 
-	String education_level;
+	String education_level; 
 	double low_income; 
 	double high_income; 
 	
@@ -38,7 +38,7 @@ public class Client implements Table_Management{
 		this.second_name = second_name;
 		this.city = city; 
 		this.adress = adress;
-		this.phone_number = phone_number;
+		this.phone_number = phone_number;  
 		this.mail = mail;
 		this.password = password;
 		
@@ -263,7 +263,44 @@ public class Client implements Table_Management{
 
     // the method delete
 	@Override
-	public void delete() {}
+	public void delete() {
+		
+
+    	Connection connection = null;
+		PreparedStatement prepared_update = null;
+		
+		try {
+			
+			// establish a connection with the database server
+			connection = Database_Connector.getConnection();
+			 
+			
+			// the delete statement
+			String delete_query = "DELETE FROM client WHERE mail = ?";
+
+			
+			// prepare the delete query
+			prepared_update = connection.prepareStatement(delete_query);
+			
+			// set paremeters values
+			prepared_update.setString(1, mail);
+		
+
+			// delete data 
+			prepared_update.executeUpdate(); }
+		
+		catch (SQLException e) {e.printStackTrace();}
+        
+		finally {
+            
+			try {
+                  if (prepared_update != null) prepared_update.close();
+                  if (connection != null) connection.close();}
+            
+			catch (SQLException e) {e.printStackTrace();}}
+		
+		
+	}
 	
 	
 	
@@ -425,16 +462,60 @@ public class Client implements Table_Management{
             
 			catch (SQLException e) {e.printStackTrace();}}
 		
-		return infos;
-		
-		
-		
-		
-		
-		
-	}
+		return infos;}
 	
             
   
+	
+	
+	
+	// ---------------------------------------------------------------
+	
+	
+	
+	
+	
+	
+	
+	// the method reset password to change the password
+	public void reset_password() {
+			
+			Connection connection = null;
+			PreparedStatement prepared_update = null;
+			
+			try {
+				
+				// establish a connection with the database server
+				connection = Database_Connector.getConnection();
+				 
+				
+				// the update statement
+				String update_query = "UPDATE client SET mot_de_passe = ?  WHERE mail = ?";
+				
+				// prepare the update query
+				prepared_update = connection.prepareStatement(update_query);
+				
+				// set paremeters values
+				prepared_update.setString(1, password);
+				prepared_update.setString(2, mail);
+				
+				// update data 
+				prepared_update.executeUpdate(); }
+			
+			catch (SQLException e) {e.printStackTrace();}
+	        
+			finally {
+	            
+				try {
+	                
+	                if (prepared_update != null) prepared_update.close();
+	                if (connection != null) connection.close();}
+	            
+				catch (SQLException e) {e.printStackTrace();}}
+			
+			
+		}
+		
+		
 
 }

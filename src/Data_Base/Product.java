@@ -37,7 +37,7 @@ public class Product implements Table_Management{
 	   
 	
 
-
+ 
 	
 	// constructor
 	public Product (String product_category,String product_name,double quantity,double price,
@@ -378,14 +378,16 @@ public class Product implements Table_Management{
                 double quantity = resultSet.getDouble("quantite");
                 double price = resultSet.getDouble("prix");
                 String supplier = resultSet.getString("fournisseur");
+                InputStream photo_1 = resultSet.getBinaryStream("photo_1");
                 
                 // create an array to store the data for this row
-                Object[] row_data = new Object[5];
+                Object[] row_data = new Object[6];
                 row_data[0] = id_product;
                 row_data[1] = product_name_result;
                 row_data[2] = price;
                 row_data[3] = quantity;
                 row_data[4] = supplier;
+                row_data[5] = photo_1;
                 
                 // add the row data array to the search_result ArrayList
                 search_result.add(row_data);
@@ -655,7 +657,12 @@ public class Product implements Table_Management{
     	
     	
     	
-    	
+    
+    
+    
+    
+    // -----------------------------------------------------------------------------
+   
     	
     	
     	

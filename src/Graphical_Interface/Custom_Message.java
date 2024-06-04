@@ -13,6 +13,9 @@ import java.io.IOException;
 
 public class Custom_Message extends JFrame {
 	
+	// attributes
+	public static boolean ok_clicked = false;
+	
 	// contructor
 	public Custom_Message(int x1,int x2,String icon_path,
 			              String bar_text,String message) {
@@ -30,7 +33,7 @@ public class Custom_Message extends JFrame {
 		
 		// set the position and size
         this.setBounds(570,300,400,200);
-                
+                 
      	
         // Set the background color of the frame
         this.getContentPane().setBackground(Color.decode("#D0E6F0"));
@@ -58,11 +61,19 @@ public class Custom_Message extends JFrame {
         "#FFFFFF","Consolas",16,true);
         Ok.setRound_shape_variables(35, 35);
         this.add(Ok);
+        
         // action
         Ok.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Close the frame
+                
+            	
+            	// the button now is clicked
+                ok_clicked = true;
+                
+            	// Close the frame
                 dispose();
+                
+                
             }
         });
 

@@ -567,7 +567,8 @@ public class Client_Orders_Page {
                 	
                 	
                 	// delivery destination id
-                	double delivery_cost = Double.valueOf(delivery_fee.getText().substring(0,delivery_fee.getText().length() - 4));
+                	double delivery_cost = 
+                	Double.valueOf(delivery_fee.getText().substring(0,delivery_fee.getText().length() - 4));
                 	Delivery_Destination dest = new Delivery_Destination(city,delivery_cost);
                 	int dest_id = dest.get_destination_id();
                 	
@@ -653,12 +654,12 @@ public class Client_Orders_Page {
 		
         
         
+         
         
         
         
         
-        
-        
+         
         
         
           

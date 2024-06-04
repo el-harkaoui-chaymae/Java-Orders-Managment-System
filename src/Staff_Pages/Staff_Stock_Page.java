@@ -1,12 +1,14 @@
 package Staff_Pages;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
+import Client_Pages.Client_Product_Details;
 import Graphical_Interface.Custom_Frame;
 import Graphical_Interface.Custom_Label;
 import Graphical_Interface.Custom_Message;
@@ -20,7 +22,7 @@ import Graphical_Interface.Custom_Table;
 
 
 import Data_Base.Product;
-
+ 
 
 
 public class Staff_Stock_Page {
@@ -28,8 +30,8 @@ public class Staff_Stock_Page {
 	// attribute
 	boolean changes_saved = false ;
 	static int product_identifier;
-	    
- 
+	     
+  
 	// constructor
 	public Staff_Stock_Page(Custom_Frame frame) {
 		 
@@ -43,9 +45,9 @@ public class Staff_Stock_Page {
 	    staff_space.stock.change_style("#b39700","#b39700");
 	    staff_space.stock.change_color_background("#2F5597","#2F5597",staff_space.labs);
 
-	      
+	       
 	     
-	     
+	       
 	    // center page panel
 	    int pn1_x = (int) ((140*frame.getWidth())/900);
 	    int pn1_y = (int) ((70*frame.getHeight())/600);
@@ -143,7 +145,7 @@ public class Staff_Stock_Page {
       
 
         // Define column names
-        String[] columns_names = {"Identifier", "Product", "Price", "Quantity"};
+        String[] columns_names = {"Identifier", "Product", "Price Dhs", "Quantity"};
 
         // Define column widths
         int[] columns_widths = {120, 310, 120, 121};
@@ -544,18 +546,16 @@ public class Staff_Stock_Page {
               			                && !(table.getValueAt(selected_row, 0).equals(""))) { 
               		 product_identifier = Integer.parseInt(table.getValueAt(selected_row, 0).toString());
               		 
-              	     // remove staff stock space page 
-                     frame.getContentPane().removeAll();    
-                     
-                     // open staff product details page 
-                     new Staff_Product_Details_Page (frame);                       
-                     
-                     // refresh the window
-                     frame.revalidate();
-                     frame.repaint();
-              		 
-              	
-              	 }
+					// Hide all components in the frame
+					for (Component comp : frame.getContentPane().getComponents()) {
+						comp.setVisible(false);
+					}
+
+					// open products details page
+					new Staff_Product_Details_Page(frame);
+					// refresh the window
+					frame.revalidate();
+					frame.repaint();}
               	 
               	 else {
               		 
@@ -574,9 +574,9 @@ public class Staff_Stock_Page {
 	
         
         // handle resizing
-        Custom_Resizing_Manager resize_1 = new Custom_Resizing_Manager(frame);
-        Custom_Resizing_Manager resize_2 = new Custom_Resizing_Manager(staff_space.space);
-        Custom_Resizing_Manager resize_3 = new Custom_Resizing_Manager(center_panel);
+        new Custom_Resizing_Manager(frame);
+        new Custom_Resizing_Manager(staff_space.space);
+        new Custom_Resizing_Manager(center_panel);
 
 		
 	}
